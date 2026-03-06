@@ -6,7 +6,8 @@ import { GEOJSON_URL, PROV_URL, RELATIONS_URL }                    from "./confi
 import { checkCommons, fetchAdminPoints }                           from "./wikidata.js";
 import { renderProvinces, renderDistricts, refreshDistrictLayer,
          highlightDistrict, getProvBounds,
-         highlightProvLayer, showAdminMarker, removeAdminMarkers }  from "./map.js";
+         highlightProvLayer, showAdminMarker, removeAdminMarkers,
+         toggleLocate, toggleLayer, zoomIn, zoomOut }              from "./map.js";
 import { initSidebar, renderList, openDetail, closeDetail,
          updateStats, scrollActiveIntoView,
          setOverlay, hideOverlay }                                  from "./sidebar.js";
@@ -109,10 +110,14 @@ function onDistrictClick(idx) {
 // ----------------------------------------------------------------
 // GLOBAL EVENT HANDLERS
 // ----------------------------------------------------------------
-window._sel      = (idx) => onDistrictClick(idx);
-window._wdSearch = (idx) => {};
-window.onSearch  = (v)   => { state.searchQ = v; renderList(); };
-window.setFilter = (f, btn) => {
+window._sel          = (idx) => onDistrictClick(idx);
+window._wdSearch     = (idx) => {};
+window.onSearch      = (v)   => { state.searchQ = v; renderList(); };
+window.toggleLocate  = ()    => toggleLocate();
+window.toggleLayer   = ()    => toggleLayer();
+window.zoomIn        = ()    => zoomIn();
+window.zoomOut       = ()    => zoomOut();
+window.setFilter     = (f, btn) => {
   state.filter = f;
   document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
