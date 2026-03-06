@@ -1,390 +1,287 @@
-/* ================================================================
-   style.css — OSM tasarım dilini baz alan ortak stiller
-   Renk paleti: OSM web sitesinden (openstreetmap-website)
-   ================================================================ */
+// ================================================================
+// map.js — Leaflet harita, il ve ilçe katmanları
+// ================================================================
 
-/* --- TOKENS ------------------------------------------------------- */
-:root {
-  --osm-green:        #7ebc6f;
-  --osm-green-dark:   #5d9451;
-  --osm-green-light:  #eaf4e6;
-  --osm-header-bg:    #222222;
-  --osm-header-text:  #ffffff;
-  --osm-body-bg:      #ffffff;
-  --osm-border:       #cccccc;
-  --osm-border-light: #e8e8e8;
-  --osm-text:         #333333;
-  --osm-text-muted:   #888888;
-  --osm-link:         #428bca;
-  --osm-sidebar-bg:   #ffffff;
-  --osm-ctrl-bg:      #ffffff;
-  --osm-ctrl-border:  rgba(0,0,0,0.2);
-  --osm-ctrl-shadow:  0 1px 5px rgba(0,0,0,0.4);
-  --osm-font:         'Helvetica Neue', Helvetica, Arial, sans-serif;
+export const map = L.map('map', { zoomControl: false }).setView([39, 35], 6);
+
+const osmTile = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> katkıda bulunanlar',
+  maxZoom: 19
+});
+const cartoTile = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '© OpenStreetMap © CARTO', maxZoom: 19
+});
+
+osmTile.addTo(map);
+let currentTile = 'osm';
+
+let provLayers  = [];
+let polyLayers  = [];
+let activeProvIdx = null;
+
+// ----------------------------------------------------------------
+// İL KATMANI — sadece başlangıçta görünür, il seçilince gizlenir
+// ----------------------------------------------------------------
+export function renderProvinces(provFeatures, onProvinceClick) {
+  provLayers.forEach(l => { if (l) map.removeLayer(l); });
+  provLayers = [];
+  provFeatures.forEach((feat, pi) => {
+    const layer = L.geoJSON(feat, {
+      style: { color: '#94a3b8', weight: 1, fillColor: '#64748b', fillOpacity: 0.04, opacity: 0.6 }
+    });
+    layer.on('click',     () => onProvinceClick(pi));
+    layer.on('mouseover', () => {
+      if (activeProvIdx !== null) return;
+      layer.setStyle({ fillOpacity: 0.10, weight: 1.5, color: '#7c3aed' });
+    });
+    layer.on('mouseout',  () => {
+      if (activeProvIdx !== null) return;
+      layer.setStyle({ color: '#94a3b8', weight: 1, fillOpacity: 0.04 });
+    });
+    layer.addTo(map);
+    provLayers[pi] = layer;
+  });
 }
 
-/* --- RESET --------------------------------------------------------- */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: var(--osm-font);
-  font-size: 14px;
-  background: var(--osm-body-bg);
-  color: var(--osm-text);
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+export function highlightProvLayer(pi) {
+  activeProvIdx = pi;
+  provLayers.forEach(l => {
+    if (!l) return;
+    l.setStyle({ color: 'transparent', weight: 0, fillColor: 'transparent', fillOpacity: 0, opacity: 0 });
+  });
+  if (provLayers[pi]) {
+    try { map.fitBounds(provLayers[pi].getBounds(), { padding: [30, 30] }); } catch(e) {}
+  }
 }
 
-/* --- HEADER ------------------------------------------------------- */
-#header {
-  background: var(--osm-header-bg);
-  color: var(--osm-header-text);
-  padding: 0 12px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,.4);
-  z-index: 100;
+export function restoreProvLayers() {
+  provLayers.forEach(l => {
+    if (!l) return;
+    l.setStyle({ color: '#94a3b8', weight: 1, fillColor: '#64748b', fillOpacity: 0.04, opacity: 0.6 });
+  });
+  activeProvIdx = null;
 }
 
-#header h1 {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--osm-header-text);
-  white-space: nowrap;
-  letter-spacing: .01em;
+export function getProvBounds(pi) {
+  return provLayers[pi]?.getBounds();
 }
 
-#header h1 span.logo { color: var(--osm-green); margin-right: 4px; }
-
-#search-box {
-  background: #3a3a3a;
-  border: 1px solid #555;
-  border-radius: 3px;
-  padding: 5px 10px;
-  color: #fff;
-  font-size: 13px;
-  font-family: var(--osm-font);
-  outline: none;
-  transition: border-color .15s, background .15s;
-}
-#search-box:focus { border-color: var(--osm-green); background: #2e2e2e; }
-#search-box::placeholder { color: #888; }
-
-#stats {
-  font-size: 12px;
-  color: #aaa;
-  white-space: nowrap;
-  margin-left: auto;
-}
-#stats b { color: var(--osm-green); }
-
-/* --- LAYOUT ------------------------------------------------------- */
-#main { display: flex; flex: 1; overflow: hidden; position: relative; }
-#map  { flex: 1; }
-
-/* --- SIDEBAR ------------------------------------------------------ */
-#sidebar {
-  width: 360px;
-  background: var(--osm-sidebar-bg);
-  border-left: 1px solid var(--osm-border);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  flex-shrink: 0;
-  box-shadow: -2px 0 4px rgba(0,0,0,.06);
+// ----------------------------------------------------------------
+// İLÇE KATMANI
+// ----------------------------------------------------------------
+export function getDistrictStyle(matches, idx, isActive) {
+  const m = matches[String(idx)];
+  if (isActive) {
+    if (!m)             return { color: '#475569', weight: 2, fillColor: '#475569', fillOpacity: 0.08, opacity: 1 };
+    if (m.hasBuildings) return { color: '#059669', weight: 2, fillColor: '#059669', fillOpacity: 0.15, opacity: 1 };
+    return                     { color: '#d97706', weight: 2, fillColor: '#d97706', fillOpacity: 0.10, opacity: 1 };
+  }
+  if (!m)             return { color: '#94a3b8', weight: 1, fillColor: '#94a3b8', fillOpacity: 0.04, opacity: 0.7 };
+  if (m.hasBuildings) return { color: '#059669', weight: 1.2, fillColor: '#059669', fillOpacity: 0.12, opacity: 0.8 };
+  return                     { color: '#d97706', weight: 1.2, fillColor: '#d97706', fillOpacity: 0.06, opacity: 0.8 };
 }
 
-#sidebar-top {
-  padding: 8px 12px;
-  border-bottom: 1px solid var(--osm-border-light);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-shrink: 0;
-  background: #f8f8f8;
+export function renderDistricts(features, matches, provBounds, onDistrictClick, provFeature) {
+  polyLayers.forEach(l => { if (l) map.removeLayer(l); });
+  polyLayers = [];
+  const districtIdxs = [];
+  features.forEach((feat, idx) => {
+    try {
+      const style = getDistrictStyle(matches, idx, false);
+      const layer = L.geoJSON(feat, { style });
+      const center = layer.getBounds().getCenter();
+      if (!provBounds.contains(center)) return;
+      if (provFeature && !pointInGeoJSON(center, provFeature)) return;
+      layer.on('click',     () => onDistrictClick(idx));
+      layer.on('mouseover', () => layer.setStyle({ ...getDistrictStyle(matches, idx, false), fillOpacity: 0.18, weight: 2 }));
+      layer.on('mouseout',  () => layer.setStyle(getDistrictStyle(matches, idx, false)));
+      const m = matches[String(idx)];
+      if (m?.label) layer.bindTooltip(m.label, { sticky: true });
+      layer.addTo(map);
+      polyLayers[idx] = layer;
+      districtIdxs.push(idx);
+    } catch(e) {}
+  });
+  return districtIdxs;
 }
 
-#list-label {
-  font-size: 11px;
-  color: var(--osm-text-muted);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .5px;
+export function refreshDistrictLayer(matches, idx) {
+  const layer = polyLayers[idx];
+  if (!layer) return;
+  layer.setStyle(getDistrictStyle(matches, idx, false));
+  layer.unbindTooltip();
+  const m = matches[String(idx)];
+  if (m?.label) layer.bindTooltip(m.label, { sticky: true });
 }
 
-#filter-btns { display: flex; gap: 4px; }
-
-.fbtn {
-  background: #fff;
-  border: 1px solid var(--osm-border);
-  color: var(--osm-text);
-  padding: 3px 8px;
-  border-radius: 3px;
-  font-size: 11px;
-  font-family: var(--osm-font);
-  cursor: pointer;
-  transition: all .12s;
-}
-.fbtn.on { background: var(--osm-green); border-color: var(--osm-green-dark); color: #fff; font-weight: 600; }
-.fbtn:hover:not(.on) { border-color: var(--osm-green); color: var(--osm-green-dark); }
-
-/* --- LİSTE -------------------------------------------------------- */
-#district-list { flex: 1; overflow-y: auto; }
-#district-list::-webkit-scrollbar { width: 4px; }
-#district-list::-webkit-scrollbar-track { background: #f8f8f8; }
-#district-list::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
-
-.ditem {
-  padding: 8px 12px;
-  border-bottom: 1px solid var(--osm-border-light);
-  cursor: pointer;
-  transition: background .1s;
-}
-.ditem:hover { background: var(--osm-green-light); }
-.ditem.active { background: var(--osm-green-light); border-left: 3px solid var(--osm-green); padding-left: 9px; }
-.dname { font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 6px; color: var(--osm-text); }
-.dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-.dot-g { background: var(--osm-green); }
-.dot-y { background: #e8a020; }
-.dot-x { background: #cccccc; }
-.dmeta { font-size: 11px; color: var(--osm-text-muted); margin-top: 2px; padding-left: 14px; }
-
-/* --- DETAY PANELİ ------------------------------------------------- */
-#detail {
-  background: #f8f8f8;
-  border-top: 2px solid var(--osm-green-light);
-  padding: 12px;
-  flex-shrink: 0;
-  max-height: 280px;
-  overflow-y: auto;
-  display: none;
-}
-#detail-title { font-size: 15px; font-weight: 700; color: var(--osm-text); margin-bottom: 10px; }
-.mlabel { font-size: 10px; color: var(--osm-text-muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; font-weight: 600; }
-
-.cur-match { display: flex; align-items: center; gap: 8px; background: var(--osm-green-light); border: 1px solid #b8ddb0; border-radius: 3px; padding: 8px 10px; }
-.cur-qid { font-size: 13px; font-weight: 700; color: var(--osm-green-dark); }
-.cur-lbl { font-size: 12px; color: var(--osm-text-muted); flex: 1; }
-
-.sug { background: #fff; border: 1px solid var(--osm-border); border-radius: 3px; padding: 7px 10px; cursor: pointer; display: flex; gap: 8px; align-items: flex-start; transition: all .12s; margin-bottom: 4px; }
-.sug:hover { border-color: var(--osm-green); background: var(--osm-green-light); }
-.sug-qid { font-size: 11px; color: var(--osm-link); font-weight: 700; white-space: nowrap; }
-.sug-name { font-size: 12px; color: var(--osm-text); font-weight: 500; }
-.sug-desc { font-size: 11px; color: var(--osm-text-muted); overflow: hidden; text-overflow: ellipsis; max-width: 260px; white-space: nowrap; }
-.info-txt { font-size: 12px; color: var(--osm-text-muted); padding: 8px 0; text-align: center; }
-
-#commons-box { margin-top: 8px; padding: 8px 10px; border-radius: 3px; font-size: 12px; line-height: 1.5; }
-#commons-box.ok { background: var(--osm-green-light); border: 1px solid #b8ddb0; color: #3a6b34; }
-#commons-box.no { background: #f8f8f8; border: 1px solid var(--osm-border); color: var(--osm-text-muted); }
-#commons-box a { color: var(--osm-link); text-decoration: none; }
-#commons-box a:hover { text-decoration: underline; }
-
-/* --- HARİTA KONTROL PANELİ ---------------------------------------- */
-#map-controls {
-  position: fixed;
-  right: 10px;
-  top: 54px; /* header altında */
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  animation: osmSlideIn .2s ease;
+export function highlightDistrict(prevIdx, idx, matches) {
+  polyLayers.forEach((l, i) => {
+    if (!l) return;
+    if (i === idx) {
+      l.setStyle(getDistrictStyle(matches, i, true));
+    } else {
+      const base = getDistrictStyle(matches, i, false);
+      l.setStyle({ ...base, fillOpacity: 0, fillColor: 'transparent' });
+    }
+  });
 }
 
-@keyframes osmSlideIn {
-  from { opacity: 0; transform: translateX(12px); }
-  to   { opacity: 1; transform: translateX(0); }
+export function showProvHighlight() {
+  // Artık kullanılmıyor — il sınırı gösterilmiyor
 }
 
-/* Kontrol grubu: zoom */
-.ctrl-group {
-  background: var(--osm-ctrl-bg);
-  border: 1px solid var(--osm-ctrl-border);
-  border-radius: 4px;
-  box-shadow: var(--osm-ctrl-shadow);
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 8px;
-  overflow: hidden;
+// ----------------------------------------------------------------
+// NOKTA (P11729)
+// ----------------------------------------------------------------
+let adminMarkers = [];
+
+export function showAdminMarker(lat, lng, label, qid, hasImage, p18thumb) {
+  const iconUrl = hasImage
+    ? 'css/marker-green.png'
+    : 'css/marker-red.png';
+
+  const icon = L.icon({
+    iconUrl,
+    shadowUrl:    'css/marker-shadow.png',
+    iconSize:     [25, 41],
+    iconAnchor:   [12, 41],
+    popupAnchor:  [1, -34],
+    shadowSize:   [41, 41],
+    shadowAnchor: [12, 41],
+  });
+
+  const imgHtml = p18thumb
+    ? `<img src="${p18thumb}" style="width:72px;height:54px;object-fit:cover;border-radius:3px;flex-shrink:0">`
+    : `<div style="width:72px;height:54px;background:#e8e8e8;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">📷</div>`;
+
+  const popupHtml = `
+    <div onclick="window.open('upload.html?qid=${qid}','_blank')" style="
+      display:flex;gap:10px;align-items:center;cursor:pointer;
+      min-width:200px;max-width:260px;padding:2px">
+      ${imgHtml}
+      <div style="flex:1;min-width:0">
+        <div style="font-weight:700;font-size:13px;color:#333;margin-bottom:3px;line-height:1.3">${label || qid}</div>
+        <div style="font-size:11px;color:#888">${hasImage ? '📷 Fotoğraf var' : '📷 Fotoğraf yok'}</div>
+        <div style="font-size:10px;color:#7ebc6f;margin-top:4px;font-weight:600">Yükle →</div>
+      </div>
+    </div>`;
+
+  const marker = L.marker([lat, lng], { icon })
+    .bindPopup(popupHtml, { maxWidth: 280, className: 'monument-popup' })
+    .addTo(map);
+
+  marker.on('click', () => {
+    if (window._sidebarOpenQid) window._sidebarOpenQid(qid);
+  });
+
+  adminMarkers.push(marker);
 }
 
-.map-btn {
-  width: 30px;
-  height: 30px;
-  background: var(--osm-ctrl-bg);
-  border: none;
-  border-bottom: 1px solid var(--osm-border-light);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  font-family: var(--osm-font);
-  transition: background .12s, color .12s;
-  line-height: 1;
-}
-.map-btn:last-child { border-bottom: none; }
-.map-btn:hover  { background: #f4f4f4; color: var(--osm-green-dark); }
-.map-btn:active { background: #e8e8e8; }
-.map-btn.active { background: var(--osm-green-light); color: var(--osm-green-dark); }
-
-.map-btn svg { display: block; }
-
-.map-btn-divider { display: none; } /* artık ctrl-group kullanıyoruz */
-
-/* --- OVERLAY ------------------------------------------------------ */
-#overlay { position: fixed; inset: 0; background: rgba(255,255,255,.85); display: flex; align-items: center; justify-content: center; z-index: 9000; }
-#overlay.hidden { display: none; }
-.spin { width: 34px; height: 34px; border: 3px solid #ddd; border-top-color: var(--osm-green); border-radius: 50%; animation: sp .7s linear infinite; }
-.spin-lbl { color: var(--osm-text-muted); font-size: 13px; margin-top: 10px; text-align: center; }
-@keyframes sp { to { transform: rotate(360deg); } }
-
-/* --- LEAFLET TOOLTIP ---------------------------------------------- */
-.leaflet-tooltip { background: #fff; border: 1px solid var(--osm-border); color: var(--osm-text); font-size: 12px; font-family: var(--osm-font); padding: 4px 8px; box-shadow: 0 1px 4px rgba(0,0,0,.2); border-radius: 3px; }
-
-/* --- FOCUS KALDIR ------------------------------------------------- */
-.leaflet-interactive:focus { outline: none; }
-path.leaflet-interactive:focus { outline: none; }
-
-/* ── SİDEBAR YENİ STILLER ─────────────────────────────────────── */
-#sidebar {
-  display: none;  /* varsayılan gizli, JS açar */
-  order: -1;      /* haritanın solunda */
+export function removeAdminMarkers() {
+  adminMarkers.forEach(m => map.removeLayer(m));
+  adminMarkers = [];
 }
 
-#sidebar-top {
-  flex-direction: column;
-  gap: 6px;
-  align-items: stretch;
+// ----------------------------------------------------------------
+// YARDIMCI
+// ----------------------------------------------------------------
+function pointInGeoJSON(latlng, geojsonFeature) {
+  const pt = [latlng.lng, latlng.lat];
+  const geom = geojsonFeature.geometry;
+  const polys = geom.type === 'Polygon' ? [geom.coordinates] : geom.coordinates;
+  return polys.some(poly => pointInPolygon(pt, poly[0]));
 }
 
-#sidebar-title {
-  font-size: 14px;
-  font-weight: 700;
-  color: #333;
+function pointInPolygon(pt, ring) {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const xi = ring[i][0], yi = ring[i][1];
+    const xj = ring[j][0], yj = ring[j][1];
+    if (((yi > pt[1]) !== (yj > pt[1])) &&
+        (pt[0] < (xj - xi) * (pt[1] - yi) / (yj - yi) + xi)) {
+      inside = !inside;
+    }
+  }
+  return inside;
 }
 
-#item-count {
-  font-size: 11px;
-  color: #999;
+// ----------------------------------------------------------------
+// KONUM TAKİBİ
+// ----------------------------------------------------------------
+let locationMarker = null;
+let locationCircle = null;
+let watchId        = null;
+let locating       = false;
+
+export function toggleLocate() {
+  if (locating) { stopLocate(); } else { startLocate(); }
 }
 
-#filter-btns { display: flex; gap: 4px; flex-wrap: wrap; }
-
-#item-list { flex: 1; overflow-y: auto; }
-#item-list::-webkit-scrollbar { width: 4px; }
-#item-list::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
-
-/* QID satırı */
-.qitem {
-  border-bottom: 1px solid #eee;
-  cursor: pointer;
-  transition: background .1s;
-  user-select: none;
-}
-.qitem:hover       { background: #eef4eb; }
-.qitem.open        { background: #f0f7ee; border-left: 3px solid #7ebc6f; }
-
-.qitem-head {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 10px;
+function startLocate() {
+  if (!navigator.geolocation) { alert('Tarayıcınız konum desteklemiyor.'); return; }
+  locating = true;
+  document.getElementById('btn-locate').classList.add('active');
+  watchId = navigator.geolocation.watchPosition(
+    pos => updateLocation(pos.coords.latitude, pos.coords.longitude, pos.coords.accuracy),
+    ()  => stopLocate(),
+    { enableHighAccuracy: true, maximumAge: 5000, timeout: 10000 }
+  );
 }
 
-.qitem-left {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  min-width: 0;
+function stopLocate() {
+  locating = false;
+  document.getElementById('btn-locate').classList.remove('active');
+  if (watchId !== null) { navigator.geolocation.clearWatch(watchId); watchId = null; }
+  if (locationMarker) { map.removeLayer(locationMarker); locationMarker = null; }
+  if (locationCircle) { map.removeLayer(locationCircle); locationCircle = null; }
 }
 
-.qid-link {
-  font-size: 11px;
-  font-weight: 700;
-  color: #375f8a;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.qid-link:hover { text-decoration: underline; }
-
-.qitem-label {
-  font-size: 12px;
-  color: #333;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.qitem-badges { display: flex; gap: 3px; flex-shrink: 0; }
-
-.badge {
-  font-size: 10px;
-  padding: 1px 5px;
-  border-radius: 2px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-.badge-img { background: #dbeafe; color: #1e40af; }
-.badge-cat { background: #dcfce7; color: #166534; }
-
-.qitem-arrow {
-  font-size: 9px;
-  color: #aaa;
-  flex-shrink: 0;
+function updateLocation(lat, lng, accuracy) {
+  const latlng = [lat, lng];
+  if (!locationMarker) {
+    map.setView(latlng, 14);
+    const icon = L.divIcon({
+      className: '',
+      html: `<div style="width:14px;height:14px;border-radius:50%;background:#2563eb;border:3px solid #fff;box-shadow:0 2px 6px rgba(37,99,235,.5)"></div>`,
+      iconSize: [14, 14], iconAnchor: [7, 7]
+    });
+    locationMarker = L.marker(latlng, { icon, zIndexOffset: 1000 })
+      .bindTooltip('Buradasınız', { permanent: false, direction: 'top' })
+      .addTo(map);
+    locationCircle = L.circle(latlng, {
+      radius: accuracy, color: '#2563eb', fillColor: '#2563eb',
+      fillOpacity: 0.08, weight: 1, opacity: 0.4
+    }).addTo(map);
+  } else {
+    locationMarker.setLatLng(latlng);
+    locationCircle.setLatLng(latlng);
+    locationCircle.setRadius(accuracy);
+  }
 }
 
-/* Accordion gövdesi */
-.qitem-body {
-  padding: 6px 10px 10px 10px;
-  border-top: 1px solid #e8f4e4;
-  background: #f7fdf6;
-  font-size: 12px;
+// ----------------------------------------------------------------
+// KATMAN DEĞİŞTİR
+// ----------------------------------------------------------------
+export function toggleLayer() {
+  if (currentTile === 'osm') {
+    map.removeLayer(osmTile);
+    cartoTile.addTo(map);
+    currentTile = 'carto';
+    document.getElementById('btn-layers').title = 'OpenStreetMap\'e geç';
+  } else {
+    map.removeLayer(cartoTile);
+    osmTile.addTo(map);
+    currentTile = 'osm';
+    document.getElementById('btn-layers').title = 'Açık haritaya geç';
+  }
 }
 
-.acc-link {
-  color: #375f8a;
-  text-decoration: none;
-  word-break: break-all;
-}
-.acc-link:hover { text-decoration: underline; }
+// ----------------------------------------------------------------
+// ZOOM
+// ----------------------------------------------------------------
+export function zoomIn()  { map.zoomIn(); }
+export function zoomOut() { map.zoomOut(); }
 
-.acc-empty { color: #999; font-style: italic; }
-
-/* ── YÜKLE BUTONU ─────────────────────────────────────────────── */
-.upload-btn {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 4px 12px;
-  background: #7ebc6f;
-  color: #fff;
-  font-size: 12px;
-  font-weight: 600;
-  border-radius: 3px;
-  text-decoration: none;
-  font-family: inherit;
-  transition: background .15s;
+export function getDistrictCenter(idx) {
+  return polyLayers[idx]?.getBounds()?.getCenter();
 }
-.upload-btn:hover { background: #6aaa5a; text-decoration: none; color: #fff; }
-
-/* ── MONUMENT POPUP ───────────────────────────────────────────── */
-.monument-popup .leaflet-popup-content-wrapper {
-  border-radius: 4px;
-  box-shadow: 0 2px 12px rgba(0,0,0,.25);
-  padding: 0;
-  overflow: hidden;
-  cursor: pointer;
-  border: 1px solid #ddd;
-}
-.monument-popup .leaflet-popup-content-wrapper:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,.3);
-}
-.monument-popup .leaflet-popup-content { margin: 10px; }
-.monument-popup .leaflet-popup-tip-container { margin-top: -1px; }
