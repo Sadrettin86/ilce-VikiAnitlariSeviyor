@@ -88,47 +88,94 @@ function applyFilter(items) {
   return items;
 }
 
-// Nokta modu: haritada görünen öğeleri sidebar'da listele
+// Nokta modu: haritada görünen öğeleri sidebar'da listele (diff tabanlı)
+let _pointsListQids = new Set(); // son render'daki QID'ler
+
+function makePointItem(item) {
+  const imgBadge = item.hasImage ? `<span class="badge badge-img">📷</span>` : '';
+  const catBadge = item.p373    ? `<span class="badge badge-cat">📁</span>` : '';
+  return `
+    <div class="qitem" data-qid="${item.qid}" onclick="window._pointSel('${item.qid}')">
+      <div class="qitem-head">
+        <div class="qitem-left">
+          <a class="qid-link" href="https://www.wikidata.org/wiki/${item.qid}"
+             target="_blank" onclick="event.stopPropagation()">${item.qid}</a>
+          <span class="qitem-label">${item.label || '–'}</span>
+        </div>
+        <div class="qitem-badges">${imgBadge}${catBadge}</div>
+      </div>
+    </div>`;
+}
+
 export function renderPointsList(items) {
   const sidebarEl = document.getElementById('sidebar');
   const titleEl   = document.getElementById('sidebar-title');
   const countEl   = document.getElementById('item-count');
   const listEl    = document.getElementById('item-list');
+  const filterEl  = document.getElementById('filter-btns');
   if (!sidebarEl) return;
 
   if (!items || !items.length) {
-    sidebarEl.style.display = 'none';
+    // Sidebar'ı gizleme — sadece listeyi boşalt, ani kayboluş olmasın
+    _pointsListQids.clear();
+    if (listEl) listEl.innerHTML = '<div style="padding:12px;color:#aaa;font-size:12px;text-align:center">Yakınlaştırın (zoom ≥ 13)</div>';
+    if (countEl) countEl.textContent = '0 öğe';
     return;
   }
 
-  sidebarEl.style.display = 'flex';
+  // İlk kez açılıyorsa sidebar'ı göster
+  if (sidebarEl.style.display !== 'flex') {
+    sidebarEl.style.display = 'flex';
+  }
   if (titleEl) titleEl.textContent = 'Haritadaki öğeler';
   if (countEl) countEl.textContent = `${items.length} öğe`;
-  // Filtre butonlarını gizle nokta modunda
-  const filterEl = document.getElementById('filter-btns');
   if (filterEl) filterEl.style.display = 'none';
-
   if (!listEl) return;
-  listEl.innerHTML = items.map(item => {
-    const imgBadge = item.hasImage ? `<span class="badge badge-img">📷</span>` : '';
-    const catBadge = item.p373    ? `<span class="badge badge-cat">📁</span>` : '';
-    return `
-      <div class="qitem" onclick="window._pointSel('${item.qid}')">
-        <div class="qitem-head">
-          <div class="qitem-left">
-            <a class="qid-link" href="https://www.wikidata.org/wiki/${item.qid}"
-               target="_blank" onclick="event.stopPropagation()">${item.qid}</a>
-            <span class="qitem-label">${item.label || '–'}</span>
-          </div>
-          <div class="qitem-badges">${imgBadge}${catBadge}</div>
-        </div>
-      </div>`;
-  }).join('');
+
+  const newQids = new Set(items.map(i => i.qid));
+
+  // İlk yüklemede direkt render et
+  if (_pointsListQids.size === 0) {
+    listEl.innerHTML = items.map(makePointItem).join('');
+    _pointsListQids = newQids;
+    return;
+  }
+
+  // Diff: eklenenler ve çıkarılanlar
+  const toRemove = [..._pointsListQids].filter(q => !newQids.has(q));
+  const toAdd    = items.filter(i => !_pointsListQids.has(i.qid));
+
+  // Çıkan satırları fade-out ile kaldır
+  toRemove.forEach(qid => {
+    const el = listEl.querySelector(`[data-qid="${qid}"]`);
+    if (el) {
+      el.style.transition = 'opacity 0.25s';
+      el.style.opacity = '0';
+      setTimeout(() => el.remove(), 250);
+    }
+    _pointsListQids.delete(qid);
+  });
+
+  // Yeni satırları fade-in ile ekle
+  toAdd.forEach(item => {
+    const div = document.createElement('div');
+    div.innerHTML = makePointItem(item).trim();
+    const node = div.firstChild;
+    node.style.opacity = '0';
+    node.style.transition = 'opacity 0.35s';
+    listEl.appendChild(node);
+    requestAnimationFrame(() => requestAnimationFrame(() => { node.style.opacity = '1'; }));
+    _pointsListQids.add(item.qid);
+  });
 }
 
 export function showFilterBtns() {
   const filterEl = document.getElementById('filter-btns');
   if (filterEl) filterEl.style.display = 'flex';
+}
+
+export function resetPointsList() {
+  _pointsListQids = new Set();
 }
 export function openQidFromMap(qid) {
   // Nokta modunda: DOM'da elemanı bul, sadece scroll et
