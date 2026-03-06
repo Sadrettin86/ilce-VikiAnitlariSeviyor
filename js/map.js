@@ -92,8 +92,8 @@ export function renderDistricts(features, matches, provBounds, onDistrictClick, 
       const center = layer.getBounds().getCenter();
       if (!provBounds.contains(center)) return;
       if (provFeature && !pointInGeoJSON(center, provFeature)) return;
-      layer.on('click',     () => onDistrictClick(idx));
-      layer.on('mouseover', () => layer.setStyle({ ...getDistrictStyle(matches, idx, false), fillOpacity: 0.18, weight: 2 }));
+      layer.on('click',     () => { if (!_districtClickDisabled) onDistrictClick(idx); });
+      layer.on('mouseover', () => { if (!_districtClickDisabled) layer.setStyle({ ...getDistrictStyle(matches, idx, false), fillOpacity: 0.18, weight: 2 }); });
       layer.on('mouseout',  () => layer.setStyle(getDistrictStyle(matches, idx, false)));
       const m = matches[String(idx)];
       if (m?.label) layer.bindTooltip(m.label, { sticky: true });
@@ -104,6 +104,10 @@ export function renderDistricts(features, matches, provBounds, onDistrictClick, 
   });
   return districtIdxs;
 }
+
+let _districtClickDisabled = false;
+export function disableDistrictClick() { _districtClickDisabled = true; }
+export function enableDistrictClick()  { _districtClickDisabled = false; }
 
 export function refreshDistrictLayer(matches, idx) {
   const layer = polyLayers[idx];
@@ -236,6 +240,9 @@ function stopLocate() {
   if (locationCircle) { map.removeLayer(locationCircle); locationCircle = null; }
 }
 
+let _onLocationDistrict = null;
+export function setLocationDistrictCallback(fn) { _onLocationDistrict = fn; }
+
 function updateLocation(lat, lng, accuracy) {
   const latlng = [lat, lng];
   if (!locationMarker) {
@@ -252,6 +259,11 @@ function updateLocation(lat, lng, accuracy) {
       radius: accuracy, color: '#2563eb', fillColor: '#2563eb',
       fillOpacity: 0.08, weight: 1, opacity: 0.4
     }).addTo(map);
+
+    // İlk konumda: hangi ilçenin içindeyiz?
+    if (_onLocationDistrict) {
+      _onLocationDistrict(lat, lng);
+    }
   } else {
     locationMarker.setLatLng(latlng);
     locationCircle.setLatLng(latlng);
