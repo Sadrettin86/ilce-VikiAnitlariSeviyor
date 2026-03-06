@@ -88,6 +88,17 @@ function applyFilter(items) {
   return items;
 }
 
+// Harita ikonundan çağrılır — QID'yi aç ve scroll et
+export function openQidFromMap(qid) {
+  _openQid = qid;
+  renderItems();
+  // O QID'nin elemanına scroll et
+  setTimeout(() => {
+    const el = document.querySelector(`.qitem.open`);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 50);
+}
+
 // ----------------------------------------------------------------
 // FİLTRE
 // ----------------------------------------------------------------
