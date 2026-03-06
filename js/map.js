@@ -2,10 +2,18 @@
 // map.js — Leaflet harita, il ve ilçe katmanları
 // ================================================================
 
-export const map = L.map('map').setView([39, 35], 6);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+export const map = L.map('map', { zoomControl: false }).setView([39, 35], 6);
+
+const osmTile = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> katkıda bulunanlar',
+  maxZoom: 19
+});
+const cartoTile = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
   attribution: '© OpenStreetMap © CARTO', maxZoom: 19
-}).addTo(map);
+});
+
+osmTile.addTo(map);
+let currentTile = 'osm';
 
 let provLayers  = [];
 let polyLayers  = [];
@@ -172,6 +180,81 @@ function pointInPolygon(pt, ring) {
   return inside;
 }
 
-export function getDistrictCenter(idx) {
+// ----------------------------------------------------------------
+// KONUM TAKİBİ
+// ----------------------------------------------------------------
+let locationMarker = null;
+let locationCircle = null;
+let watchId        = null;
+let locating       = false;
+
+export function toggleLocate() {
+  if (locating) { stopLocate(); } else { startLocate(); }
+}
+
+function startLocate() {
+  if (!navigator.geolocation) { alert('Tarayıcınız konum desteklemiyor.'); return; }
+  locating = true;
+  document.getElementById('btn-locate').classList.add('active');
+  watchId = navigator.geolocation.watchPosition(
+    pos => updateLocation(pos.coords.latitude, pos.coords.longitude, pos.coords.accuracy),
+    ()  => stopLocate(),
+    { enableHighAccuracy: true, maximumAge: 5000, timeout: 10000 }
+  );
+}
+
+function stopLocate() {
+  locating = false;
+  document.getElementById('btn-locate').classList.remove('active');
+  if (watchId !== null) { navigator.geolocation.clearWatch(watchId); watchId = null; }
+  if (locationMarker) { map.removeLayer(locationMarker); locationMarker = null; }
+  if (locationCircle) { map.removeLayer(locationCircle); locationCircle = null; }
+}
+
+function updateLocation(lat, lng, accuracy) {
+  const latlng = [lat, lng];
+  if (!locationMarker) {
+    map.setView(latlng, 14);
+    const icon = L.divIcon({
+      className: '',
+      html: `<div style="width:14px;height:14px;border-radius:50%;background:#2563eb;border:3px solid #fff;box-shadow:0 2px 6px rgba(37,99,235,.5)"></div>`,
+      iconSize: [14, 14], iconAnchor: [7, 7]
+    });
+    locationMarker = L.marker(latlng, { icon, zIndexOffset: 1000 })
+      .bindTooltip('Buradasınız', { permanent: false, direction: 'top' })
+      .addTo(map);
+    locationCircle = L.circle(latlng, {
+      radius: accuracy, color: '#2563eb', fillColor: '#2563eb',
+      fillOpacity: 0.08, weight: 1, opacity: 0.4
+    }).addTo(map);
+  } else {
+    locationMarker.setLatLng(latlng);
+    locationCircle.setLatLng(latlng);
+    locationCircle.setRadius(accuracy);
+  }
+}
+
+// ----------------------------------------------------------------
+// KATMAN DEĞİŞTİR
+// ----------------------------------------------------------------
+export function toggleLayer() {
+  if (currentTile === 'osm') {
+    map.removeLayer(osmTile);
+    cartoTile.addTo(map);
+    currentTile = 'carto';
+    document.getElementById('btn-layers').title = 'OpenStreetMap\'e geç';
+  } else {
+    map.removeLayer(cartoTile);
+    osmTile.addTo(map);
+    currentTile = 'osm';
+    document.getElementById('btn-layers').title = 'Açık haritaya geç';
+  }
+}
+
+// ----------------------------------------------------------------
+// ZOOM
+// ----------------------------------------------------------------
+export function zoomIn()  { map.zoomIn(); }
+export function zoomOut() { map.zoomOut(); }
   return polyLayers[idx]?.getBounds()?.getCenter();
 }
