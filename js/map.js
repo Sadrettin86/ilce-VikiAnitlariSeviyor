@@ -119,7 +119,7 @@ export function highlightDistrict(prevIdx, idx, matches) {
   });
   // Seçili ilçeye zoom
   if (polyLayers[idx]) {
-    try { map.fitBounds(polyLayers[idx].getBounds(), { maxZoom: 11, padding: [60, 60] }); } catch(e) {}
+    try { map.fitBounds(polyLayers[idx].getBounds(), { padding: [20, 20] }); } catch(e) {}
   }
 }
 
