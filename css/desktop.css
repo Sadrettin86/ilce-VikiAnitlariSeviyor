@@ -1,0 +1,10 @@
+/* ================================================================
+   desktop.css — Sadece masaüstü stilleri (min-width: 769px)
+   ================================================================ */
+
+@media (min-width: 769px) {
+  #sidebar { display: flex; }
+  #stats { display: block; }
+  #search-box { max-width: 300px; }
+  #header h1 { font-size: 15px; }
+}
