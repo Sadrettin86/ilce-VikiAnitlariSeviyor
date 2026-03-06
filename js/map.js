@@ -131,6 +131,69 @@ export function showProvHighlight() {
 }
 
 // ----------------------------------------------------------------
+// NOKTA MODU — tüm il/ilçe katmanlarını gizle/göster
+// ----------------------------------------------------------------
+export function hideAllLayers() {
+  provLayers.forEach(l => { if (l) l.remove(); });
+  polyLayers.forEach(l => { if (l) l.remove(); });
+}
+
+export function showAllLayers() {
+  provLayers.forEach(l => { if (l) l.addTo(map); });
+  polyLayers.forEach(l => { if (l) l.addTo(map); });
+}
+
+// Nokta modu marker'ları (adminMarkers'dan ayrı)
+let pointMarkers = [];
+
+export function clearPointMarkers() {
+  pointMarkers.forEach(m => map.removeLayer(m));
+  pointMarkers = [];
+}
+
+export function showPointMarkers(items, onMarkerClick) {
+  clearPointMarkers();
+  items.forEach(item => {
+    const iconUrl = item.hasImage ? 'css/marker-green.png' : 'css/marker-red.png';
+    const icon = L.icon({
+      iconUrl,
+      shadowUrl:    'css/marker-shadow.png',
+      iconSize:     [25, 41], iconAnchor:   [12, 41],
+      popupAnchor:  [1, -34], shadowSize:   [41, 41], shadowAnchor: [12, 41],
+    });
+
+    const p18thumb = item.p18file
+      ? `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(item.p18file)}?width=100`
+      : null;
+    const imgHtml = p18thumb
+      ? `<img src="${p18thumb}" style="width:72px;height:54px;object-fit:cover;border-radius:3px;flex-shrink:0">`
+      : `<div style="width:72px;height:54px;background:#e8e8e8;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">📷</div>`;
+
+    const popupHtml = `
+      <div onclick="window.open('upload.html?qid=${item.qid}','_blank')" style="display:flex;gap:10px;align-items:center;cursor:pointer;min-width:200px;max-width:260px;padding:2px">
+        ${imgHtml}
+        <div style="flex:1;min-width:0">
+          <div style="font-weight:700;font-size:13px;color:#333;margin-bottom:3px;line-height:1.3">${item.label || item.qid}</div>
+          <div style="font-size:11px;color:#888">${item.hasImage ? '📷 Fotoğraf var' : '📷 Fotoğraf yok'}</div>
+          <div style="font-size:10px;color:#7ebc6f;margin-top:4px;font-weight:600">Yükle →</div>
+        </div>
+      </div>`;
+
+    const marker = L.marker([item.lat, item.lng], { icon })
+      .bindPopup(popupHtml, { maxWidth: 280, className: 'monument-popup' })
+      .addTo(map);
+
+    marker.on('click', () => { if (onMarkerClick) onMarkerClick(item.qid); });
+    pointMarkers.push(marker);
+  });
+}
+
+export function getMapBounds() { return map.getBounds(); }
+export function getMapZoom()   { return map.getZoom(); }
+export function onMapMoveEnd(fn) { map.on('moveend', fn); }
+export function offMapMoveEnd(fn) { map.off('moveend', fn); }
+
+// ----------------------------------------------------------------
 // NOKTA (P11729)
 // ----------------------------------------------------------------
 let adminMarkers = [];
