@@ -53,3 +53,38 @@ export async function fetchAdminPoints(qid) {
     }).filter(p => !isNaN(p.lat) && !isNaN(p.lng));
   } catch(e) { return []; }
 }
+
+// Bounding box içindeki P11729'lu öğeleri çek (nokta modu)
+export async function fetchPointsInBounds(south, west, north, east) {
+  try {
+    const sparql = `
+      SELECT ?item ?itemLabel (SAMPLE(?p18) AS ?p18) (SAMPLE(?p373) AS ?p373) ?coord WHERE {
+        SERVICE wikibase:box {
+          ?item wdt:P625 ?coord .
+          bd:serviceParam wikibase:cornerSouthWest "Point(${west} ${south})"^^geo:wktLiteral .
+          bd:serviceParam wikibase:cornerNorthEast "Point(${east} ${north})"^^geo:wktLiteral .
+        }
+        ?item wdt:P11729 [] .
+        OPTIONAL { ?item wdt:P18 ?p18 }
+        OPTIONAL { ?item wdt:P373 ?p373 }
+        SERVICE wikibase:label { bd:serviceParam wikibase:language "tr,en". }
+      }
+      GROUP BY ?item ?itemLabel ?coord
+      LIMIT 300
+    `;
+    const url  = 'https://query.wikidata.org/sparql?query=' + encodeURIComponent(sparql) + '&format=json';
+    const data = await (await fetch(url, { headers: { 'Accept': 'application/sparql-results+json' } })).json();
+    return (data.results?.bindings || []).map(b => {
+      const m = b.coord.value.match(/Point\(([^ ]+) ([^)]+)\)/);
+      return {
+        qid:     b.item.value.replace('http://www.wikidata.org/entity/', ''),
+        label:   b.itemLabel?.value || '',
+        hasImage:!!b.p18,
+        p18file: b.p18?.value || null,
+        p373:    b.p373?.value || null,
+        lat:     parseFloat(m?.[2]),
+        lng:     parseFloat(m?.[1]),
+      };
+    }).filter(p => !isNaN(p.lat) && !isNaN(p.lng));
+  } catch(e) { return []; }
+}
