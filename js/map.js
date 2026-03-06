@@ -56,8 +56,7 @@ export function getDistrictStyle(matches, idx) {
   return                     { color: '#d97706', weight: 1.5, fillColor: '#d97706', fillOpacity: 0.18, opacity: 0.9 };
 }
 
-export function renderDistricts(features, matches, provBounds, onDistrictClick) {
-  // Mevcut ilçe layerlarını kaldır
+export function renderDistricts(features, matches, provBounds, onDistrictClick, provFeature) {
   polyLayers.forEach(l => { if (l) map.removeLayer(l); });
   polyLayers = [];
 
@@ -67,12 +66,14 @@ export function renderDistricts(features, matches, provBounds, onDistrictClick) 
     try {
       const style = getDistrictStyle(matches, idx);
       const layer = L.geoJSON(feat, { style });
+      const center = layer.getBounds().getCenter();
 
-      // İl sınırları içinde mi?
-      if (!provBounds.contains(layer.getBounds().getCenter())) return;
+      // Önce bbox ile hızlı filtre, sonra gerçek polygon içi kontrolü
+      if (!provBounds.contains(center)) return;
+      if (provFeature && !pointInGeoJSON(center, provFeature)) return;
 
       layer.on('click',     () => onDistrictClick(idx));
-      layer.on('mouseover', () => { if (polyLayers[idx]?._active) return; layer.setStyle({ fillOpacity: style.fillOpacity + 0.12, weight: 2 }); });
+      layer.on('mouseover', () => layer.setStyle({ fillOpacity: style.fillOpacity + 0.12, weight: 2 }));
       layer.on('mouseout',  () => layer.setStyle(getDistrictStyle(matches, idx)));
 
       const m = matches[String(idx)];
@@ -84,6 +85,27 @@ export function renderDistricts(features, matches, provBounds, onDistrictClick) 
   });
 
   return districtIdxs;
+}
+
+// Nokta GeoJSON polygon içinde mi? (ray casting)
+function pointInGeoJSON(latlng, geojsonFeature) {
+  const pt = [latlng.lng, latlng.lat];
+  const geom = geojsonFeature.geometry;
+  const polys = geom.type === 'Polygon' ? [geom.coordinates] : geom.coordinates;
+  return polys.some(poly => pointInPolygon(pt, poly[0]));
+}
+
+function pointInPolygon(pt, ring) {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const xi = ring[i][0], yi = ring[i][1];
+    const xj = ring[j][0], yj = ring[j][1];
+    if (((yi > pt[1]) !== (yj > pt[1])) &&
+        (pt[0] < (xj - xi) * (pt[1] - yi) / (yj - yi) + xi)) {
+      inside = !inside;
+    }
+  }
+  return inside;
 }
 
 export function refreshDistrictLayer(matches, idx) {
