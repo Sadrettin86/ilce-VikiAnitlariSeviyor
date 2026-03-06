@@ -1,14 +1,34 @@
 // ================================================================
-// wikidata.js — Wikidata arama, Commons ve SPARQL sorguları
+// wikidata.js — Wikidata SPARQL sorguları
 // ================================================================
 
-export async function searchWikidata(q) {
-  const url = `https://www.wikidata.org/w/api.php?action=wbsearchentities&search=${encodeURIComponent(q)}&language=tr&uselang=tr&type=item&limit=7&format=json&origin=*`;
-  const data = await (await fetch(url)).json();
-  return data.search || [];
+// P131=ilçe QID'si olan, P11729 değeri bulunan öğeleri çek
+// P18 (görsel) ve P373 (Commons kategorisi) de çek
+export async function fetchDistrictItems(qid) {
+  try {
+    const sparql = `
+      SELECT ?item ?itemLabel (SAMPLE(?p18) AS ?p18) (SAMPLE(?p373) AS ?p373) WHERE {
+        ?item wdt:P131 wd:${qid} .
+        ?item wdt:P11729 [] .
+        OPTIONAL { ?item wdt:P18 ?p18 }
+        OPTIONAL { ?item wdt:P373 ?p373 }
+        SERVICE wikibase:label { bd:serviceParam wikibase:language "tr,en". }
+      }
+      GROUP BY ?item ?itemLabel
+      ORDER BY ?itemLabel
+    `;
+    const url  = 'https://query.wikidata.org/sparql?query=' + encodeURIComponent(sparql) + '&format=json';
+    const data = await (await fetch(url, { headers: { 'Accept': 'application/sparql-results+json' } })).json();
+    return (data.results?.bindings || []).map(b => ({
+      qid:      b.item.value.replace('http://www.wikidata.org/entity/', ''),
+      label:    b.itemLabel?.value || '',
+      hasImage: !!b.p18,
+      p373:     b.p373?.value || null,
+    }));
+  } catch(e) { return []; }
 }
 
-// P131=ilçe QID'si, P11729 (Kültür Envanteri ID) var, P625 koordinatını çek
+// P131=ilçe QID'si, P11729 var, P625 koordinatını çek (harita işaretleyici)
 export async function fetchAdminPoints(qid) {
   try {
     const sparql = `
@@ -19,7 +39,7 @@ export async function fetchAdminPoints(qid) {
         SERVICE wikibase:label { bd:serviceParam wikibase:language "tr,en". }
       }
     `;
-    const url = 'https://query.wikidata.org/sparql?query=' + encodeURIComponent(sparql) + '&format=json';
+    const url  = 'https://query.wikidata.org/sparql?query=' + encodeURIComponent(sparql) + '&format=json';
     const data = await (await fetch(url, { headers: { 'Accept': 'application/sparql-results+json' } })).json();
     return (data.results?.bindings || []).map(b => {
       const m = b.coord.value.match(/Point\(([^ ]+) ([^)]+)\)/);
@@ -31,20 +51,4 @@ export async function fetchAdminPoints(qid) {
       };
     }).filter(p => !isNaN(p.lat) && !isNaN(p.lng));
   } catch(e) { return []; }
-}
-
-export async function checkCommons(qid) {
-  try {
-    const wdData = await (await fetch(`https://www.wikidata.org/wiki/Special:EntityData/${qid}.json`)).json();
-    const entity = wdData.entities[qid];
-    const p373   = entity?.claims?.P373?.[0]?.mainsnak?.datavalue?.value;
-    if (!p373) return {};
-    const buildingsCat = `Buildings in ${p373}`;
-    const cmData = await (await fetch(
-      `https://commons.wikimedia.org/w/api.php?action=query&titles=Category:${encodeURIComponent(buildingsCat)}&format=json&origin=*`
-    )).json();
-    const pages  = cmData.query?.pages || {};
-    const exists = !Object.keys(pages).some(k => k === '-1');
-    return { commonsCategory: p373, hasBuildings: exists, buildingsCat: exists ? buildingsCat : null };
-  } catch(e) { return {}; }
 }
