@@ -54,9 +54,9 @@ export function getProvBounds(pi) {
 export function getDistrictStyle(matches, idx, isActive) {
   const m = matches[String(idx)];
   if (isActive) {
-    if (!m)             return { color: '#475569', weight: 2, fillColor: '#475569', fillOpacity: 0.18, opacity: 1 };
-    if (m.hasBuildings) return { color: '#059669', weight: 2, fillColor: '#059669', fillOpacity: 0.35, opacity: 1 };
-    return                     { color: '#d97706', weight: 2, fillColor: '#d97706', fillOpacity: 0.30, opacity: 1 };
+    if (!m)             return { color: '#475569', weight: 2, fillColor: '#475569', fillOpacity: 0.08, opacity: 1 };
+    if (m.hasBuildings) return { color: '#059669', weight: 2, fillColor: '#059669', fillOpacity: 0.15, opacity: 1 };
+    return                     { color: '#d97706', weight: 2, fillColor: '#d97706', fillOpacity: 0.10, opacity: 1 };
   }
   if (!m)             return { color: '#94a3b8', weight: 1, fillColor: '#94a3b8', fillOpacity: 0.04, opacity: 0.7 };
   if (m.hasBuildings) return { color: '#059669', weight: 1.2, fillColor: '#059669', fillOpacity: 0.12, opacity: 0.8 };
@@ -97,19 +97,19 @@ export function refreshDistrictLayer(matches, idx) {
 }
 
 export function highlightDistrict(prevIdx, idx, matches) {
-  // Tüm ilçeleri fill=0 yap (aktif olan hariç)
   polyLayers.forEach((l, i) => {
     if (!l) return;
-    const m = matches[String(i)];
     if (i === idx) {
       l.setStyle(getDistrictStyle(matches, i, true));
     } else {
-      // Sadece sınır çizgisi, fill yok
       const base = getDistrictStyle(matches, i, false);
       l.setStyle({ ...base, fillOpacity: 0, fillColor: 'transparent' });
     }
   });
-  // fitBounds yok — kullanıcı zoom'u bozmayalım
+  // Seçili ilçeye zoom
+  if (polyLayers[idx]) {
+    try { map.fitBounds(polyLayers[idx].getBounds(), { maxZoom: 11, padding: [60, 60] }); } catch(e) {}
+  }
 }
 
 export function showProvHighlight() {
