@@ -14,7 +14,7 @@ import { renderProvinces, renderDistricts, refreshDistrictLayer,
          makeThumbUrl }                                             from "./map.js";
 import { initSidebar, openSidebar, closeSidebar, renderItems,
          setItemFilter, toggleAccordion, openQidFromMap,
-         renderPointsList, showFilterBtns,
+         renderPointsList, showFilterBtns, resetPointsList,
          setOverlay, hideOverlay }                                  from "./sidebar.js";
 
 // ----------------------------------------------------------------
@@ -191,36 +191,50 @@ async function onDistrictClick(idx) {
 // ----------------------------------------------------------------
 // NOKTA MODU
 // ----------------------------------------------------------------
-let pointsMode   = false;
+let pointsMode     = false;
 let pointsFetching = false;
+let pointsPending  = false; // fetch sırasında yeni istek geldi mi
 let pointsDebounce = null;
 
 async function updatePointsView() {
   if (!pointsMode) return;
   const zoom = getMapZoom();
   if (zoom < 13) {
+    // Zoom yetersiz — yavaşça temizle
     clearPointMarkers();
     renderPointsList([]);
     return;
   }
-  if (pointsFetching) return;
+  if (pointsFetching) {
+    // Zaten fetch var, bitince tekrar çalışsın
+    pointsPending = true;
+    return;
+  }
   pointsFetching = true;
+  pointsPending  = false;
   const b = getMapBounds();
   const items = await fetchPointsInBounds(
     b.getSouth(), b.getWest(), b.getNorth(), b.getEast()
   );
   pointsFetching = false;
-  if (!pointsMode) return; // mod kapandıysa iptal
+  if (!pointsMode) { clearPointMarkers(); return; }
+
+  // Diff güncelleme — eski marker'lar anında silinmez
   showPointMarkers(items, qid => {
     if (window._sidebarOpenQid) window._sidebarOpenQid(qid);
   });
   renderPointsList(items);
+
+  // Fetch sırasında harita hareket ettiyse tekrar güncelle
+  if (pointsPending) updatePointsView();
 }
 
 function onMapMove() {
   if (!pointsMode) return;
   clearTimeout(pointsDebounce);
-  pointsDebounce = setTimeout(updatePointsView, 600);
+  // Zoom < 13'se daha hızlı temizle; değilse 700ms bekle
+  const delay = getMapZoom() < 13 ? 150 : 700;
+  pointsDebounce = setTimeout(updatePointsView, delay);
 }
 
 export function togglePointsMode() {
@@ -242,6 +256,7 @@ export function togglePointsMode() {
     clearPointMarkers();
     clearTimeout(pointsDebounce);
     closeSidebar();
+    resetPointsList();
     showFilterBtns();
     showAllLayers();
     if (btn) { btn.classList.remove('active'); btn.title = 'İl/ilçe modunu kapat'; }
