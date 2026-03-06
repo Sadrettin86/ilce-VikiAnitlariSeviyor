@@ -10,7 +10,8 @@ import { renderProvinces, renderDistricts, refreshDistrictLayer,
          toggleLocate, toggleLayer, zoomIn, zoomOut,
          hideAllLayers, showAllLayers,
          showPointMarkers, clearPointMarkers,
-         getMapBounds, getMapZoom, onMapMoveEnd, offMapMoveEnd }    from "./map.js";
+         getMapBounds, getMapZoom, onMapMoveEnd, offMapMoveEnd,
+         makeThumbUrl }                                             from "./map.js";
 import { initSidebar, openSidebar, closeSidebar, renderItems,
          setItemFilter, toggleAccordion, openQidFromMap,
          renderPointsList, showFilterBtns,
@@ -177,11 +178,8 @@ async function onDistrictClick(idx) {
 
   hideOverlay();
   points.forEach(p => {
-    // fetchDistrictItems'dan gelen item'ı bul (p18 bilgisi için)
-    const item = items.find(i => i.qid === p.qid);
-    const p18thumb = item?.hasImage
-      ? `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(item.p18file || '')}`
-      : null;
+    const item    = items.find(i => i.qid === p.qid);
+    const p18thumb = makeThumbUrl(item?.p18file || null, 120);
     showAdminMarker(p.lat, p.lng, p.label, p.qid, item?.hasImage || false, p18thumb);
   });
   openSidebar(m.label || `İlçe #${idx+1}`, items);
