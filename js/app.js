@@ -4,10 +4,11 @@
 
 import { GEOJSON_URL, PROV_URL }                                   from "./config.js";
 import { loadMatches, saveMatch, deleteMatch }                      from "./firebase.js";
-import { checkCommons }                                             from "./wikidata.js";
+import { checkCommons, fetchP11729 }                                from "./wikidata.js";
 import { renderProvinces, renderDistricts, refreshDistrictLayer,
          highlightDistrict, showProvHighlight, getProvBounds,
-         highlightProvLayer, getDistrictCenter }                    from "./map.js";
+         highlightProvLayer, getDistrictCenter,
+         showAdminMarker, removeAdminMarker }                       from "./map.js";
 import { initSidebar, renderList, openDetail, closeDetail,
          showCurrentMatch, showCommonsBox, showSuggestions,
          runWdSearch, updateStats, scrollActiveIntoView,
@@ -46,6 +47,7 @@ function onProvinceClick(pi) {
   state.activeIdx     = null;
   highlightProvLayer(pi);
   closeDetail();
+  removeAdminMarker();
   const provBounds   = getProvBounds(pi);
   const districtIdxs = renderDistricts(state.features, state.matches, provBounds, onDistrictClick);
   state.currentIdxList = districtIdxs;
@@ -58,6 +60,16 @@ function onDistrictClick(idx) {
   state.activeIdx = idx;
   highlightDistrict(prev, idx, state.matches);
   if (state.activeProvIdx !== null) showProvHighlight(state.provFeatures[state.activeProvIdx]);
+
+  // P11729 idari merkez noktası
+  removeAdminMarker();
+  const m = state.matches[String(idx)];
+  if (m?.qid) {
+    fetchP11729(m.qid).then(coord => {
+      if (coord) showAdminMarker(coord.lat, coord.lng, m.label);
+    });
+  }
+
   renderList();
   scrollActiveIntoView();
   openDetail(idx);
@@ -80,6 +92,10 @@ async function applyMatch(idx, qid, label) {
   showCurrentMatch(idx, data);
   showCommonsBox(data);
   refreshDistrictLayer(state.matches, idx);
+  // Eşleştirme yapılınca noktayı hemen göster
+  fetchP11729(qid).then(coord => {
+    if (coord) showAdminMarker(coord.lat, coord.lng, label);
+  });
   renderList();
   updateStats(state.features, state.matches);
 }
@@ -90,6 +106,7 @@ window._remove = async function(idx) {
   document.getElementById('commons-box').style.display = 'none';
   document.getElementById('detail-title').textContent = `📍 İlçe #${idx + 1}`;
   refreshDistrictLayer(state.matches, idx);
+  removeAdminMarker();
   renderList();
   updateStats(state.features, state.matches);
   showSuggestions(idx);
