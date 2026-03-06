@@ -3,12 +3,56 @@
    ================================================================ */
 
 @media (max-width: 768px) {
-  #sidebar    { display: none; }
+  /* Header zaten sticky; mobilde de sabit kalır */
   #stats      { display: none; }
-  #search-box { max-width: 140px; font-size: 12px; }
+  #search-box { max-width: 130px; font-size: 12px; }
   #header h1  { font-size: 12px; }
   #header     { padding: 0 8px; gap: 8px; }
 
-  /* Kontrol paneli ekranın sağında */
-  #map-controls { right: 10px; top: 54px; }
+  /* Ana alan: dikey yığın (sidebar üstte, harita altta) */
+  #main {
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Sidebar: header'ın hemen altında, ekranın üst yarısı */
+  #sidebar {
+    width: 100% !important;       /* desktop'taki 320px'i geç */
+    height: 42vh;
+    min-height: 180px;
+    max-height: 48vh;
+    border-right: none;
+    border-bottom: 1px solid var(--osm-border);
+    border-left: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,.08);
+    order: 0;
+    flex-shrink: 0;
+  }
+
+  /* Harita: ekranın alt yarısı */
+  #map {
+    flex: 1;
+    min-height: 0;
+  }
+
+  /* Kontrol butonları: sağ üst köşe, header'dan biraz aşağıda */
+  #map-controls {
+    right: 8px;
+    top: 8px;   /* harita içindeki konumu — harita artık tam üstten başlamıyor */
+  }
+
+  /* Filtre butonları mobilde daha küçük */
+  .fbtn {
+    padding: 2px 6px;
+    font-size: 10px;
+  }
+
+  /* Sidebar üstündeki başlık satırı */
+  #sidebar-top {
+    padding: 6px 10px;
+  }
+
+  #sidebar-title {
+    font-size: 13px;
+  }
 }
