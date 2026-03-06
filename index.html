@@ -3,165 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Türkiye İlçeleri – Wikidata Eşleştirici</title>
+<title>Viki Anıtları Seviyor – İlçe Eşleştirici</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f1117; color: #e2e8f0; height: 100vh; display: flex; flex-direction: column; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f2f5; color: #1e2433; height: 100vh; display: flex; flex-direction: column; }
 
-  /* HEADER */
-  #header { background: #1a1d27; border-bottom: 1px solid #2d3148; padding: 12px 20px; display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
-  #header h1 { font-size: 16px; font-weight: 600; color: #a78bfa; white-space: nowrap; }
-  #search-box { flex: 1; background: #252836; border: 1px solid #3d4166; border-radius: 8px; padding: 7px 12px; color: #e2e8f0; font-size: 13px; max-width: 320px; }
-  #search-box::placeholder { color: #6b7280; }
-  #stats { font-size: 12px; color: #6b7280; white-space: nowrap; }
-  #stats span { color: #10b981; font-weight: 600; }
+  #header { background: #ffffff; border-bottom: 1px solid #dde1ea; padding: 10px 20px; display: flex; align-items: center; gap: 14px; flex-shrink: 0; box-shadow: 0 1px 4px rgba(0,0,0,.07); }
+  #header h1 { font-size: 15px; font-weight: 700; color: #5b21b6; white-space: nowrap; }
+  #search-box { flex: 1; background: #f5f6fa; border: 1px solid #dde1ea; border-radius: 8px; padding: 7px 12px; color: #1e2433; font-size: 13px; max-width: 300px; outline: none; transition: border-color .15s; }
+  #search-box:focus { border-color: #7c3aed; }
+  #search-box::placeholder { color: #9ca3af; }
+  #stats { font-size: 12px; color: #6b7280; white-space: nowrap; margin-left: auto; }
+  #stats b { color: #059669; }
 
-  /* MAIN LAYOUT */
   #main { display: flex; flex: 1; overflow: hidden; }
-
-  /* MAP */
   #map { flex: 1; }
 
-  /* SIDEBAR */
-  #sidebar { width: 380px; background: #1a1d27; border-left: 1px solid #2d3148; display: flex; flex-direction: column; overflow: hidden; flex-shrink: 0; }
-  #sidebar-header { padding: 12px 16px; border-bottom: 1px solid #2d3148; font-size: 12px; color: #6b7280; display: flex; justify-content: space-between; align-items: center; }
-  #filter-btns { display: flex; gap: 6px; }
-  .filter-btn { background: #252836; border: 1px solid #3d4166; color: #9ca3af; padding: 3px 10px; border-radius: 20px; font-size: 11px; cursor: pointer; transition: all .15s; }
-  .filter-btn.active { background: #4c1d95; border-color: #7c3aed; color: #e2e8f0; }
+  #sidebar { width: 370px; background: #ffffff; border-left: 1px solid #dde1ea; display: flex; flex-direction: column; overflow: hidden; flex-shrink: 0; }
+  #sidebar-top { padding: 10px 14px; border-bottom: 1px solid #eef0f5; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; background: #fafbfd; }
+  #list-label { font-size: 11px; color: #9ca3af; font-weight: 600; text-transform: uppercase; letter-spacing: .4px; }
+  #filter-btns { display: flex; gap: 5px; }
+  .fbtn { background: #f0f2f5; border: 1px solid #dde1ea; color: #6b7280; padding: 3px 9px; border-radius: 20px; font-size: 11px; cursor: pointer; transition: all .15s; }
+  .fbtn.on { background: #ede9fe; border-color: #7c3aed; color: #5b21b6; font-weight: 600; }
+  .fbtn:hover:not(.on) { border-color: #a78bfa; color: #5b21b6; }
+
   #district-list { flex: 1; overflow-y: auto; }
-  #district-list::-webkit-scrollbar { width: 4px; }
-  #district-list::-webkit-scrollbar-track { background: #1a1d27; }
-  #district-list::-webkit-scrollbar-thumb { background: #3d4166; border-radius: 2px; }
+  #district-list::-webkit-scrollbar { width: 5px; }
+  #district-list::-webkit-scrollbar-track { background: #f5f6fa; }
+  #district-list::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
 
-  /* DISTRICT ITEM */
-  .district-item { padding: 10px 16px; border-bottom: 1px solid #1e2235; cursor: pointer; transition: background .1s; }
-  .district-item:hover { background: #252836; }
-  .district-item.active { background: #1e2035; border-left: 3px solid #7c3aed; }
-  .district-name { font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 6px; }
-  .status-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-  .dot-green { background: #10b981; }
-  .dot-yellow { background: #f59e0b; }
-  .dot-gray { background: #4b5563; }
-  .district-meta { font-size: 11px; color: #6b7280; margin-top: 3px; }
+  .ditem { padding: 9px 14px; border-bottom: 1px solid #f0f2f5; cursor: pointer; transition: background .1s; }
+  .ditem:hover { background: #f5f3ff; }
+  .ditem.active { background: #ede9fe; border-left: 3px solid #7c3aed; padding-left: 11px; }
+  .dname { font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 6px; color: #1e2433; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .dot-g { background: #059669; }
+  .dot-y { background: #d97706; }
+  .dot-x { background: #d1d5db; }
+  .dmeta { font-size: 11px; color: #9ca3af; margin-top: 2px; padding-left: 14px; }
 
-  /* DETAIL PANEL */
-  #detail-panel { background: #1a1d27; border-top: 1px solid #2d3148; padding: 16px; flex-shrink: 0; max-height: 280px; overflow-y: auto; }
-  #detail-panel.hidden { display: none; }
-  #detail-title { font-size: 15px; font-weight: 600; color: #a78bfa; margin-bottom: 12px; }
+  #detail { background: #fafbfd; border-top: 2px solid #ede9fe; padding: 14px; flex-shrink: 0; max-height: 300px; overflow-y: auto; display: none; }
+  #detail-title { font-size: 15px; font-weight: 700; color: #5b21b6; margin-bottom: 12px; }
+  .mlabel { font-size: 10px; color: #9ca3af; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; font-weight: 600; }
 
-  /* QID MATCH AREA */
-  .match-area { margin-bottom: 12px; }
-  .match-label { font-size: 11px; color: #6b7280; margin-bottom: 6px; text-transform: uppercase; letter-spacing: .5px; }
-  .current-match { display: flex; align-items: center; gap: 8px; background: #252836; border: 1px solid #10b981; border-radius: 8px; padding: 8px 12px; }
-  .match-qid { font-size: 13px; font-weight: 600; color: #10b981; }
-  .match-label-name { font-size: 12px; color: #9ca3af; flex: 1; }
-  .remove-btn { background: none; border: none; color: #6b7280; cursor: pointer; font-size: 16px; line-height: 1; padding: 2px; border-radius: 4px; transition: color .15s; }
-  .remove-btn:hover { color: #ef4444; }
+  .cur-match { display: flex; align-items: center; gap: 8px; background: #ecfdf5; border: 1px solid #6ee7b7; border-radius: 8px; padding: 8px 12px; }
+  .cur-qid { font-size: 13px; font-weight: 700; color: #059669; }
+  .cur-lbl { font-size: 12px; color: #6b7280; flex: 1; }
+  .xbtn { background: none; border: none; color: #d1d5db; cursor: pointer; font-size: 17px; line-height: 1; padding: 2px 4px; border-radius: 4px; transition: color .15s; }
+  .xbtn:hover { color: #ef4444; }
 
-  /* SUGGESTIONS */
-  #suggestions { display: flex; flex-direction: column; gap: 6px; }
-  .suggestion-item { background: #252836; border: 1px solid #3d4166; border-radius: 8px; padding: 8px 12px; cursor: pointer; transition: all .15s; display: flex; align-items: flex-start; gap: 10px; }
-  .suggestion-item:hover { border-color: #7c3aed; background: #1e1b3a; }
-  .sug-qid { font-size: 11px; color: #7c3aed; font-weight: 600; white-space: nowrap; }
-  .sug-info { flex: 1; min-width: 0; }
-  .sug-name { font-size: 12px; color: #e2e8f0; }
-  .sug-desc { font-size: 11px; color: #6b7280; margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .loading-sug { color: #6b7280; font-size: 12px; text-align: center; padding: 12px; }
+  .sug { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 8px 12px; cursor: pointer; display: flex; gap: 10px; align-items: flex-start; transition: all .15s; margin-bottom: 5px; }
+  .sug:hover { border-color: #7c3aed; background: #f5f3ff; }
+  .sug-qid { font-size: 11px; color: #7c3aed; font-weight: 700; white-space: nowrap; padding-top: 1px; }
+  .sug-name { font-size: 12px; color: #1e2433; font-weight: 500; }
+  .sug-desc { font-size: 11px; color: #9ca3af; overflow: hidden; text-overflow: ellipsis; max-width: 260px; white-space: nowrap; }
+  .info-txt { font-size: 12px; color: #9ca3af; padding: 10px 0; text-align: center; }
 
-  /* COMMONS RESULT */
-  #commons-result { margin-top: 10px; padding: 10px 12px; border-radius: 8px; font-size: 12px; }
-  #commons-result.has-buildings { background: #064e3b; border: 1px solid #10b981; }
-  #commons-result.no-buildings { background: #1f2937; border: 1px solid #374151; }
-  #commons-result a { color: #60a5fa; text-decoration: none; }
-  #commons-result a:hover { text-decoration: underline; }
+  #commons-box { margin-top: 10px; padding: 9px 12px; border-radius: 8px; font-size: 12px; line-height: 1.5; }
+  #commons-box.ok { background: #ecfdf5; border: 1px solid #6ee7b7; color: #065f46; }
+  #commons-box.no { background: #f9fafb; border: 1px solid #e5e7eb; color: #9ca3af; }
+  #commons-box a { color: #2563eb; text-decoration: none; }
+  #commons-box a:hover { text-decoration: underline; }
 
-  /* SETUP OVERLAY */
-  #setup-overlay { position: fixed; inset: 0; background: rgba(15,17,23,.95); display: flex; align-items: center; justify-content: center; z-index: 9999; }
-  #setup-overlay.hidden { display: none; }
-  .setup-box { background: #1a1d27; border: 1px solid #3d4166; border-radius: 16px; padding: 32px; max-width: 480px; width: 90%; text-align: center; }
-  .setup-box h2 { font-size: 20px; color: #a78bfa; margin-bottom: 8px; }
-  .setup-box p { color: #9ca3af; font-size: 13px; margin-bottom: 20px; line-height: 1.6; }
-  .setup-btn { background: #7c3aed; color: white; border: none; padding: 12px 28px; border-radius: 8px; font-size: 14px; cursor: pointer; transition: background .15s; }
-  .setup-btn:hover { background: #6d28d9; }
-  .setup-btn:disabled { background: #4c1d95; color: #6b7280; cursor: not-allowed; }
-  #setup-progress { margin-top: 16px; font-size: 12px; color: #6b7280; }
-  .progress-bar { background: #252836; border-radius: 4px; height: 6px; margin-top: 8px; overflow: hidden; }
-  .progress-fill { background: #7c3aed; height: 100%; width: 0%; transition: width .3s; border-radius: 4px; }
+  #overlay { position: fixed; inset: 0; background: rgba(240,242,245,.88); display: flex; align-items: center; justify-content: center; z-index: 9000; }
+  #overlay.hidden { display: none; }
+  .spin { width: 36px; height: 36px; border: 3px solid #dde1ea; border-top-color: #7c3aed; border-radius: 50%; animation: sp .7s linear infinite; }
+  .spin-lbl { color: #6b7280; font-size: 13px; margin-top: 12px; text-align: center; }
+  @keyframes sp { to { transform: rotate(360deg); } }
 
-  /* LOADING */
-  #loading { position: fixed; inset: 0; background: rgba(15,17,23,.8); display: flex; align-items: center; justify-content: center; z-index: 8888; }
-  #loading.hidden { display: none; }
-  .spinner { width: 40px; height: 40px; border: 3px solid #3d4166; border-top-color: #7c3aed; border-radius: 50%; animation: spin .8s linear infinite; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  /* LEAFLET CUSTOM */
-  .leaflet-popup-content-wrapper { background: #1a1d27; border: 1px solid #3d4166; color: #e2e8f0; border-radius: 8px; }
-  .leaflet-popup-tip { background: #1a1d27; }
-  .leaflet-popup-content { font-size: 13px; }
+  .leaflet-tooltip { background: #fff; border: 1px solid #dde1ea; color: #1e2433; font-size: 12px; padding: 4px 8px; box-shadow: 0 2px 6px rgba(0,0,0,.1); border-radius: 6px; }
+  .leaflet-tooltip-pane .leaflet-tooltip::before { display: none; }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <div id="header">
-  <h1>🗺️ Türkiye İlçeleri – Wikidata Eşleştirici</h1>
-  <input type="text" id="search-box" placeholder="İlçe ara..." oninput="filterList(this.value)">
-  <div id="stats">Eşleşti: <span id="matched-count">0</span> / <span id="total-count">0</span> &nbsp;|&nbsp; Binalar: <span id="buildings-count">0</span></div>
+  <h1>🏛️ Viki Anıtları Seviyor – İlçe Eşleştirici</h1>
+  <input id="search-box" type="text" placeholder="İlçe ara (eşleştirilen)..." oninput="onSearch(this.value)">
+  <div id="stats">Eşleşti: <b id="s-matched">0</b> / <b id="s-total">0</b> &nbsp;|&nbsp; 🟢 Binalar: <b id="s-bldg">0</b></div>
 </div>
 
-<!-- MAIN -->
 <div id="main">
   <div id="map"></div>
   <div id="sidebar">
-    <div id="sidebar-header">
-      <span id="list-count">İlçeler</span>
+    <div id="sidebar-top">
+      <span id="list-label">–</span>
       <div id="filter-btns">
-        <button class="filter-btn active" onclick="setFilter('all',this)">Tümü</button>
-        <button class="filter-btn" onclick="setFilter('matched',this)">Eşleşti</button>
-        <button class="filter-btn" onclick="setFilter('buildings',this)">Binalar ✓</button>
-        <button class="filter-btn" onclick="setFilter('unmatched',this)">Bekliyor</button>
+        <button class="fbtn on" onclick="setFilter('all',this)">Tümü</button>
+        <button class="fbtn" onclick="setFilter('matched',this)">Eşleşti</button>
+        <button class="fbtn" onclick="setFilter('buildings',this)">🟢 Binalar</button>
+        <button class="fbtn" onclick="setFilter('unmatched',this)">Bekliyor</button>
       </div>
     </div>
     <div id="district-list"></div>
-    <div id="detail-panel" class="hidden">
+    <div id="detail">
       <div id="detail-title"></div>
-      <div class="match-area">
-        <div class="match-label">Wikidata Eşleştirmesi</div>
-        <div id="match-content"></div>
-      </div>
-      <div id="commons-result"></div>
+      <div class="mlabel">Wikidata Eşleştirmesi</div>
+      <div id="match-area"></div>
+      <div id="commons-box" style="display:none"></div>
     </div>
   </div>
 </div>
 
-<!-- SETUP OVERLAY -->
-<div id="setup-overlay">
-  <div class="setup-box">
-    <h2>🔧 İlk Kurulum</h2>
-    <p>Türkiye'deki ~970 ilçenin sınırları OpenStreetMap'ten tek seferlik çekilecek ve Firebase'e kaydedilecek.<br>Bu işlem 1-2 dakika sürebilir.</p>
-    <button class="setup-btn" id="start-fetch-btn" onclick="startFetchBoundaries()">Sınırları Çek ve Kaydet</button>
-    <div id="setup-progress">
-      <div id="progress-text"></div>
-      <div class="progress-bar" id="progress-bar-wrap" style="display:none">
-        <div class="progress-fill" id="progress-fill"></div>
-      </div>
-    </div>
+<div id="overlay">
+  <div style="text-align:center">
+    <div class="spin"></div>
+    <div class="spin-lbl" id="overlay-lbl">İlçe sınırları yükleniyor...</div>
   </div>
 </div>
 
-<!-- LOADING -->
-<div id="loading"><div class="spinner"></div></div>
-
-<!-- FIREBASE -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, doc, getDoc, setDoc, getDocs, collection, deleteField, updateDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { getFirestore, doc, setDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-// ============================================================
-// 🔧 FIREBASE KONFİGÜRASYON (firebase-config.js'den doldur)
-// ============================================================
+// ================================================================
+// 🔧 FIREBASE KONFİGÜRASYON — kendi değerlerinle değiştir
+// ================================================================
 const firebaseConfig = {
   apiKey: "FIREBASE_API_KEY",
   authDomain: "FIREBASE_AUTH_DOMAIN",
@@ -170,443 +129,301 @@ const firebaseConfig = {
   messagingSenderId: "FIREBASE_MESSAGING_SENDER_ID",
   appId: "FIREBASE_APP_ID"
 };
-// ============================================================
+// ================================================================
+
+const GEOJSON_URL = "https://raw.githubusercontent.com/Sadrettin86/ilce-VikiAnitlariSeviyor/main/districts.geojson";
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const db  = getFirestore(app);
 
-// STATE
-let districts = [];       // [{name, osm_id, center_lat, center_lon, geometry}]
-let matches = {};         // {osm_id: {qid, label, hasBuildings, commonsCategory}}
-let activeDistrict = null;
-let currentFilter = 'all';
-let searchTerm = '';
-let layers = {};          // osm_id -> leaflet layer
-let markers = {};         // osm_id -> leaflet marker
+let features   = [];
+let matches    = {};
+let activeIdx  = null;
+let filter     = 'all';
+let searchQ    = '';
+let polyLayers = [];
 
-// MAP INIT
-const map = L.map('map', { zoomControl: true }).setView([39, 35], 6);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+// MAP — açık harita tile
+const map = L.map('map').setView([39, 35], 6);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
   attribution: '© OpenStreetMap © CARTO', maxZoom: 19
 }).addTo(map);
 
-// ============================================================
+// ================================================================
 // INIT
-// ============================================================
+// ================================================================
 async function init() {
-  document.getElementById('loading').classList.remove('hidden');
-  try {
-    // Firebase'den sınır verisini kontrol et
-    const metaDoc = await getDoc(doc(db, 'meta', 'districts_loaded'));
-    if (metaDoc.exists() && metaDoc.data().count > 0) {
-      // Yüklü - sınırları ve eşleştirmeleri çek
-      await loadDistrictsFromFirebase();
-      await loadMatchesFromFirebase();
-      document.getElementById('setup-overlay').classList.add('hidden');
-    } else {
-      // İlk kurulum
-      document.getElementById('setup-overlay').classList.remove('hidden');
-    }
-  } catch (e) {
-    console.error('Init error:', e);
-    alert('Firebase bağlantı hatası. firebaseConfig değerlerini kontrol et.');
-  }
-  document.getElementById('loading').classList.add('hidden');
-}
+  setOverlay('İlçe sınırları yükleniyor...');
+  const resp = await fetch(GEOJSON_URL);
+  if (!resp.ok) throw new Error('GeoJSON yüklenemedi: ' + resp.status);
+  const geojson = await resp.json();
+  features = geojson.features;
 
-// ============================================================
-// OVERPASS'TAN SINIR ÇEKİMİ (tek seferlik)
-// ============================================================
-window.startFetchBoundaries = async function() {
-  const btn = document.getElementById('start-fetch-btn');
-  const progressText = document.getElementById('progress-text');
-  const progressBarWrap = document.getElementById('progress-bar-wrap');
-  const progressFill = document.getElementById('progress-fill');
+  setOverlay('Eşleştirmeler yükleniyor...');
+  await loadMatches();
 
-  btn.disabled = true;
-  progressBarWrap.style.display = 'block';
-  progressText.textContent = 'Overpass API\'ye bağlanılıyor...';
-
-  const query = `
-[out:json][timeout:300];
-relation["admin_level"="6"]["boundary"="administrative"]["type"="boundary"](36.0,26.0,42.5,45.0);
-out geom;
-  `;
-
-  try {
-    progressText.textContent = 'Sınır verileri indiriliyor... (1-2 dk)';
-    progressFill.style.width = '10%';
-
-    const resp = await fetch('https://overpass-api.de/api/interpreter', {
-      method: 'POST',
-      body: new URLSearchParams({ data: query })
-    });
-
-    if (!resp.ok) throw new Error(`Overpass HTTP ${resp.status}`);
-    
-    progressText.textContent = 'Veri parse ediliyor...';
-    progressFill.style.width = '40%';
-
-    const raw = await resp.json();
-    progressText.textContent = `${raw.elements.length} ilçe bulundu, işleniyor...`;
-    progressFill.style.width = '50%';
-
-    const processed = [];
-    for (const elem of raw.elements) {
-      if (elem.type !== 'relation') continue;
-      const tags = elem.tags || {};
-      const name = tags['name:tr'] || tags['name'] || '';
-      if (!name) continue;
-
-      const members = elem.members || [];
-      const outerWays = members.filter(m => m.role === 'outer' && m.geometry);
-      if (!outerWays.length) continue;
-
-      const rings = outerWays.map(w => w.geometry.map(pt => [pt.lon, pt.lat])).filter(r => r.length >= 4);
-      if (!rings.length) continue;
-
-      const allLons = rings.flat().map(c => c[0]);
-      const allLats = rings.flat().map(c => c[1]);
-      const centerLat = allLats.reduce((a,b)=>a+b,0)/allLats.length;
-      const centerLon = allLons.reduce((a,b)=>a+b,0)/allLons.length;
-
-      processed.push({
-        name,
-        osm_id: String(elem.id),
-        wikidata_osm: tags.wikidata || '',
-        center_lat: Math.round(centerLat*10000)/10000,
-        center_lon: Math.round(centerLon*10000)/10000,
-        geometry: rings
-      });
-    }
-
-    progressText.textContent = `${processed.length} ilçe Firebase\'e kaydediliyor...`;
-    progressFill.style.width = '60%';
-
-    // Batch write - Firebase'e kaydet (50'şer grup)
-    const BATCH = 50;
-    for (let i = 0; i < processed.length; i += BATCH) {
-      const chunk = processed.slice(i, i + BATCH);
-      await Promise.all(chunk.map(d =>
-        setDoc(doc(db, 'districts_geo', d.osm_id), d)
-      ));
-      const pct = 60 + Math.round((i / processed.length) * 35);
-      progressFill.style.width = pct + '%';
-      progressText.textContent = `Kaydediliyor: ${Math.min(i+BATCH, processed.length)}/${processed.length}`;
-    }
-
-    // Meta kayıt
-    await setDoc(doc(db, 'meta', 'districts_loaded'), {
-      count: processed.length,
-      loadedAt: new Date().toISOString()
-    });
-
-    progressFill.style.width = '100%';
-    progressText.textContent = `✅ ${processed.length} ilçe başarıyla kaydedildi!`;
-
-    setTimeout(async () => {
-      document.getElementById('setup-overlay').classList.add('hidden');
-      districts = processed;
-      renderMap();
-      renderList();
-      updateStats();
-    }, 1000);
-
-  } catch (e) {
-    console.error(e);
-    progressText.textContent = `❌ Hata: ${e.message}`;
-    btn.disabled = false;
-  }
-};
-
-// ============================================================
-// FIREBASE'DEN YÜKLEme
-// ============================================================
-async function loadDistrictsFromFirebase() {
-  document.getElementById('loading').classList.remove('hidden');
-  const snap = await getDocs(collection(db, 'districts_geo'));
-  districts = snap.docs.map(d => d.data());
-  document.getElementById('loading').classList.add('hidden');
-}
-
-async function loadMatchesFromFirebase() {
-  const snap = await getDocs(collection(db, 'matches'));
-  matches = {};
-  snap.docs.forEach(d => { matches[d.id] = d.data(); });
   renderMap();
   renderList();
   updateStats();
+  hideOverlay();
 }
 
-// ============================================================
-// HARİTA
-// ============================================================
-function getDistrictColor(osm_id) {
-  const m = matches[osm_id];
-  if (!m) return '#4b5563';       // gray - eşleşmemiş
-  if (m.hasBuildings) return '#10b981'; // green
-  if (m.qid) return '#f59e0b';    // yellow - eşleşmiş ama buildings yok
-  return '#4b5563';
+// ================================================================
+// FIREBASE
+// ================================================================
+async function loadMatches() {
+  const snap = await getDocs(collection(db, 'matches'));
+  matches = {};
+  snap.docs.forEach(d => { const data = d.data(); if (data.qid) matches[d.id] = data; });
+}
+async function saveMatch(idx, data) {
+  await setDoc(doc(db, 'matches', String(idx)), data);
+  matches[String(idx)] = data;
+}
+async function deleteMatch(idx) {
+  await setDoc(doc(db, 'matches', String(idx)), { deleted: true });
+  delete matches[String(idx)];
+}
+
+// ================================================================
+// HARİTA — sadece polygon, marker yok
+// ================================================================
+function getStyle(idx) {
+  const m = matches[String(idx)];
+  if (!m)             return { color: '#94a3b8', weight: 1.2, fillColor: '#94a3b8', fillOpacity: 0.08, opacity: 0.6 };
+  if (m.hasBuildings) return { color: '#059669', weight: 1.5, fillColor: '#059669', fillOpacity: 0.20, opacity: 0.9 };
+  return               { color: '#d97706', weight: 1.5, fillColor: '#d97706', fillOpacity: 0.18, opacity: 0.9 };
 }
 
 function renderMap() {
-  // Mevcut layerları temizle
-  Object.values(layers).forEach(l => map.removeLayer(l));
-  layers = {};
-  Object.values(markers).forEach(m => map.removeLayer(m));
-  markers = {};
+  polyLayers.forEach(l => { if (l) map.removeLayer(l); });
+  polyLayers = [];
 
-  for (const d of districts) {
-    const color = getDistrictColor(d.osm_id);
-    
-    // Polygon layer
-    const latlngs = d.geometry.map(ring => ring.map(([lon, lat]) => [lat, lon]));
-    const poly = L.polygon(latlngs, {
-      color: color,
-      weight: 1.2,
-      fillColor: color,
-      fillOpacity: matches[d.osm_id] ? 0.25 : 0.08,
-      opacity: 0.7
-    });
-
-    poly.on('click', () => selectDistrict(d.osm_id));
-    poly.bindTooltip(d.name, { sticky: true, className: 'district-tooltip' });
-    poly.addTo(map);
-    layers[d.osm_id] = poly;
-  }
+  features.forEach((feature, idx) => {
+    const layer = L.geoJSON(feature, { style: getStyle(idx) });
+    layer.on('click', () => selectDistrict(idx));
+    layer.on('mouseover', () => { if (activeIdx !== idx) layer.setStyle({ fillOpacity: getStyle(idx).fillOpacity + 0.12, weight: 2 }); });
+    layer.on('mouseout',  () => { if (activeIdx !== idx) layer.setStyle(getStyle(idx)); });
+    const m = matches[String(idx)];
+    if (m?.label) layer.bindTooltip(m.label, { sticky: true });
+    layer.addTo(map);
+    polyLayers[idx] = layer;
+  });
 }
 
-function updateLayerColor(osm_id) {
-  const layer = layers[osm_id];
+function refreshLayer(idx) {
+  const layer = polyLayers[idx];
   if (!layer) return;
-  const color = getDistrictColor(osm_id);
-  layer.setStyle({ color, fillColor: color, fillOpacity: matches[osm_id] ? 0.25 : 0.08 });
+  layer.setStyle(getStyle(idx));
+  layer.unbindTooltip();
+  const m = matches[String(idx)];
+  if (m?.label) layer.bindTooltip(m.label, { sticky: true });
 }
 
-// ============================================================
+// ================================================================
 // LİSTE
-// ============================================================
+// ================================================================
+function getFiltered() {
+  let list = features.map((f, i) => ({ idx: i, match: matches[String(i)] }));
+  if (searchQ) {
+    const q = searchQ.toLowerCase();
+    list = list.filter(d => (d.match?.label || '').toLowerCase().includes(q));
+  }
+  if (filter === 'matched')        list = list.filter(d => d.match?.qid);
+  else if (filter === 'buildings') list = list.filter(d => d.match?.hasBuildings);
+  else if (filter === 'unmatched') list = list.filter(d => !d.match?.qid);
+  list.sort((a, b) => {
+    if (a.match?.label && b.match?.label) return a.match.label.localeCompare(b.match.label, 'tr');
+    if (a.match?.label) return -1;
+    if (b.match?.label) return 1;
+    return a.idx - b.idx;
+  });
+  return list;
+}
+
 function renderList() {
-  const container = document.getElementById('district-list');
   const filtered = getFiltered();
-  document.getElementById('list-count').textContent = `${filtered.length} ilçe`;
-  
-  container.innerHTML = filtered.map(d => {
-    const m = matches[d.osm_id];
-    const dotClass = m?.hasBuildings ? 'dot-green' : m?.qid ? 'dot-yellow' : 'dot-gray';
-    const meta = m?.qid ? `${m.qid}${m.label ? ' · ' + m.label : ''}` : 'Eşleştirilmedi';
-    const isActive = activeDistrict === d.osm_id;
-    return `<div class="district-item${isActive?' active':''}" onclick="selectDistrict('${d.osm_id}')">
-      <div class="district-name">
-        <span class="status-dot ${dotClass}"></span>
-        ${d.name}
-      </div>
-      <div class="district-meta">${meta}</div>
+  document.getElementById('list-label').textContent = `${filtered.length} ilçe`;
+  document.getElementById('district-list').innerHTML = filtered.map(({ idx, match }) => {
+    const name   = match?.label || `İlçe #${idx + 1}`;
+    const dotCls = match?.hasBuildings ? 'dot-g' : match?.qid ? 'dot-y' : 'dot-x';
+    const meta   = match?.qid ? match.qid : 'Eşleştirilmedi';
+    return `<div class="ditem${activeIdx === idx ? ' active' : ''}" onclick="window._sel(${idx})">
+      <div class="dname"><span class="dot ${dotCls}"></span>${name}</div>
+      <div class="dmeta">${meta}</div>
     </div>`;
   }).join('');
 }
 
-function getFiltered() {
-  let list = districts;
-  if (searchTerm) list = list.filter(d => d.name.toLowerCase().includes(searchTerm.toLowerCase()));
-  if (currentFilter === 'matched') list = list.filter(d => matches[d.osm_id]?.qid);
-  else if (currentFilter === 'buildings') list = list.filter(d => matches[d.osm_id]?.hasBuildings);
-  else if (currentFilter === 'unmatched') list = list.filter(d => !matches[d.osm_id]?.qid);
-  return list.sort((a,b) => a.name.localeCompare(b.name, 'tr'));
+window._sel      = (idx) => selectDistrict(idx);
+window.onSearch  = (v)   => { searchQ = v; renderList(); };
+window.setFilter = (f, btn) => {
+  filter = f;
+  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  renderList();
+};
+
+// ================================================================
+// SEÇİM
+// ================================================================
+async function selectDistrict(idx) {
+  // Önceki aktif layer stilini sıfırla
+  if (activeIdx !== null && polyLayers[activeIdx]) polyLayers[activeIdx].setStyle(getStyle(activeIdx));
+
+  activeIdx = idx;
+  renderList();
+
+  // Aktif layer'ı vurgula
+  if (polyLayers[idx]) {
+    const s = getStyle(idx);
+    polyLayers[idx].setStyle({ ...s, weight: 2.5, fillOpacity: s.fillOpacity + 0.15 });
+    try { map.fitBounds(polyLayers[idx].getBounds(), { maxZoom: 12, padding: [40, 40] }); } catch(e) {}
+  }
+
+  const panel = document.getElementById('detail');
+  panel.style.display = 'block';
+  const m    = matches[String(idx)];
+  const name = m?.label || `İlçe #${idx + 1}`;
+  document.getElementById('detail-title').textContent = `📍 ${name}`;
+  document.getElementById('commons-box').style.display = 'none';
+
+  if (m?.qid) { showCurrentMatch(idx, m); showCommonsBox(m); }
+  else { await showSuggestions(idx); }
+
+  setTimeout(() => { const el = document.querySelector('.ditem.active'); if (el) el.scrollIntoView({ block: 'nearest' }); }, 50);
 }
 
-window.filterList = function(val) {
-  searchTerm = val;
-  renderList();
-};
+// ================================================================
+// WIKIDATA ARAMA
+// ================================================================
+async function showSuggestions(idx) {
+  document.getElementById('match-area').innerHTML = `
+    <div style="display:flex;gap:6px;margin-bottom:8px">
+      <input id="wd-search"
+        style="flex:1;background:#fff;border:1px solid #dde1ea;border-radius:6px;padding:6px 10px;color:#1e2433;font-size:12px;outline:none"
+        placeholder="İlçe adını yaz, Enter'a bas..."
+        onkeydown="if(event.key==='Enter')window._wdSearch(${idx})">
+      <button onclick="window._wdSearch(${idx})"
+        style="background:#7c3aed;border:none;color:white;padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:600">Ara</button>
+    </div>
+    <div id="sugs"></div>`;
+  document.getElementById('wd-search').focus();
+}
 
-window.setFilter = function(f, btn) {
-  currentFilter = f;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  renderList();
-};
-
-// ============================================================
-// SEÇİM & DETAY PANELİ
-// ============================================================
-window.selectDistrict = async function(osm_id) {
-  activeDistrict = osm_id;
-  const district = districts.find(d => d.osm_id === osm_id);
-  if (!district) return;
-
-  // Haritayı o ilçeye zoom yap
-  const layer = layers[osm_id];
-  if (layer) map.fitBounds(layer.getBounds(), { maxZoom: 13 });
-
-  // Sidebar'da aktif göster
-  renderList();
-  // Aktif itemi scroll'a getir
-  setTimeout(() => {
-    const activeEl = document.querySelector('.district-item.active');
-    if (activeEl) activeEl.scrollIntoView({ block: 'nearest' });
-  }, 50);
-
-  // Detail panel
-  const panel = document.getElementById('detail-panel');
-  panel.classList.remove('hidden');
-  document.getElementById('detail-title').textContent = `📍 ${district.name}`;
-  document.getElementById('commons-result').innerHTML = '';
-
-  const m = matches[osm_id];
-  if (m?.qid) {
-    showCurrentMatch(osm_id, m);
-    if (m.commonsCategory) showCommonsResult(m);
-  } else {
-    showSuggestions(osm_id, district.name);
+window._wdSearch = async function(idx) {
+  const q = document.getElementById('wd-search')?.value?.trim();
+  if (!q) return;
+  document.getElementById('sugs').innerHTML = `<div class="info-txt">Aranıyor...</div>`;
+  try {
+    const url  = `https://www.wikidata.org/w/api.php?action=wbsearchentities&search=${encodeURIComponent(q)}&language=tr&uselang=tr&type=item&limit=7&format=json&origin=*`;
+    const data = await (await fetch(url)).json();
+    const res  = data.search || [];
+    if (!res.length) { document.getElementById('sugs').innerHTML = `<div class="info-txt">Sonuç bulunamadı.</div>`; return; }
+    document.getElementById('sugs').innerHTML = res.map(r => `
+      <div class="sug" onclick="window._apply(${idx},'${r.id}',${JSON.stringify(r.label || r.id)})">
+        <div class="sug-qid">${r.id}</div>
+        <div>
+          <div class="sug-name">${r.label || r.id}</div>
+          <div class="sug-desc">${r.description || ''}</div>
+        </div>
+      </div>`).join('');
+  } catch(e) {
+    document.getElementById('sugs').innerHTML = `<div class="info-txt">Hata: ${e.message}</div>`;
   }
 };
 
-function showCurrentMatch(osm_id, m) {
-  document.getElementById('match-content').innerHTML = `
-    <div class="current-match">
+// ================================================================
+// EŞLEŞTİRME UYGULA
+// ================================================================
+window._apply = async function(idx, qid, label) {
+  document.getElementById('match-area').innerHTML = `<div class="info-txt">⏳ Commons kontrol ediliyor...</div>`;
+  document.getElementById('commons-box').style.display = 'none';
+
+  const { commonsCategory, hasBuildings, buildingsCat } = await checkCommons(qid);
+  const data = { qid, label, commonsCategory: commonsCategory || '', hasBuildings: !!hasBuildings, buildingsCat: buildingsCat || '', updatedAt: new Date().toISOString() };
+
+  await saveMatch(idx, data);
+  document.getElementById('detail-title').textContent = `📍 ${label}`;
+  showCurrentMatch(idx, data);
+  showCommonsBox(data);
+  refreshLayer(idx);
+  // Aktif stil tekrar uygula
+  if (polyLayers[idx]) {
+    const s = getStyle(idx);
+    polyLayers[idx].setStyle({ ...s, weight: 2.5, fillOpacity: s.fillOpacity + 0.15 });
+  }
+  renderList();
+  updateStats();
+};
+
+function showCurrentMatch(idx, m) {
+  document.getElementById('match-area').innerHTML = `
+    <div class="cur-match">
       <div>
-        <div class="match-qid">${m.qid}</div>
-        <div class="match-label-name">${m.label || ''}</div>
+        <div class="cur-qid">${m.qid}</div>
+        <div class="cur-lbl">${m.label || ''}</div>
       </div>
-      <button class="remove-btn" onclick="removeMatch('${osm_id}')" title="Eşleştirmeyi sil">✕</button>
+      <button class="xbtn" onclick="window._remove(${idx})" title="Eşleştirmeyi sil">✕</button>
     </div>`;
 }
 
-async function showSuggestions(osm_id, name) {
-  document.getElementById('match-content').innerHTML = `<div class="loading-sug">🔍 Wikidata'dan öneriler yükleniyor...</div>`;
-  
-  try {
-    const suggestions = await searchWikidata(name);
-    if (!suggestions.length) {
-      document.getElementById('match-content').innerHTML = `<div class="loading-sug">Öneri bulunamadı. QID'yi kendin girebilirsin.</div>`;
-      return;
-    }
-    document.getElementById('match-content').innerHTML = `
-      <div id="suggestions">
-        ${suggestions.map(s => `
-          <div class="suggestion-item" onclick="applyMatch('${osm_id}','${s.id}','${escapeAttr(s.label)}')">
-            <div class="sug-qid">${s.id}</div>
-            <div class="sug-info">
-              <div class="sug-name">${s.label}</div>
-              <div class="sug-desc">${s.description || ''}</div>
-            </div>
-          </div>`).join('')}
-      </div>`;
-  } catch(e) {
-    document.getElementById('match-content').innerHTML = `<div class="loading-sug">Hata: ${e.message}</div>`;
-  }
-}
-
-// ============================================================
-// WIKIDATA ARAMA
-// ============================================================
-async function searchWikidata(name) {
-  const url = `https://www.wikidata.org/w/api.php?action=wbsearchentities&search=${encodeURIComponent(name)}&language=tr&uselang=tr&type=item&limit=6&format=json&origin=*`;
-  const resp = await fetch(url);
-  const data = await resp.json();
-  return (data.search || []).map(r => ({
-    id: r.id,
-    label: r.label || r.id,
-    description: r.description || ''
-  }));
-}
-
-// ============================================================
-// EŞLEŞTİRME UYGULA
-// ============================================================
-window.applyMatch = async function(osm_id, qid, label) {
-  document.getElementById('match-content').innerHTML = `<div class="loading-sug">⏳ Kaydediliyor ve Commons kontrol ediliyor...</div>`;
-  document.getElementById('commons-result').innerHTML = '';
-  
-  // P373 çek
-  const { commonsCategory, hasBuildings, buildingsCategory } = await checkCommonsBuildings(qid);
-  
-  const matchData = { qid, label, commonsCategory: commonsCategory || '', hasBuildings, buildingsCategory: buildingsCategory || '', updatedAt: new Date().toISOString() };
-  
-  // Firebase'e yaz
-  await setDoc(doc(db, 'matches', osm_id), matchData);
-  matches[osm_id] = matchData;
-
-  // UI güncelle
-  showCurrentMatch(osm_id, matchData);
-  showCommonsResult(matchData);
-  updateLayerColor(osm_id);
-  renderList();
-  updateStats();
-};
-
-// ============================================================
+// ================================================================
 // EŞLEŞTİRME SİL
-// ============================================================
-window.removeMatch = async function(osm_id) {
-  await setDoc(doc(db, 'matches', osm_id), {});
-  delete matches[osm_id];
-  document.getElementById('commons-result').innerHTML = '';
-  updateLayerColor(osm_id);
+// ================================================================
+window._remove = async function(idx) {
+  await deleteMatch(idx);
+  document.getElementById('commons-box').style.display = 'none';
+  document.getElementById('detail-title').textContent = `📍 İlçe #${idx + 1}`;
+  refreshLayer(idx);
   renderList();
   updateStats();
-  const district = districts.find(d => d.osm_id === osm_id);
-  if (district) showSuggestions(osm_id, district.name);
+  await showSuggestions(idx);
 };
 
-// ============================================================
-// COMMONS P373 & BİNALAR KONTROLÜ
-// ============================================================
-async function checkCommonsBuildings(qid) {
+// ================================================================
+// COMMONS P373
+// ================================================================
+async function checkCommons(qid) {
   try {
-    // P373 çek
-    const wdUrl = `https://www.wikidata.org/wiki/Special:EntityData/${qid}.json`;
-    const resp = await fetch(wdUrl);
-    const data = await resp.json();
-    const entity = data.entities[qid];
-    const p373 = entity?.claims?.P373?.[0]?.mainsnak?.datavalue?.value;
-    if (!p373) return { commonsCategory: null, hasBuildings: false };
-
-    // "Buildings in X" kategorisini kontrol et
+    const wdData = await (await fetch(`https://www.wikidata.org/wiki/Special:EntityData/${qid}.json`)).json();
+    const entity = wdData.entities[qid];
+    const p373   = entity?.claims?.P373?.[0]?.mainsnak?.datavalue?.value;
+    if (!p373) return {};
     const buildingsCat = `Buildings in ${p373}`;
-    const cmUrl = `https://commons.wikimedia.org/w/api.php?action=query&titles=Category:${encodeURIComponent(buildingsCat)}&format=json&origin=*`;
-    const cmResp = await fetch(cmUrl);
-    const cmData = await cmResp.json();
-    const pages = cmData.query?.pages || {};
+    const cmData = await (await fetch(`https://commons.wikimedia.org/w/api.php?action=query&titles=Category:${encodeURIComponent(buildingsCat)}&format=json&origin=*`)).json();
+    const pages  = cmData.query?.pages || {};
     const exists = !Object.keys(pages).some(k => k === '-1');
-
-    return { commonsCategory: p373, hasBuildings: exists, buildingsCategory: exists ? buildingsCat : null };
-  } catch(e) {
-    return { commonsCategory: null, hasBuildings: false };
-  }
+    return { commonsCategory: p373, hasBuildings: exists, buildingsCat: exists ? buildingsCat : null };
+  } catch(e) { return {}; }
 }
 
-function showCommonsResult(m) {
-  const el = document.getElementById('commons-result');
+function showCommonsBox(m) {
+  const box = document.getElementById('commons-box');
+  box.style.display = 'block';
   if (!m.commonsCategory) {
-    el.className = 'no-buildings';
-    el.innerHTML = `📁 P373 (Commons Kategori) bulunamadı`;
-    return;
-  }
-  if (m.hasBuildings) {
-    const url = `https://commons.wikimedia.org/wiki/Category:${encodeURIComponent(m.buildingsCategory)}`;
-    el.className = 'commons-result has-buildings';
-    el.innerHTML = `✅ <a href="${url}" target="_blank">Category:${m.buildingsCategory}</a>`;
+    box.className = 'no'; box.innerHTML = '📁 Wikidata\'da P373 değeri yok';
+  } else if (m.hasBuildings) {
+    const url = `https://commons.wikimedia.org/wiki/Category:${encodeURIComponent(m.buildingsCat)}`;
+    box.className = 'ok'; box.innerHTML = `✅ <a href="${url}" target="_blank">Category:${m.buildingsCat}</a>`;
   } else {
-    el.className = 'commons-result no-buildings';
-    el.innerHTML = `❌ "Buildings in ${m.commonsCategory}" kategorisi mevcut değil`;
+    box.className = 'no'; box.innerHTML = `❌ "Buildings in ${m.commonsCategory}" kategorisi yok`;
   }
 }
 
-// ============================================================
+// ================================================================
 // STATS
-// ============================================================
+// ================================================================
 function updateStats() {
-  document.getElementById('total-count').textContent = districts.length;
-  document.getElementById('matched-count').textContent = Object.values(matches).filter(m=>m.qid).length;
-  document.getElementById('buildings-count').textContent = Object.values(matches).filter(m=>m.hasBuildings).length;
+  document.getElementById('s-total').textContent   = features.length;
+  document.getElementById('s-matched').textContent = Object.keys(matches).length;
+  document.getElementById('s-bldg').textContent    = Object.values(matches).filter(m => m.hasBuildings).length;
 }
 
-function escapeAttr(s) { return (s||'').replace(/'/g, "\\'"); }
+function setOverlay(txt) { document.getElementById('overlay').classList.remove('hidden'); document.getElementById('overlay-lbl').textContent = txt; }
+function hideOverlay()    { document.getElementById('overlay').classList.add('hidden'); }
 
-// START
-init();
+init().catch(e => { hideOverlay(); alert('Yükleme hatası: ' + e.message); });
 </script>
 </body>
 </html>
