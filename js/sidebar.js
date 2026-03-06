@@ -88,7 +88,48 @@ function applyFilter(items) {
   return items;
 }
 
-// Harita ikonundan çağrılır — QID'yi aç ve scroll et
+// Nokta modu: haritada görünen öğeleri sidebar'da listele
+export function renderPointsList(items) {
+  const sidebarEl = document.getElementById('sidebar');
+  const titleEl   = document.getElementById('sidebar-title');
+  const countEl   = document.getElementById('item-count');
+  const listEl    = document.getElementById('item-list');
+  if (!sidebarEl) return;
+
+  if (!items || !items.length) {
+    sidebarEl.style.display = 'none';
+    return;
+  }
+
+  sidebarEl.style.display = 'flex';
+  if (titleEl) titleEl.textContent = 'Haritadaki öğeler';
+  if (countEl) countEl.textContent = `${items.length} öğe`;
+  // Filtre butonlarını gizle nokta modunda
+  const filterEl = document.getElementById('filter-btns');
+  if (filterEl) filterEl.style.display = 'none';
+
+  if (!listEl) return;
+  listEl.innerHTML = items.map(item => {
+    const imgBadge = item.hasImage ? `<span class="badge badge-img">📷</span>` : '';
+    const catBadge = item.p373    ? `<span class="badge badge-cat">📁</span>` : '';
+    return `
+      <div class="qitem" onclick="window._pointSel('${item.qid}')">
+        <div class="qitem-head">
+          <div class="qitem-left">
+            <a class="qid-link" href="https://www.wikidata.org/wiki/${item.qid}"
+               target="_blank" onclick="event.stopPropagation()">${item.qid}</a>
+            <span class="qitem-label">${item.label || '–'}</span>
+          </div>
+          <div class="qitem-badges">${imgBadge}${catBadge}</div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+export function showFilterBtns() {
+  const filterEl = document.getElementById('filter-btns');
+  if (filterEl) filterEl.style.display = 'flex';
+}
 export function openQidFromMap(qid) {
   _openQid = qid;
   renderItems();
