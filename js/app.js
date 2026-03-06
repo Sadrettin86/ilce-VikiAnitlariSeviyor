@@ -1,30 +1,29 @@
 // ================================================================
-// app.js — Ana uygulama akışı, state yönetimi
+// app.js — Ana uygulama akışı
 // ================================================================
 
 import { GEOJSON_URL, PROV_URL, RELATIONS_URL }                    from "./config.js";
-import { checkCommons, fetchAdminPoints }                           from "./wikidata.js";
+import { fetchDistrictItems, fetchAdminPoints }                    from "./wikidata.js";
 import { renderProvinces, renderDistricts, refreshDistrictLayer,
          highlightDistrict, getProvBounds,
          highlightProvLayer, showAdminMarker, removeAdminMarkers,
          toggleLocate, toggleLayer, zoomIn, zoomOut }              from "./map.js";
-import { initSidebar, renderList, openDetail, closeDetail,
-         updateStats, scrollActiveIntoView,
+import { initSidebar, openSidebar, closeSidebar, renderItems,
+         setItemFilter, toggleAccordion,
          setOverlay, hideOverlay }                                  from "./sidebar.js";
 
 // ----------------------------------------------------------------
-// UYGULAMA STATE
+// STATE
 // ----------------------------------------------------------------
 const state = {
-  features:       [],   // ilçe GeoJSON features
-  provFeatures:   [],   // il GeoJSON features
-  relations:      {},   // relation_id → { qid, label, ... }
-  matches:        {},   // feature index → { qid, label, ... }  (türetilir)
-  activeIdx:      null,
-  activeProvIdx:  null,
-  filter:         'all',
-  searchQ:        '',
-  currentIdxList: [],
+  features:      [],
+  provFeatures:  [],
+  relations:     {},
+  matches:       {},
+  activeIdx:     null,
+  activeProvIdx: null,
+  currentItems:  [],
+  currentIdxList:[],
 };
 
 initSidebar(state);
@@ -34,13 +33,11 @@ initSidebar(state);
 // ----------------------------------------------------------------
 async function init() {
   setOverlay('Harita yükleniyor...');
-
   const [distResp, provResp, relResp] = await Promise.all([
     fetch(GEOJSON_URL),
     fetch(PROV_URL),
     fetch(RELATIONS_URL + '?_=' + Date.now())
   ]);
-
   if (!distResp.ok) throw new Error('İlçe GeoJSON yüklenemedi');
   if (!provResp.ok) throw new Error('İl GeoJSON yüklenemedi');
 
@@ -48,16 +45,11 @@ async function init() {
   state.provFeatures = (await provResp.json()).features;
   state.relations    = relResp.ok ? (await relResp.json()) : {};
 
-  // relation_id bazlı eşleştirmeyi index bazlı matches'e dönüştür
   buildMatches();
-
   renderProvinces(state.provFeatures, onProvinceClick);
-  renderList([]);
-  updateStats(state.features, state.matches);
   hideOverlay();
 }
 
-// GeoJSON feature'larındaki relation_id → relations.json eşleştirmesi
 function buildMatches() {
   state.matches = {};
   state.features.forEach((feat, idx) => {
@@ -75,54 +67,55 @@ function onProvinceClick(pi) {
   state.activeProvIdx = pi;
   state.activeIdx     = null;
   highlightProvLayer(pi);
-  closeDetail();
+  closeSidebar();
   removeAdminMarkers();
-  const provBounds   = getProvBounds(pi);
-  const provFeature  = state.provFeatures[pi];
-  const districtIdxs = renderDistricts(state.features, state.matches, provBounds, onDistrictClick, provFeature);
-  state.currentIdxList = districtIdxs;
-  renderList(districtIdxs);
-  updateStats(state.features, state.matches);
+
+  const provBounds  = getProvBounds(pi);
+  const provFeature = state.provFeatures[pi];
+  const idxList     = renderDistricts(state.features, state.matches, provBounds, onDistrictClick, provFeature);
+  state.currentIdxList = idxList;
 }
 
 // ----------------------------------------------------------------
 // İLÇE TIKLAMA
 // ----------------------------------------------------------------
-function onDistrictClick(idx) {
+async function onDistrictClick(idx) {
   const prev      = state.activeIdx;
   state.activeIdx = idx;
   highlightDistrict(prev, idx, state.matches);
-
-  // P11729 — ilçeye bağlı tüm idari merkez noktaları
   removeAdminMarkers();
+
   const m = state.matches[String(idx)];
-  if (m?.qid) {
-    fetchAdminPoints(m.qid).then(points => {
-      points.forEach(p => showAdminMarker(p.lat, p.lng, p.label));
-    });
+  if (!m?.qid) {
+    closeSidebar();
+    return;
   }
 
-  renderList();
-  scrollActiveIntoView();
-  openDetail(idx);
+  // Sidebar'ı hemen aç, yükleniyor göster
+  openSidebar(m.label || `İlçe #${idx+1}`, []);
+  setOverlay('Öğeler yükleniyor...');
+
+  // Paralel: harita noktaları + sidebar item listesi
+  const [items, points] = await Promise.all([
+    fetchDistrictItems(m.qid),
+    fetchAdminPoints(m.qid)
+  ]);
+
+  hideOverlay();
+  points.forEach(p => showAdminMarker(p.lat, p.lng, p.label));
+  openSidebar(m.label || `İlçe #${idx+1}`, items);
 }
 
 // ----------------------------------------------------------------
-// GLOBAL EVENT HANDLERS
+// GLOBAL HANDLERS
 // ----------------------------------------------------------------
-window._sel          = (idx) => onDistrictClick(idx);
-window._wdSearch     = (idx) => {};
-window.onSearch      = (v)   => { state.searchQ = v; renderList(); };
-window.toggleLocate  = ()    => toggleLocate();
-window.toggleLayer   = ()    => toggleLayer();
-window.zoomIn        = ()    => zoomIn();
-window.zoomOut       = ()    => zoomOut();
-window.setFilter     = (f, btn) => {
-  state.filter = f;
-  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
-  renderList();
-};
+window._sel         = (idx) => onDistrictClick(idx);
+window._qSel        = (qid) => toggleAccordion(qid);
+window.setItemFilter= (f, btn) => setItemFilter(f);
+window.toggleLocate = () => toggleLocate();
+window.toggleLayer  = () => toggleLayer();
+window.zoomIn       = () => zoomIn();
+window.zoomOut      = () => zoomOut();
 
 // ----------------------------------------------------------------
 // BAŞLAT
