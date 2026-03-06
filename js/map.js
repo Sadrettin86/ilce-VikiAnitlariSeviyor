@@ -20,11 +20,11 @@ export function renderProvinces(provFeatures, onProvinceClick) {
 
   provFeatures.forEach((feat, pi) => {
     const layer = L.geoJSON(feat, {
-      style: { color: '#475569', weight: 2, fillColor: '#64748b', fillOpacity: 0.06, opacity: 0.7 }
+      style: { color: '#94a3b8', weight: 1, fillColor: '#64748b', fillOpacity: 0.04, opacity: 0.6 }
     });
     layer.on('click',     () => onProvinceClick(pi));
-    layer.on('mouseover', () => layer.setStyle({ fillOpacity: 0.15, weight: 2.5, color: '#7c3aed' }));
-    layer.on('mouseout',  () => layer.setStyle({ color: '#475569', weight: 2, fillOpacity: 0.06 }));
+    layer.on('mouseover', () => layer.setStyle({ fillOpacity: 0.12, weight: 1.5, color: '#7c3aed' }));
+    layer.on('mouseout',  () => layer.setStyle({ color: '#94a3b8', weight: 1, fillOpacity: 0.04 }));
     layer.addTo(map);
     provLayers[pi] = layer;
   });
@@ -33,9 +33,13 @@ export function renderProvinces(provFeatures, onProvinceClick) {
 export function highlightProvLayer(pi) {
   provLayers.forEach((l, i) => {
     if (!l) return;
-    if (i === pi) l.setStyle({ color: '#7c3aed', weight: 3, fillColor: '#7c3aed', fillOpacity: 0.08 });
-    else          l.setStyle({ color: '#475569', weight: 2, fillColor: '#64748b', fillOpacity: 0.06 });
+    if (i === pi) l.setStyle({ color: '#7c3aed', weight: 2, fillColor: '#7c3aed', fillOpacity: 0.06 });
+    else          l.setStyle({ color: '#94a3b8', weight: 1, fillColor: '#64748b', fillOpacity: 0.04 });
   });
+  // Seçili ile zoom yap
+  if (provLayers[pi]) {
+    try { map.fitBounds(provLayers[pi].getBounds(), { padding: [30, 30] }); } catch(e) {}
+  }
 }
 
 export function getProvBounds(pi) {
