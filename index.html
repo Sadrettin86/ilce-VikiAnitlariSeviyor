@@ -131,12 +131,15 @@ const firebaseConfig = {
 };
 // ================================================================
 
-const GEOJSON_URL = "https://raw.githubusercontent.com/Sadrettin86/ilce-VikiAnitlariSeviyor/main/districts.geojson";
+const GEOJSON_URL  = "https://raw.githubusercontent.com/Sadrettin86/ilce-VikiAnitlariSeviyor/main/districts.geojson";
+const PROV_URL     = "https://raw.githubusercontent.com/Sadrettin86/ilce-VikiAnitlariSeviyor/main/provinces.geojson";
 
 const app = initializeApp(firebaseConfig);
 const db  = getFirestore(app);
 
 let features   = [];
+let provFeatures = [];   // il sınırları
+let activeProvLayer = null;
 let matches    = {};
 let activeIdx  = null;
 let filter     = 'all';
@@ -154,10 +157,17 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 // ================================================================
 async function init() {
   setOverlay('İlçe sınırları yükleniyor...');
-  const resp = await fetch(GEOJSON_URL);
-  if (!resp.ok) throw new Error('GeoJSON yüklenemedi: ' + resp.status);
-  const geojson = await resp.json();
-  features = geojson.features;
+  const [distResp, provResp] = await Promise.all([fetch(GEOJSON_URL), fetch(PROV_URL)]);
+  if (!distResp.ok) throw new Error('İlçe GeoJSON yüklenemedi');
+  if (!provResp.ok)  throw new Error('İl GeoJSON yüklenemedi');
+  features     = (await distResp.json()).features;
+  provFeatures = (await provResp.json()).features;
+
+  // İl katmanını arkaya çiz (tıklanamaz)
+  L.geoJSON({type:'FeatureCollection', features: provFeatures}, {
+    style: { color: '#475569', weight: 2, fill: false, opacity: 0.5 },
+    interactive: false
+  }).addTo(map);
 
   setOverlay('Eşleştirmeler yükleniyor...');
   await loadMatches();
@@ -279,6 +289,9 @@ async function selectDistrict(idx) {
     const s = getStyle(idx);
     polyLayers[idx].setStyle({ ...s, weight: 2.5, fillOpacity: s.fillOpacity + 0.15 });
     try { map.fitBounds(polyLayers[idx].getBounds(), { maxZoom: 12, padding: [40, 40] }); } catch(e) {}
+
+    // Hangi ilin içinde → il sınırını vurgula
+    highlightProvince(polyLayers[idx].getBounds().getCenter());
   }
 
   const panel = document.getElementById('detail');
@@ -292,6 +305,40 @@ async function selectDistrict(idx) {
   else { await showSuggestions(idx); }
 
   setTimeout(() => { const el = document.querySelector('.ditem.active'); if (el) el.scrollIntoView({ block: 'nearest' }); }, 50);
+}
+
+// ================================================================
+// İL VURGULAMA
+// ================================================================
+function pointInPolygon(pt, ring) {
+  let inside = false;
+  const x = pt.lng, y = pt.lat;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const xi = ring[i][0], yi = ring[i][1], xj = ring[j][0], yj = ring[j][1];
+    if (((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi)) inside = !inside;
+  }
+  return inside;
+}
+
+function findProvince(center) {
+  for (const feat of provFeatures) {
+    const g = feat.geometry;
+    const rings = g.type === 'Polygon' ? [g.coordinates[0]] : g.coordinates.map(p => p[0]);
+    for (const ring of rings) {
+      if (pointInPolygon(center, ring)) return feat;
+    }
+  }
+  return null;
+}
+
+function highlightProvince(center) {
+  if (activeProvLayer) { map.removeLayer(activeProvLayer); activeProvLayer = null; }
+  const prov = findProvince(center);
+  if (!prov) return;
+  activeProvLayer = L.geoJSON(prov, {
+    style: { color: '#7c3aed', weight: 3, fill: false, opacity: 0.9 },
+    interactive: false
+  }).addTo(map);
 }
 
 // ================================================================
