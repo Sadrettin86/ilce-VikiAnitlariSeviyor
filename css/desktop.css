@@ -1,12 +1,12 @@
 /* ================================================================
-   desktop.css — Masaüstü stilleri (min-width: 769px)
+   desktop.css — Masaüstü (min-width: 769px)
    ================================================================ */
 
 @media (min-width: 769px) {
-  #sidebar   { display: flex; }
-  #stats     { display: block; }
-  #search-box { max-width: 280px; }
-
-  /* Kontrol paneli sidebar solunda */
-  #map-controls { right: 370px; } /* sidebar genişliği kadar sol */
+  /* Sidebar aktif olunca flex ile gösterilir (JS style.display=flex) */
+  #sidebar {
+    width: 320px;
+    border-left: none;
+    border-right: 1px solid #ccc;
+  }
 }
