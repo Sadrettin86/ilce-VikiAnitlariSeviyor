@@ -3,13 +3,17 @@
 // ================================================================
 
 import { GEOJSON_URL, PROV_URL, RELATIONS_URL }                    from "./config.js";
-import { fetchDistrictItems, fetchAdminPoints }                    from "./wikidata.js";
+import { fetchDistrictItems, fetchAdminPoints, fetchPointsInBounds } from "./wikidata.js";
 import { renderProvinces, renderDistricts, refreshDistrictLayer,
          highlightDistrict, getProvBounds,
          highlightProvLayer, showAdminMarker, removeAdminMarkers,
-         toggleLocate, toggleLayer, zoomIn, zoomOut }              from "./map.js";
+         toggleLocate, toggleLayer, zoomIn, zoomOut,
+         hideAllLayers, showAllLayers,
+         showPointMarkers, clearPointMarkers,
+         getMapBounds, getMapZoom, onMapMoveEnd, offMapMoveEnd }    from "./map.js";
 import { initSidebar, openSidebar, closeSidebar, renderItems,
          setItemFilter, toggleAccordion, openQidFromMap,
+         renderPointsList, showFilterBtns,
          setOverlay, hideOverlay }                                  from "./sidebar.js";
 
 // ----------------------------------------------------------------
@@ -184,10 +188,67 @@ async function onDistrictClick(idx) {
 }
 
 // ----------------------------------------------------------------
-// GLOBAL HANDLERS
+// NOKTA MODU
 // ----------------------------------------------------------------
+let pointsMode   = false;
+let pointsFetching = false;
+let pointsDebounce = null;
+
+async function updatePointsView() {
+  if (!pointsMode) return;
+  const zoom = getMapZoom();
+  if (zoom < 13) {
+    clearPointMarkers();
+    renderPointsList([]);
+    return;
+  }
+  if (pointsFetching) return;
+  pointsFetching = true;
+  const b = getMapBounds();
+  const items = await fetchPointsInBounds(
+    b.getSouth(), b.getWest(), b.getNorth(), b.getEast()
+  );
+  pointsFetching = false;
+  if (!pointsMode) return; // mod kapandıysa iptal
+  showPointMarkers(items, qid => {
+    if (window._sidebarOpenQid) window._sidebarOpenQid(qid);
+  });
+  renderPointsList(items);
+}
+
+function onMapMove() {
+  if (!pointsMode) return;
+  clearTimeout(pointsDebounce);
+  pointsDebounce = setTimeout(updatePointsView, 600);
+}
+
+export function togglePointsMode() {
+  pointsMode = !pointsMode;
+  const btn = document.getElementById('btn-mode');
+
+  if (pointsMode) {
+    // Modu aç
+    hideAllLayers();
+    closeSidebar();
+    removeAdminMarkers();
+    showFilterBtns();
+    if (btn) { btn.classList.add('active'); btn.title = 'İl/ilçe moduna dön'; }
+    onMapMoveEnd(onMapMove);
+    updatePointsView();
+  } else {
+    // Modu kapat
+    offMapMoveEnd(onMapMove);
+    clearPointMarkers();
+    clearTimeout(pointsDebounce);
+    closeSidebar();
+    showFilterBtns();
+    showAllLayers();
+    if (btn) { btn.classList.remove('active'); btn.title = 'İl/ilçe modunu kapat'; }
+  }
+}
 window._sel             = (idx) => onDistrictClick(idx);
 window._sidebarOpenQid  = (qid) => openQidFromMap(qid);
+window._pointSel        = (qid) => openQidFromMap(qid);
 window._qSel        = (qid) => {
   toggleAccordion(qid);
   const relId    = String(state.features[state.activeIdx]?.properties?.relation_id || '');
@@ -197,11 +258,12 @@ window._qSel        = (qid) => {
     history.replaceState(null, '', hash);
   }
 };
-window.setItemFilter= (f, btn) => setItemFilter(f);
-window.toggleLocate = () => toggleLocate();
-window.toggleLayer  = () => toggleLayer();
-window.zoomIn       = () => zoomIn();
-window.zoomOut      = () => zoomOut();
+window.setItemFilter    = (f, btn) => setItemFilter(f);
+window.toggleLocate     = () => toggleLocate();
+window.toggleLayer      = () => toggleLayer();
+window.togglePointsMode = () => togglePointsMode();
+window.zoomIn           = () => zoomIn();
+window.zoomOut          = () => zoomOut();
 
 // ----------------------------------------------------------------
 // BAŞLAT
