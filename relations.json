@@ -1,0 +1,6806 @@
+{
+  "282342": {
+    "qid": "Q430693",
+    "label": "Nevşehir",
+    "commonsCategory": "Nevşehir Province",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Nevşehir Province"
+  },
+  "1727032": {
+    "qid": "Q1004462",
+    "label": "Korkuteli",
+    "commonsCategory": "Korkuteli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Korkuteli"
+  },
+  "1727186": {
+    "qid": "Q1004471",
+    "label": "Kumluca",
+    "commonsCategory": "Kumluca",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kumluca"
+  },
+  "1727536": {
+    "qid": "Q1012849",
+    "label": "Serik",
+    "commonsCategory": "Serik",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Serik"
+  },
+  "1727264": {
+    "qid": "Q1012894",
+    "label": "Finike",
+    "commonsCategory": "Finike",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Finike"
+  },
+  "1727263": {
+    "qid": "Q1013462",
+    "label": "Elmalı",
+    "commonsCategory": "Elmalı District",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Elmalı District"
+  },
+  "1727454": {
+    "qid": "Q1027553",
+    "label": "Döşemealtı",
+    "commonsCategory": "Döşemealtı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Döşemealtı"
+  },
+  "1727535": {
+    "qid": "Q1503514",
+    "label": "Muratpaşa",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1727384": {
+    "qid": "Q1783599",
+    "label": "Konyaaltı",
+    "commonsCategory": "Konyaaltı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Konyaaltı"
+  },
+  "1273950": {
+    "qid": "Q130539",
+    "label": "Karacabey",
+    "commonsCategory": "Karacabey",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karacabey"
+  },
+  "1273931": {
+    "qid": "Q217125",
+    "label": "İznik",
+    "commonsCategory": "İznik",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İznik"
+  },
+  "1273938": {
+    "qid": "Q343973",
+    "label": "İnegöl",
+    "commonsCategory": "İnegöl",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İnegöl"
+  },
+  "1273947": {
+    "qid": "Q719537",
+    "label": "Mustafakemalpaşa",
+    "commonsCategory": "Mustafakemalpaşa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Mustafakemalpaşa"
+  },
+  "1273958": {
+    "qid": "Q753752",
+    "label": "Gemlik",
+    "commonsCategory": "Gemlik",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gemlik"
+  },
+  "1273953": {
+    "qid": "Q856171",
+    "label": "Mudanya",
+    "commonsCategory": "Mudanya",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Mudanya"
+  },
+  "1273933": {
+    "qid": "Q1012836",
+    "label": "Orhangazi",
+    "commonsCategory": "Orhangazi",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Orhangazi"
+  },
+  "1273954": {
+    "qid": "Q1023140",
+    "label": "Osmangazi",
+    "commonsCategory": "Osmangazi, Bursa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Osmangazi, Bursa"
+  },
+  "1273951": {
+    "qid": "Q1948420",
+    "label": "Orhaneli",
+    "commonsCategory": "Orhaneli, Bursa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Orhaneli, Bursa"
+  },
+  "1273936": {
+    "qid": "Q1994764",
+    "label": "Yenişehir",
+    "commonsCategory": "Yenişehir, Bursa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yenişehir, Bursa"
+  },
+  "1273952": {
+    "qid": "Q2183942",
+    "label": "Nilüfer",
+    "commonsCategory": "Nilüfer, Bursa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Nilüfer, Bursa"
+  },
+  "1273957": {
+    "qid": "Q2384475",
+    "label": "Gürsu",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1273944": {
+    "qid": "Q2473756",
+    "label": "Büyükorhan",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1273941": {
+    "qid": "Q2473777",
+    "label": "Keles",
+    "commonsCategory": "Keles",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Keles"
+  },
+  "1273945": {
+    "qid": "Q2473998",
+    "label": "Harmancık",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1273955": {
+    "qid": "Q2598734",
+    "label": "Yıldırım",
+    "commonsCategory": "Yıldırım, Bursa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yıldırım, Bursa"
+  },
+  "1273939": {
+    "qid": "Q2607431",
+    "label": "Kestel",
+    "commonsCategory": "Kestel, Bursa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kestel, Bursa"
+  },
+  "1825792": {
+    "qid": "Q168197",
+    "label": "Adıyaman",
+    "commonsCategory": "Adıyaman",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Adıyaman"
+  },
+  "1825796": {
+    "qid": "Q116449235",
+    "label": "Çelikhan ilçesi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1825793": {
+    "qid": "Q15989053",
+    "label": "Kahta (ilçe)",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1389197": {
+    "qid": "Q519859",
+    "label": "Gölbaşı",
+    "commonsCategory": "Gölbaşı, Adıyaman",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gölbaşı, Adıyaman"
+  },
+  "1825794": {
+    "qid": "Q667098",
+    "label": "Samsat",
+    "commonsCategory": "Samsat",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Samsat"
+  },
+  "1825239": {
+    "qid": "Q816753",
+    "label": "Besni",
+    "commonsCategory": "Besni",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Besni"
+  },
+  "1807479": {
+    "qid": "Q2408119",
+    "label": "Gerger",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1825795": {
+    "qid": "Q1010479",
+    "label": "Sincik",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1825241": {
+    "qid": "Q1023319",
+    "label": "Tut",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1838464": {
+    "qid": "Q193445",
+    "label": "Artvin",
+    "commonsCategory": "Artvin",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Artvin"
+  },
+  "1838467": {
+    "qid": "Q388603",
+    "label": "Şavşat",
+    "commonsCategory": "Şavşat",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Şavşat"
+  },
+  "1838462": {
+    "qid": "Q638539",
+    "label": "Ardanuç",
+    "commonsCategory": "Ardanuç",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ardanuç"
+  },
+  "1838463": {
+    "qid": "Q653312",
+    "label": "Arhavi",
+    "commonsCategory": "Arhavi",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Arhavi"
+  },
+  "1596278": {
+    "qid": "Q657127",
+    "label": "Hopa",
+    "commonsCategory": "Hopa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Hopa"
+  },
+  "1838465": {
+    "qid": "Q894325",
+    "label": "Borçka",
+    "commonsCategory": "Borçka",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Borçka"
+  },
+  "1385155": {
+    "qid": "Q1027153",
+    "label": "Yusufeli",
+    "commonsCategory": "Yusufeli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yusufeli"
+  },
+  "1838466": {
+    "qid": "Q1029774",
+    "label": "Murgul",
+    "commonsCategory": "Murgul",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Murgul"
+  },
+  "8101358": {
+    "qid": "Q4817429",
+    "label": "Kemalpaşa",
+    "commonsCategory": "Kemalpaşa, Artvin",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kemalpaşa, Artvin"
+  },
+  "1726993": {
+    "qid": "Q81643",
+    "label": "Manavgat",
+    "commonsCategory": "Manavgat",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Manavgat"
+  },
+  "1726977": {
+    "qid": "Q171810",
+    "label": "Alanya",
+    "commonsCategory": "Alanya",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Alanya"
+  },
+  "1727262": {
+    "qid": "Q188950",
+    "label": "Demre",
+    "commonsCategory": "Demre",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Demre"
+  },
+  "1727292": {
+    "qid": "Q217047",
+    "label": "Kemer",
+    "commonsCategory": "Kemer",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kemer"
+  },
+  "1726981": {
+    "qid": "Q327508",
+    "label": "Gündoğmuş",
+    "commonsCategory": "Gündoğmuş",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gündoğmuş"
+  },
+  "1726998": {
+    "qid": "Q343180",
+    "label": "İbradı",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1726997": {
+    "qid": "Q421462",
+    "label": "Akseki",
+    "commonsCategory": "Akseki",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Akseki"
+  },
+  "1727534": {
+    "qid": "Q421618",
+    "label": "Aksu",
+    "commonsCategory": "Aksu, Antalya",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Aksu, Antalya"
+  },
+  "1727470": {
+    "qid": "Q727065",
+    "label": "Kepez",
+    "commonsCategory": "Kepez, Antalya",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kepez, Antalya"
+  },
+  "1443174": {
+    "qid": "Q844779",
+    "label": "Gazipaşa",
+    "commonsCategory": "Gazipaşa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gazipaşa"
+  },
+  "1727265": {
+    "qid": "Q1004438",
+    "label": "Kaş",
+    "commonsCategory": "Kaş (town)",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kaş (town)"
+  },
+  "1263753": {
+    "qid": "Q166824",
+    "label": "Afyonkarahisar",
+    "commonsCategory": "Afyonkarahisar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Afyonkarahisar"
+  },
+  "1263742": {
+    "qid": "Q343559",
+    "label": "İhsaniye",
+    "commonsCategory": "İhsaniye",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İhsaniye"
+  },
+  "1263745": {
+    "qid": "Q796992",
+    "label": "Bayat",
+    "commonsCategory": "Bayat, Afyonkarahisar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bayat, Afyonkarahisar"
+  },
+  "1263741": {
+    "qid": "Q933815",
+    "label": "Dinar",
+    "commonsCategory": "Dinar, Afyonkarahisar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Dinar, Afyonkarahisar"
+  },
+  "1263755": {
+    "qid": "Q1012846",
+    "label": "Sandıklı",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1815262": {
+    "qid": "Q211817",
+    "label": "Bozcaada",
+    "commonsCategory": "Bozcaada",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bozcaada"
+  },
+  "1816957": {
+    "qid": "Q16698797",
+    "label": "Ezine",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1263748": {
+    "qid": "Q1905717",
+    "label": "Başmakçı",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1263757": {
+    "qid": "Q1911759",
+    "label": "Emirdağ",
+    "commonsCategory": "Emirdağ",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Emirdağ"
+  },
+  "1263743": {
+    "qid": "Q1915489",
+    "label": "Çay",
+    "commonsCategory": "Çay",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çay"
+  },
+  "1263749": {
+    "qid": "Q1915508",
+    "label": "Bolvadin",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1263752": {
+    "qid": "Q1947477",
+    "label": "İscehisar",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1263754": {
+    "qid": "Q1947545",
+    "label": "Şuhut",
+    "commonsCategory": "Şuhut",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Şuhut"
+  },
+  "1263747": {
+    "qid": "Q1948398",
+    "label": "Çobanlar",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1824754": {
+    "qid": "Q2365599",
+    "label": "Kızılören",
+    "commonsCategory": "Kızılören",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kızılören"
+  },
+  "1263751": {
+    "qid": "Q2672686",
+    "label": "Dazkırı",
+    "commonsCategory": "Dazkırı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Dazkırı"
+  },
+  "1263744": {
+    "qid": "Q2672697",
+    "label": "Hocalar",
+    "commonsCategory": "Hocalar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Hocalar"
+  },
+  "1263746": {
+    "qid": "Q2672705",
+    "label": "Evciler",
+    "commonsCategory": "Evciler",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Evciler"
+  },
+  "1263750": {
+    "qid": "Q2674205",
+    "label": "Sultandağı",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1263756": {
+    "qid": "Q2744945",
+    "label": "Sinanpaşa",
+    "commonsCategory": "Sinanpaşa, Afyonkarahisar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sinanpaşa, Afyonkarahisar"
+  },
+  "1837141": {
+    "qid": "Q170532",
+    "label": "Amasya",
+    "commonsCategory": "Amasya",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Amasya"
+  },
+  "1837145": {
+    "qid": "Q225506",
+    "label": "Taşova",
+    "commonsCategory": "Taşova",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Taşova"
+  },
+  "1837144": {
+    "qid": "Q1922386",
+    "label": "Suluova",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1837143": {
+    "qid": "Q958135",
+    "label": "Merzifon",
+    "commonsCategory": "Merzifon",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Merzifon"
+  },
+  "1724394": {
+    "qid": "Q2248859",
+    "label": "Gümüşhacıköy",
+    "commonsCategory": "Gümüşhacıköy",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gümüşhacıköy"
+  },
+  "1724395": {
+    "qid": "Q2670691",
+    "label": "Hamamözü",
+    "commonsCategory": "Hamamözü",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Hamamözü"
+  },
+  "1837142": {
+    "qid": "Q2670770",
+    "label": "Göynücek",
+    "commonsCategory": "Göynücek",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Göynücek"
+  },
+  "1561849": {
+    "qid": "Q210292",
+    "label": "Yozgat",
+    "commonsCategory": "Yozgat",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yozgat"
+  },
+  "1815219": {
+    "qid": "Q1023153",
+    "label": "Eceabat",
+    "commonsCategory": "Eceabat",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Eceabat"
+  },
+  "1780615": {
+    "qid": "Q509324",
+    "label": "Patnos",
+    "commonsCategory": "Patnos",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Patnos"
+  },
+  "1837706": {
+    "qid": "Q849535",
+    "label": "Doğubayazıt",
+    "commonsCategory": "Doğubayazıt",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Doğubayazıt"
+  },
+  "1780207": {
+    "qid": "Q918800",
+    "label": "Eleşkirt",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1837705": {
+    "qid": "Q932913",
+    "label": "Diyadin",
+    "commonsCategory": "Diyadin",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Diyadin"
+  },
+  "1837708": {
+    "qid": "Q1023307",
+    "label": "Taşlıçay",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1837707": {
+    "qid": "Q1025417",
+    "label": "Hamur",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1780622": {
+    "qid": "Q1727597",
+    "label": "Tutak",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1249250": {
+    "qid": "Q185346",
+    "label": "Ceyhan",
+    "commonsCategory": "Ceyhan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ceyhan"
+  },
+  "1249253": {
+    "qid": "Q272948",
+    "label": "Çukurova",
+    "commonsCategory": "Çukurova, Adana",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çukurova, Adana"
+  },
+  "1249260": {
+    "qid": "Q343879",
+    "label": "İmamoğlu",
+    "commonsCategory": "İmamoğlu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İmamoğlu"
+  },
+  "1249254": {
+    "qid": "Q376854",
+    "label": "Karataş",
+    "commonsCategory": "Karataş",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karataş"
+  },
+  "1249257": {
+    "qid": "Q524349",
+    "label": "Seyhan",
+    "commonsCategory": "Seyhan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Seyhan"
+  },
+  "1249251": {
+    "qid": "Q533294",
+    "label": "Karaisalı",
+    "commonsCategory": "Karaisalı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karaisalı"
+  },
+  "1249255": {
+    "qid": "Q765123",
+    "label": "Yüreğir",
+    "commonsCategory": "Yüreğir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yüreğir"
+  },
+  "1249246": {
+    "qid": "Q911286",
+    "label": "Aladağ",
+    "commonsCategory": "Aladağ",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Aladağ"
+  },
+  "1249252": {
+    "qid": "Q926426",
+    "label": "Kozan",
+    "commonsCategory": "Kozan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kozan"
+  },
+  "1249259": {
+    "qid": "Q939243",
+    "label": "Yumurtalık",
+    "commonsCategory": "Yumurtalık",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yumurtalık"
+  },
+  "1249256": {
+    "qid": "Q1004432",
+    "label": "Pozantı",
+    "commonsCategory": "Pozantı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Pozantı"
+  },
+  "1249258": {
+    "qid": "Q1004480",
+    "label": "Tufanbeyli",
+    "commonsCategory": "Tufanbeyli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Tufanbeyli"
+  },
+  "1249249": {
+    "qid": "Q1017381",
+    "label": "Saimbeyli",
+    "commonsCategory": "Saimbeyli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Saimbeyli"
+  },
+  "1249247": {
+    "qid": "Q1430729",
+    "label": "Sarıçam",
+    "commonsCategory": "Sarıçam",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sarıçam"
+  },
+  "1249248": {
+    "qid": "Q1430807",
+    "label": "Feke",
+    "commonsCategory": "Feke",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Feke"
+  },
+  "1561854": {
+    "qid": "Q388673",
+    "label": "Şefaatli",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1561850": {
+    "qid": "Q659435",
+    "label": "Sarıkaya",
+    "commonsCategory": "Sarıkaya, Yozgat",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sarıkaya, Yozgat"
+  },
+  "1561851": {
+    "qid": "Q763824",
+    "label": "Çekerek",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1561856": {
+    "qid": "Q1004526",
+    "label": "Sorgun",
+    "commonsCategory": "Sorgun, Yozgat",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sorgun, Yozgat"
+  },
+  "1240430": {
+    "qid": "Q1012911",
+    "label": "Yerköy",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1559325": {
+    "qid": "Q1859513",
+    "label": "Akdağmadeni",
+    "commonsCategory": "Akdağmadeni",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Akdağmadeni"
+  },
+  "1561855": {
+    "qid": "Q1869200",
+    "label": "Boğazlıyan",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1561853": {
+    "qid": "Q2225384",
+    "label": "Çayıralan",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1561848": {
+    "qid": "Q2367349",
+    "label": "Çandır",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1561846": {
+    "qid": "Q2372316",
+    "label": "Saraykent",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1561847": {
+    "qid": "Q2674100",
+    "label": "Yenifakılı",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1561852": {
+    "qid": "Q2874885",
+    "label": "Aydıncık",
+    "commonsCategory": "Aydıncık, Yozgat",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Aydıncık, Yozgat"
+  },
+  "1561845": {
+    "qid": "Q3056065",
+    "label": "Kadışehri",
+    "commonsCategory": "Kadışehri",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kadışehri"
+  },
+  "1779035": {
+    "qid": "Q272362",
+    "label": "Çaldıran",
+    "commonsCategory": "Çaldıran",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çaldıran"
+  },
+  "1778679": {
+    "qid": "Q272667",
+    "label": "Çatak",
+    "commonsCategory": "Çatak",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çatak"
+  },
+  "1778677": {
+    "qid": "Q285420",
+    "label": "Edremit",
+    "commonsCategory": "Edremit, Van",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Edremit, Van"
+  },
+  "1779036": {
+    "qid": "Q307726",
+    "label": "Özalp",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1779032": {
+    "qid": "Q695365",
+    "label": "Erciş",
+    "commonsCategory": "Erciş",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Erciş"
+  },
+  "1778676": {
+    "qid": "Q803679",
+    "label": "Bahçesaray",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1778014": {
+    "qid": "Q812759",
+    "label": "Başkale",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1779033": {
+    "qid": "Q1000878",
+    "label": "Muradiye",
+    "commonsCategory": "Muradiye",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Muradiye"
+  },
+  "1778678": {
+    "qid": "Q1004597",
+    "label": "Gevaş",
+    "commonsCategory": "Gevaş",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gevaş"
+  },
+  "1779034": {
+    "qid": "Q1019904",
+    "label": "Saray",
+    "commonsCategory": "Saray, Van",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Saray, Van"
+  },
+  "1778557": {
+    "qid": "Q1562063",
+    "label": "Gürpınar",
+    "commonsCategory": "Gürpınar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gürpınar"
+  },
+  "1238969": {
+    "qid": "Q208006",
+    "label": "Bilecik",
+    "commonsCategory": "Bilecik",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bilecik"
+  },
+  "1238965": {
+    "qid": "Q49101408",
+    "label": "Bozüyük İlçesi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1238963": {
+    "qid": "Q13970966",
+    "label": "Osmaneli İlçesi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1238966": {
+    "qid": "Q1911884",
+    "label": "Söğüt İlçesi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1238962": {
+    "qid": "Q3056035",
+    "label": "Yenipazar",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1238967": {
+    "qid": "Q49110545",
+    "label": "İnhisar İlçesi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1238968": {
+    "qid": "Q3056115",
+    "label": "Pazaryeri",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1238964": {
+    "qid": "Q49103887",
+    "label": "Gölpazarı İlçesi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1280048": {
+    "qid": "Q211811",
+    "label": "Burdur",
+    "commonsCategory": "Burdur",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Burdur"
+  },
+  "1280050": {
+    "qid": "Q272692",
+    "label": "Çavdır",
+    "commonsCategory": "Çavdır",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çavdır"
+  },
+  "1280043": {
+    "qid": "Q272779",
+    "label": "Çeltikçi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1280045": {
+    "qid": "Q447230",
+    "label": "Altınyayla",
+    "commonsCategory": "Altınyayla, Burdur",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Altınyayla, Burdur"
+  },
+  "1280042": {
+    "qid": "Q581187",
+    "label": "Bucak",
+    "commonsCategory": "Bucak",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bucak"
+  },
+  "1280041": {
+    "qid": "Q794714",
+    "label": "Ağlasun",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1280047": {
+    "qid": "Q990215",
+    "label": "Gölhisar",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1280051": {
+    "qid": "Q1014443",
+    "label": "Karamanlı",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1280046": {
+    "qid": "Q1023156",
+    "label": "Kemer",
+    "commonsCategory": "Kemer, Burdur",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kemer, Burdur"
+  },
+  "1280044": {
+    "qid": "Q1582858",
+    "label": "Yeşilova",
+    "commonsCategory": "Yeşilova",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yeşilova"
+  },
+  "1280049": {
+    "qid": "Q1788162",
+    "label": "Tefenni",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1836192": {
+    "qid": "Q2369670",
+    "label": "Genç İlçesi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1836191": {
+    "qid": "Q1812528",
+    "label": "Bingöl İlçesi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1836190": {
+    "qid": "Q347084",
+    "label": "Adaklı",
+    "commonsCategory": "Adaklı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Adaklı"
+  },
+  "1836196": {
+    "qid": "Q472878",
+    "label": "Yayladere",
+    "commonsCategory": "Yayladere",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yayladere"
+  },
+  "1836195": {
+    "qid": "Q49109081",
+    "label": "Solhan İlçesi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1836194": {
+    "qid": "Q1023262",
+    "label": "Kiğı",
+    "commonsCategory": "Kiğı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kiğı"
+  },
+  "1836193": {
+    "qid": "Q1023304",
+    "label": "Karlıova",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1836197": {
+    "qid": "Q1023328",
+    "label": "Yedisu",
+    "commonsCategory": "Yedisu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yedisu"
+  },
+  "3678626": {
+    "qid": "Q16848468",
+    "label": "İpekyolu",
+    "commonsCategory": "İpekyolu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İpekyolu"
+  },
+  "1778550": {
+    "qid": "Q16968873",
+    "label": "Tuşba",
+    "commonsCategory": "Tuşba",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Tuşba"
+  },
+  "1814782": {
+    "qid": "Q177298",
+    "label": "Erdek",
+    "commonsCategory": "Erdek",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Erdek"
+  },
+  "1820912": {
+    "qid": "Q1826014",
+    "label": "Bandırma",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1814983": {
+    "qid": "Q793383",
+    "label": "Ayvalık",
+    "commonsCategory": "Ayvalık",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ayvalık"
+  },
+  "1814783": {
+    "qid": "Q957486",
+    "label": "Marmara",
+    "commonsCategory": "Marmara, Balıkesir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Marmara, Balıkesir"
+  },
+  "1820913": {
+    "qid": "Q2329262",
+    "label": "Burhaniye (ilçe)",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1820649": {
+    "qid": "Q1014114",
+    "label": "Dursunbey",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1815033": {
+    "qid": "Q1021818",
+    "label": "Edremit",
+    "commonsCategory": "Edremit, Balıkesir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Edremit, Balıkesir"
+  },
+  "1820788": {
+    "qid": "Q1023133",
+    "label": "Susurluk",
+    "commonsCategory": "Susurluk",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Susurluk"
+  },
+  "1820914": {
+    "qid": "Q2046382",
+    "label": "Gönen",
+    "commonsCategory": "Gönen",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gönen"
+  },
+  "1821207": {
+    "qid": "Q2344927",
+    "label": "Sındırgı",
+    "commonsCategory": "Sındırgı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sındırgı"
+  },
+  "1820741": {
+    "qid": "Q2248715",
+    "label": "Bigadiç",
+    "commonsCategory": "Bigadiç",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bigadiç"
+  },
+  "1819457": {
+    "qid": "Q2384358",
+    "label": "Savaştepe",
+    "commonsCategory": "Savaştepe",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Savaştepe"
+  },
+  "1819456": {
+    "qid": "Q3165044",
+    "label": "Havran (ilçe)",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1820708": {
+    "qid": "Q2447988",
+    "label": "Kepsut",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1820787": {
+    "qid": "Q2473795",
+    "label": "Manyas",
+    "commonsCategory": "Manyas, Balıkesir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Manyas, Balıkesir"
+  },
+  "1815035": {
+    "qid": "Q2598753",
+    "label": "İvrindi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1815034": {
+    "qid": "Q2598762",
+    "label": "Gömeç",
+    "commonsCategory": "Gömeç",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gömeç"
+  },
+  "1588165": {
+    "qid": "Q2598790",
+    "label": "Balya",
+    "commonsCategory": "Balya, Balıkesir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Balya, Balıkesir"
+  },
+  "1820740": {
+    "qid": "Q16028029",
+    "label": "Altıeylül",
+    "commonsCategory": "Altıeylül",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Altıeylül"
+  },
+  "3666900": {
+    "qid": "Q16852358",
+    "label": "Karesi",
+    "commonsCategory": "Karesi, Balıkesir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karesi, Balıkesir"
+  },
+  "1842145": {
+    "qid": "Q159835",
+    "label": "Batman",
+    "commonsCategory": "Batman, Turkey",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Batman, Turkey"
+  },
+  "1842148": {
+    "qid": "Q477171",
+    "label": "Kozluk",
+    "commonsCategory": "Kozluk",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kozluk"
+  },
+  "1361162": {
+    "qid": "Q756957",
+    "label": "Hasankeyf",
+    "commonsCategory": "Hasankeyf",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Hasankeyf"
+  },
+  "1842146": {
+    "qid": "Q854667",
+    "label": "Beşiri",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1842147": {
+    "qid": "Q1023286",
+    "label": "Gercüş",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1842149": {
+    "qid": "Q2225836",
+    "label": "Sason",
+    "commonsCategory": "Sason",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sason"
+  },
+  "1651536": {
+    "qid": "Q202188",
+    "label": "Ardahan",
+    "commonsCategory": "Ardahan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ardahan"
+  },
+  "1649770": {
+    "qid": "Q272985",
+    "label": "Çıldır",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1651532": {
+    "qid": "Q1004454",
+    "label": "Göle",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1651534": {
+    "qid": "Q1004613",
+    "label": "Posof",
+    "commonsCategory": "Posof",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Posof"
+  },
+  "1651533": {
+    "qid": "Q1014299",
+    "label": "Hanak",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1651535": {
+    "qid": "Q1025410",
+    "label": "Damal",
+    "commonsCategory": "Damal",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Damal"
+  },
+  "1795630": {
+    "qid": "Q2680945",
+    "label": "Bolu",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1795632": {
+    "qid": "Q49103672",
+    "label": "Gerede İlçesi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1392573": {
+    "qid": "Q967446",
+    "label": "Mudurnu",
+    "commonsCategory": "Mudurnu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Mudurnu"
+  },
+  "1795631": {
+    "qid": "Q2143455",
+    "label": "Dörtdivan",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1795635": {
+    "qid": "Q2093031",
+    "label": "Seben",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1795633": {
+    "qid": "Q2672692",
+    "label": "Kıbrıscık",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1795636": {
+    "qid": "Q2674058",
+    "label": "Yeniçağa",
+    "commonsCategory": "Yeniçağa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yeniçağa"
+  },
+  "1392574": {
+    "qid": "Q2901109",
+    "label": "Göynük",
+    "commonsCategory": "Göynük",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Göynük"
+  },
+  "1795634": {
+    "qid": "Q3123478",
+    "label": "Mengen",
+    "commonsCategory": "Mengen, Bolu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Mengen, Bolu"
+  },
+  "1814656": {
+    "qid": "Q211952",
+    "label": "Kuşadası",
+    "commonsCategory": "Kuşadası",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kuşadası"
+  },
+  "1812967": {
+    "qid": "Q272856",
+    "label": "Çine",
+    "commonsCategory": "Çine",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çine"
+  },
+  "1814657": {
+    "qid": "Q343949",
+    "label": "İncirliova",
+    "commonsCategory": "İncirliova",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İncirliova"
+  },
+  "1813256": {
+    "qid": "Q637120",
+    "label": "Nazilli",
+    "commonsCategory": "Nazilli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Nazilli"
+  },
+  "1813255": {
+    "qid": "Q896138",
+    "label": "Bozdoğan",
+    "commonsCategory": "Bozdoğan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bozdoğan"
+  },
+  "1814655": {
+    "qid": "Q958144",
+    "label": "Didim",
+    "commonsCategory": "Didim",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Didim"
+  },
+  "1246169": {
+    "qid": "Q1002672",
+    "label": "Buharkent",
+    "commonsCategory": "Buharkent",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Buharkent"
+  },
+  "1812965": {
+    "qid": "Q1004448",
+    "label": "Germencik",
+    "commonsCategory": "Germencik",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Germencik"
+  },
+  "1246164": {
+    "qid": "Q1004534",
+    "label": "Kuyucak",
+    "commonsCategory": "Kuyucak",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kuyucak"
+  },
+  "1612669": {
+    "qid": "Q1012854",
+    "label": "Söke",
+    "commonsCategory": "Söke",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Söke"
+  },
+  "1813052": {
+    "qid": "Q1025421",
+    "label": "Köşk",
+    "commonsCategory": "Köşk, Turkey",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Köşk, Turkey"
+  },
+  "1812966": {
+    "qid": "Q1635301",
+    "label": "Koçarlı",
+    "commonsCategory": "Koçarlı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Koçarlı"
+  },
+  "1701079": {
+    "qid": "Q1728892",
+    "label": "Karacasu",
+    "commonsCategory": "Karacasu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karacasu"
+  },
+  "1622039": {
+    "qid": "Q1734375",
+    "label": "Karpuzlu",
+    "commonsCategory": "Karpuzlu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karpuzlu"
+  },
+  "1813257": {
+    "qid": "Q1858565",
+    "label": "Sultanhisar",
+    "commonsCategory": "Sultanhisar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sultanhisar"
+  },
+  "1813273": {
+    "qid": "Q1898069",
+    "label": "Yenipazar",
+    "commonsCategory": "Yenipazar, Aydın",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yenipazar, Aydın"
+  },
+  "1250954": {
+    "qid": "Q127389",
+    "label": "Beyşehir",
+    "commonsCategory": "Beyşehir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Beyşehir"
+  },
+  "1250956": {
+    "qid": "Q169974",
+    "label": "Akşehir",
+    "commonsCategory": "Akşehir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Akşehir"
+  },
+  "1250946": {
+    "qid": "Q349367",
+    "label": "Taşkent",
+    "commonsCategory": "Taşkent",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Taşkent"
+  },
+  "1250950": {
+    "qid": "Q349498",
+    "label": "Hadim",
+    "commonsCategory": "Hadim",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Hadim"
+  },
+  "1250964": {
+    "qid": "Q389815",
+    "label": "Ahırlı",
+    "commonsCategory": "Ahırlı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ahırlı"
+  },
+  "1814654": {
+    "qid": "Q16836589",
+    "label": "Efeler",
+    "commonsCategory": "Efeler",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Efeler"
+  },
+  "1816280": {
+    "qid": "Q199712",
+    "label": "Çanakkale",
+    "commonsCategory": "Çanakkale",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çanakkale"
+  },
+  "1815220": {
+    "qid": "Q216907",
+    "label": "Gelibolu",
+    "commonsCategory": "Gelibolu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gelibolu"
+  },
+  "1816958": {
+    "qid": "Q272568",
+    "label": "Çan",
+    "commonsCategory": "Çan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çan"
+  },
+  "1815261": {
+    "qid": "Q793377",
+    "label": "Ayvacık",
+    "commonsCategory": "Ayvacık, Çanakkale",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ayvacık, Çanakkale"
+  },
+  "1816956": {
+    "qid": "Q812617",
+    "label": "Bayramiç",
+    "commonsCategory": "Bayramiç",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bayramiç"
+  },
+  "1593709": {
+    "qid": "Q859621",
+    "label": "Biga",
+    "commonsCategory": "Biga",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Biga"
+  },
+  "1815245": {
+    "qid": "Q1026657",
+    "label": "Lapseki",
+    "commonsCategory": "Lapseki",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Lapseki"
+  },
+  "1815263": {
+    "qid": "Q658437",
+    "label": "Gökçeada",
+    "commonsCategory": "Gökçeada",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gökçeada"
+  },
+  "1589927": {
+    "qid": "Q1758492",
+    "label": "Yenice",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1606205": {
+    "qid": "Q272352",
+    "label": "Çal",
+    "commonsCategory": "Çal",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çal"
+  },
+  "1606202": {
+    "qid": "Q272634",
+    "label": "Çardak",
+    "commonsCategory": "Çardak",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çardak"
+  },
+  "1606210": {
+    "qid": "Q272867",
+    "label": "Çivril",
+    "commonsCategory": "Çivril",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çivril"
+  },
+  "1605790": {
+    "qid": "Q345120",
+    "label": "Acıpayam",
+    "commonsCategory": "Acıpayam",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Acıpayam"
+  },
+  "1607200": {
+    "qid": "Q370464",
+    "label": "Kale",
+    "commonsCategory": "Kale, Denizli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kale, Denizli"
+  },
+  "1606201": {
+    "qid": "Q420157",
+    "label": "Pamukkale",
+    "commonsCategory": "Pamukkale, Denizli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Pamukkale, Denizli"
+  },
+  "1606200": {
+    "qid": "Q797558",
+    "label": "Babadağ",
+    "commonsCategory": "Babadağ",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Babadağ"
+  },
+  "1606203": {
+    "qid": "Q815026",
+    "label": "Bekilli",
+    "commonsCategory": "Bekilli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bekilli"
+  },
+  "1606209": {
+    "qid": "Q853055",
+    "label": "Beyağaç",
+    "commonsCategory": "Beyağaç",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Beyağaç"
+  },
+  "1606199": {
+    "qid": "Q896161",
+    "label": "Bozkurt",
+    "commonsCategory": "Bozkurt, Denizli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bozkurt, Denizli"
+  },
+  "1606204": {
+    "qid": "Q1003598",
+    "label": "Buldan",
+    "commonsCategory": "Buldan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Buldan"
+  },
+  "1605440": {
+    "qid": "Q1004555",
+    "label": "Tavas",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "3446022": {
+    "qid": "Q1014103",
+    "label": "Serinhisar",
+    "commonsCategory": "Serinhisar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Serinhisar"
+  },
+  "1606206": {
+    "qid": "Q1023136",
+    "label": "Honaz",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1606208": {
+    "qid": "Q1027171",
+    "label": "Güney",
+    "commonsCategory": "Güney",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Güney"
+  },
+  "1606212": {
+    "qid": "Q1639909",
+    "label": "Sarayköy",
+    "commonsCategory": "Sarayköy",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sarayköy"
+  },
+  "1605791": {
+    "qid": "Q2195108",
+    "label": "Çameli",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1606207": {
+    "qid": "Q2474230",
+    "label": "Baklan",
+    "commonsCategory": "Baklan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Baklan"
+  },
+  "1606211": {
+    "qid": "Q16895027",
+    "label": "Merkezefendi",
+    "commonsCategory": "Merkezefendi",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Merkezefendi"
+  },
+  "1250967": {
+    "qid": "Q532164",
+    "label": "Seydişehir",
+    "commonsCategory": "Seydişehir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Seydişehir"
+  },
+  "1250945": {
+    "qid": "Q996056",
+    "label": "Ereğli",
+    "commonsCategory": "Ereğli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ereğli"
+  },
+  "1250968": {
+    "qid": "Q1253665",
+    "label": "Doğanhisar",
+    "commonsCategory": "Doğanhisar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Doğanhisar"
+  },
+  "1250974": {
+    "qid": "Q1819077",
+    "label": "Hüyük",
+    "commonsCategory": "Hüyük",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Hüyük"
+  },
+  "1250973": {
+    "qid": "Q1914881",
+    "label": "Ilgın",
+    "commonsCategory": "Ilgın",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ilgın"
+  },
+  "280991": {
+    "qid": "Q1922408",
+    "label": "Çumra",
+    "commonsCategory": "Çumra",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çumra"
+  },
+  "1250971": {
+    "qid": "Q1922433",
+    "label": "Cihanbeyli",
+    "commonsCategory": "Cihanbeyli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Cihanbeyli"
+  },
+  "1250961": {
+    "qid": "Q1947554",
+    "label": "Karapınar",
+    "commonsCategory": "Karapınar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karapınar"
+  },
+  "1250969": {
+    "qid": "Q1948486",
+    "label": "Kulu",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1250960": {
+    "qid": "Q2073541",
+    "label": "Sarayönü",
+    "commonsCategory": "Sarayönü, Konya",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sarayönü, Konya"
+  },
+  "1250955": {
+    "qid": "Q2086324",
+    "label": "Bozkır",
+    "commonsCategory": "Bozkır",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bozkır"
+  },
+  "1250965": {
+    "qid": "Q2115563",
+    "label": "Çeltik",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1250952": {
+    "qid": "Q2116467",
+    "label": "Yalıhüyük",
+    "commonsCategory": "Yalıhüyük",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yalıhüyük"
+  },
+  "1250953": {
+    "qid": "Q2218549",
+    "label": "Emirgazi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1250957": {
+    "qid": "Q2313013",
+    "label": "Akören",
+    "commonsCategory": "Akören",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Akören"
+  },
+  "1250962": {
+    "qid": "Q2313597",
+    "label": "Kadınhanı",
+    "commonsCategory": "Kadınhanı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kadınhanı"
+  },
+  "1250970": {
+    "qid": "Q2671048",
+    "label": "Derebucak",
+    "commonsCategory": "Derebucak",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Derebucak"
+  },
+  "1250963": {
+    "qid": "Q2672829",
+    "label": "Altınekin",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1250972": {
+    "qid": "Q2674097",
+    "label": "Selçuklu",
+    "commonsCategory": "Selçuklu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Selçuklu"
+  },
+  "1250959": {
+    "qid": "Q2789550",
+    "label": "Tuzlukçu",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1250947": {
+    "qid": "Q2901077",
+    "label": "Yunak",
+    "commonsCategory": "Yunak",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yunak"
+  },
+  "1250966": {
+    "qid": "Q3023581",
+    "label": "Derbent",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1250958": {
+    "qid": "Q3055997",
+    "label": "Meram",
+    "commonsCategory": "Meram",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Meram"
+  },
+  "1250948": {
+    "qid": "Q3056013",
+    "label": "Güneysınır",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1250951": {
+    "qid": "Q3123558",
+    "label": "Karatay",
+    "commonsCategory": "Karatay, Konya",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karatay, Konya"
+  },
+  "1250949": {
+    "qid": "Q3123561",
+    "label": "Halkapınar",
+    "commonsCategory": "Halkapınar (district)",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Halkapınar (district)"
+  },
+  "1838392": {
+    "qid": "Q127063",
+    "label": "Kars",
+    "commonsCategory": "Kars",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kars"
+  },
+  "1838389": {
+    "qid": "Q424414",
+    "label": "Akyaka",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1838390": {
+    "qid": "Q698806",
+    "label": "Arpaçay",
+    "commonsCategory": "Arpaçay",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Arpaçay"
+  },
+  "1838394": {
+    "qid": "Q844542",
+    "label": "Sarıkamış",
+    "commonsCategory": "Sarıkamış",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sarıkamış"
+  },
+  "1838393": {
+    "qid": "Q990201",
+    "label": "Kağızman",
+    "commonsCategory": "Kağızman",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kağızman"
+  },
+  "1838396": {
+    "qid": "Q1022236",
+    "label": "Susuz",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1838391": {
+    "qid": "Q1027545",
+    "label": "Digor",
+    "commonsCategory": "Digor",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Digor"
+  },
+  "1838395": {
+    "qid": "Q1027550",
+    "label": "Selim",
+    "commonsCategory": "Selim",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Selim"
+  },
+  "1834221": {
+    "qid": "Q43387",
+    "label": "Edirne",
+    "commonsCategory": "Edirne",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Edirne"
+  },
+  "1834586": {
+    "qid": "Q344021",
+    "label": "İpsala",
+    "commonsCategory": "İpsala",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İpsala"
+  },
+  "1834460": {
+    "qid": "Q610751",
+    "label": "Enez",
+    "commonsCategory": "Enez",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Enez"
+  },
+  "1834461": {
+    "qid": "Q655279",
+    "label": "Havsa",
+    "commonsCategory": "Havsa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Havsa"
+  },
+  "1834585": {
+    "qid": "Q775225",
+    "label": "Uzunköprü",
+    "commonsCategory": "Uzunköprü",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Uzunköprü"
+  },
+  "1277696": {
+    "qid": "Q951495",
+    "label": "Keşan",
+    "commonsCategory": "Keşan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Keşan"
+  },
+  "1834584": {
+    "qid": "Q1015330",
+    "label": "Meriç",
+    "commonsCategory": "Meriç",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Meriç"
+  },
+  "1833421": {
+    "qid": "Q1015437",
+    "label": "Lalapaşa",
+    "commonsCategory": "Lalapaşa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Lalapaşa"
+  },
+  "1834222": {
+    "qid": "Q1019897",
+    "label": "Süloğlu",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1252532": {
+    "qid": "Q94593",
+    "label": "Kocaali",
+    "commonsCategory": "Kocaali",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kocaali"
+  },
+  "1836397": {
+    "qid": "Q83531",
+    "label": "Bitlis",
+    "commonsCategory": "Bitlis",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bitlis"
+  },
+  "1836395": {
+    "qid": "Q49100380",
+    "label": "Adilcevaz ilçesi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1836396": {
+    "qid": "Q15981193",
+    "label": "Ahlat İlçesi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1668092": {
+    "qid": "Q475253",
+    "label": "Hizan",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1836400": {
+    "qid": "Q2214840",
+    "label": "Tatvan İlçesi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1836398": {
+    "qid": "Q49103938",
+    "label": "Güroymak İlçesi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1836399": {
+    "qid": "Q1860747",
+    "label": "Mutki İlçesi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1827275": {
+    "qid": "Q172267",
+    "label": "Bodrum",
+    "commonsCategory": "Bodrum",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bodrum"
+  },
+  "1613889": {
+    "qid": "Q177880",
+    "label": "Yatağan",
+    "commonsCategory": "Yatağan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yatağan"
+  },
+  "1827656": {
+    "qid": "Q207998",
+    "label": "Q207998",
+    "commonsCategory": "Fethiye",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Fethiye"
+  },
+  "1827293": {
+    "qid": "Q209908",
+    "label": "Marmaris",
+    "commonsCategory": "Marmaris",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Marmaris"
+  },
+  "1827399": {
+    "qid": "Q847295",
+    "label": "Dalaman",
+    "commonsCategory": "Dalaman",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Dalaman"
+  },
+  "1827276": {
+    "qid": "Q924252",
+    "label": "Milas",
+    "commonsCategory": "Milas",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Milas"
+  },
+  "1645432": {
+    "qid": "Q947051",
+    "label": "Datça",
+    "commonsCategory": "Datça",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Datça"
+  },
+  "1827378": {
+    "qid": "Q988116",
+    "label": "Ortaca",
+    "commonsCategory": "Ortaca",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ortaca"
+  },
+  "1827377": {
+    "qid": "Q993688",
+    "label": "Köyceğiz",
+    "commonsCategory": "Köyceğiz",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Köyceğiz"
+  },
+  "1624125": {
+    "qid": "Q1737217",
+    "label": "Kavaklıdere",
+    "commonsCategory": "Kavaklıdere, Muğla",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kavaklıdere, Muğla"
+  },
+  "1827295": {
+    "qid": "Q1803032",
+    "label": "Ula",
+    "commonsCategory": "Ula, Muğla",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ula, Muğla"
+  },
+  "19258534": {
+    "qid": "Q2254939",
+    "label": "Karaada",
+    "commonsCategory": "Karaada",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karaada"
+  },
+  "3671798": {
+    "qid": "Q6620651",
+    "label": "Seydikemer",
+    "commonsCategory": "Seydikemer",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Seydikemer"
+  },
+  "1827294": {
+    "qid": "Q6817536",
+    "label": "Menteşe",
+    "commonsCategory": "Menteşe",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Menteşe"
+  },
+  "1252526": {
+    "qid": "Q175323",
+    "label": "Adapazarı",
+    "commonsCategory": "Adapazarı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Adapazarı"
+  },
+  "1717633": {
+    "qid": "Q182025",
+    "label": "Aksaray",
+    "commonsCategory": "Aksaray (District)",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Aksaray (District)"
+  },
+  "1252522": {
+    "qid": "Q424435",
+    "label": "Akyazı",
+    "commonsCategory": "Akyazı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Akyazı"
+  },
+  "1252521": {
+    "qid": "Q615088",
+    "label": "Kaynarca",
+    "commonsCategory": "Kaynarca, Sakarya",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kaynarca, Sakarya"
+  },
+  "1252530": {
+    "qid": "Q1011270",
+    "label": "Hendek",
+    "commonsCategory": "Hendek",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Hendek"
+  },
+  "4161128": {
+    "qid": "Q2191303",
+    "label": "Karasu (ilçe)",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1252531": {
+    "qid": "Q1728980",
+    "label": "Karapürçek",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1775627": {
+    "qid": "Q1947514",
+    "label": "Pamukova",
+    "commonsCategory": "Pamukova",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Pamukova"
+  },
+  "1252524": {
+    "qid": "Q2248743",
+    "label": "Geyve",
+    "commonsCategory": "Geyve",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Geyve"
+  },
+  "1252523": {
+    "qid": "Q2248768",
+    "label": "Söğütlü",
+    "commonsCategory": "Söğütlü, Sakarya",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Söğütlü, Sakarya"
+  },
+  "1252527": {
+    "qid": "Q2266583",
+    "label": "Taraklı",
+    "commonsCategory": "Taraklı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Taraklı"
+  },
+  "1252528": {
+    "qid": "Q2340133",
+    "label": "Ferizli",
+    "commonsCategory": "Ferizli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ferizli"
+  },
+  "1775628": {
+    "qid": "Q2384347",
+    "label": "Sapanca",
+    "commonsCategory": "Sapanca",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sapanca"
+  },
+  "1775177": {
+    "qid": "Q3696167",
+    "label": "Arifiye",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "6989045": {
+    "qid": "Q3906617",
+    "label": "Serdivan",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1775571": {
+    "qid": "Q6044732",
+    "label": "Erenler",
+    "commonsCategory": "Erenler",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Erenler"
+  },
+  "8100757": {
+    "qid": "Q657912",
+    "label": "Sultanhanı",
+    "commonsCategory": "Sultanhanı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sultanhanı"
+  },
+  "1717636": {
+    "qid": "Q1004503",
+    "label": "Güzelyurt",
+    "commonsCategory": "Güzelyurt",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Güzelyurt"
+  },
+  "1246396": {
+    "qid": "Q1434794",
+    "label": "Ortaköy",
+    "commonsCategory": "Ortaköy, Aksaray",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ortaköy, Aksaray"
+  },
+  "1713915": {
+    "qid": "Q1846787",
+    "label": "Sarıyahşi",
+    "commonsCategory": "Sarıyahşi",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sarıyahşi"
+  },
+  "1714007": {
+    "qid": "Q1917854",
+    "label": "Eskil",
+    "commonsCategory": "Eskil",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Eskil"
+  },
+  "1717634": {
+    "qid": "Q1948336",
+    "label": "Ağaçören",
+    "commonsCategory": "Ağaçören",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ağaçören"
+  },
+  "1717635": {
+    "qid": "Q1958579",
+    "label": "Gülağaç",
+    "commonsCategory": "Gülağaç",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gülağaç"
+  },
+  "1240898": {
+    "qid": "Q80561",
+    "label": "Antakya",
+    "commonsCategory": "Antakya",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Antakya"
+  },
+  "1240891": {
+    "qid": "Q174341",
+    "label": "İskenderun",
+    "commonsCategory": "İskenderun",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İskenderun"
+  },
+  "1240897": {
+    "qid": "Q447265",
+    "label": "Altınözü",
+    "commonsCategory": "Altınözü",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Altınözü"
+  },
+  "3664512": {
+    "qid": "Q705180",
+    "label": "Arsuz",
+    "commonsCategory": "Arsuz",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Arsuz"
+  },
+  "1240901": {
+    "qid": "Q815399",
+    "label": "Belen",
+    "commonsCategory": "Belen, Hatay",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Belen, Hatay"
+  },
+  "1240896": {
+    "qid": "Q840957",
+    "label": "Samandağ",
+    "commonsCategory": "Samandağ",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Samandağ"
+  },
+  "1240895": {
+    "qid": "Q945375",
+    "label": "Reyhanlı",
+    "commonsCategory": "Reyhanlı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Reyhanlı"
+  },
+  "1240902": {
+    "qid": "Q988324",
+    "label": "Dörtyol",
+    "commonsCategory": "Dörtyol",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Dörtyol"
+  },
+  "1240899": {
+    "qid": "Q1003903",
+    "label": "Hassa",
+    "commonsCategory": "Hassa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Hassa"
+  },
+  "1240892": {
+    "qid": "Q1003948",
+    "label": "Yayladağı",
+    "commonsCategory": "Yayladağı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yayladağı"
+  },
+  "1240894": {
+    "qid": "Q1012929",
+    "label": "Erzin",
+    "commonsCategory": "Erzin",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Erzin"
+  },
+  "1240900": {
+    "qid": "Q1012940",
+    "label": "Kırıkhan",
+    "commonsCategory": "Kırıkhan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kırıkhan"
+  },
+  "1240893": {
+    "qid": "Q1015322",
+    "label": "Kumlu",
+    "commonsCategory": "Kumlu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kumlu"
+  },
+  "3664639": {
+    "qid": "Q2674278",
+    "label": "Payas",
+    "commonsCategory": "Payas",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Payas"
+  },
+  "3663389": {
+    "qid": "Q16834782",
+    "label": "Defne",
+    "commonsCategory": "Defne, Hatay",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Defne, Hatay"
+  },
+  "1665602": {
+    "qid": "Q272978",
+    "label": "Çüngüş",
+    "commonsCategory": "Çüngüş",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çüngüş"
+  },
+  "1404649": {
+    "qid": "Q272992",
+    "label": "Çınar",
+    "commonsCategory": "Çınar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çınar"
+  },
+  "1357023": {
+    "qid": "Q546905",
+    "label": "Bismil",
+    "commonsCategory": "Bismil",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bismil"
+  },
+  "1664708": {
+    "qid": "Q664716",
+    "label": "Sur",
+    "commonsCategory": "Sur, Diyarbakır",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sur, Diyarbakır"
+  },
+  "1665231": {
+    "qid": "Q690433",
+    "label": "Kayapınar",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1665230": {
+    "qid": "Q812731",
+    "label": "Bağlar",
+    "commonsCategory": "Bağlar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bağlar"
+  },
+  "1842160": {
+    "qid": "Q2273905",
+    "label": "Silvan (ilçe)",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1842159": {
+    "qid": "Q955561",
+    "label": "Kulp",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1846362": {
+    "qid": "Q975198",
+    "label": "Hani",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1665091": {
+    "qid": "Q990218",
+    "label": "Yenişehir",
+    "commonsCategory": "Yenişehir, Diyarbakır",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yenişehir, Diyarbakır"
+  },
+  "1846360": {
+    "qid": "Q1003877",
+    "label": "Dicle",
+    "commonsCategory": "Dicle (Diyarbakır)",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Dicle (Diyarbakır)"
+  },
+  "1846363": {
+    "qid": "Q1012828",
+    "label": "Lice",
+    "commonsCategory": "Lice (Diyarbakır)",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Lice (Diyarbakır)"
+  },
+  "1354018": {
+    "qid": "Q1023277",
+    "label": "Kocaköy",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1846361": {
+    "qid": "Q1023322",
+    "label": "Eğil",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1842158": {
+    "qid": "Q1025104",
+    "label": "Hazro",
+    "commonsCategory": "Hazro",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Hazro"
+  },
+  "1665601": {
+    "qid": "Q1911118",
+    "label": "Çermik",
+    "commonsCategory": "Çermik",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çermik"
+  },
+  "1834227": {
+    "qid": "Q206903",
+    "label": "Kırklareli",
+    "commonsCategory": "Kırklareli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kırklareli"
+  },
+  "1835618": {
+    "qid": "Q214670",
+    "label": "Lüleburgaz",
+    "commonsCategory": "Lüleburgaz",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Lüleburgaz"
+  },
+  "1835616": {
+    "qid": "Q268619",
+    "label": "Babaeski",
+    "commonsCategory": "Babaeski",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Babaeski"
+  },
+  "1835621": {
+    "qid": "Q364021",
+    "label": "Vize",
+    "commonsCategory": "Vize",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Vize"
+  },
+  "1835620": {
+    "qid": "Q1003885",
+    "label": "Pınarhisar",
+    "commonsCategory": "Pınarhisar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Pınarhisar"
+  },
+  "1834226": {
+    "qid": "Q1019887",
+    "label": "Kofçaz",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1835619": {
+    "qid": "Q1022161",
+    "label": "Pehlivanköy",
+    "commonsCategory": "Pehlivanköy",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Pehlivanköy"
+  },
+  "1835617": {
+    "qid": "Q1023149",
+    "label": "Demirköy",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1251330": {
+    "qid": "Q483331",
+    "label": "Iğdır",
+    "commonsCategory": "Iğdır",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Iğdır"
+  },
+  "1251329": {
+    "qid": "Q527626",
+    "label": "Aralık",
+    "commonsCategory": "Aralık",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Aralık"
+  },
+  "1251328": {
+    "qid": "Q1000871",
+    "label": "Tuzluca",
+    "commonsCategory": "Tuzluca",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Tuzluca"
+  },
+  "1251331": {
+    "qid": "Q1023272",
+    "label": "Karakoyunlu",
+    "commonsCategory": "Karakoyunlu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karakoyunlu"
+  },
+  "1211492": {
+    "qid": "Q27161",
+    "label": "Körfez",
+    "commonsCategory": "Körfez",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Körfez"
+  },
+  "1694026": {
+    "qid": "Q176086",
+    "label": "Derik",
+    "commonsCategory": "Derik",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Derik"
+  },
+  "1358708": {
+    "qid": "Q179504",
+    "label": "Ömerli",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1694027": {
+    "qid": "Q693929",
+    "label": "Kızıltepe",
+    "commonsCategory": "Kızıltepe",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kızıltepe"
+  },
+  "1692098": {
+    "qid": "Q2314602",
+    "label": "Midyat",
+    "commonsCategory": "Midyat",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Midyat"
+  },
+  "1693940": {
+    "qid": "Q1004602",
+    "label": "Yeşilli",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1361267": {
+    "qid": "Q1004605",
+    "label": "Dargeçit",
+    "commonsCategory": "Dargeçit",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Dargeçit"
+  },
+  "1849197": {
+    "qid": "Q1004614",
+    "label": "Savur",
+    "commonsCategory": "Savur",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Savur"
+  },
+  "1693976": {
+    "qid": "Q1004646",
+    "label": "Mazıdağı",
+    "commonsCategory": "Mazıdağı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Mazıdağı"
+  },
+  "1692099": {
+    "qid": "Q1553052",
+    "label": "Nusaybin",
+    "commonsCategory": "Nusaybin",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Nusaybin"
+  },
+  "1693939": {
+    "qid": "Q16251875",
+    "label": "Artuklu",
+    "commonsCategory": "Artuklu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Artuklu"
+  },
+  "1824951": {
+    "qid": "Q188894",
+    "label": "Kütahya",
+    "commonsCategory": "Kütahya",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kütahya"
+  },
+  "1669549": {
+    "qid": "Q953775",
+    "label": "Şaphane",
+    "commonsCategory": "Şaphane",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Şaphane"
+  },
+  "1824831": {
+    "qid": "Q1859664",
+    "label": "Emet",
+    "commonsCategory": "Emet",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Emet"
+  },
+  "1593755": {
+    "qid": "Q1948344",
+    "label": "Simav",
+    "commonsCategory": "Simav",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Simav"
+  },
+  "1824952": {
+    "qid": "Q1948357",
+    "label": "Tavşanlı",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1668902": {
+    "qid": "Q1958867",
+    "label": "Gediz",
+    "commonsCategory": "Gediz, Kütahya",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gediz, Kütahya"
+  },
+  "1824948": {
+    "qid": "Q2034360",
+    "label": "Altıntaş",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1824811": {
+    "qid": "Q2424690",
+    "label": "Çavdarhisar",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1824949": {
+    "qid": "Q2534870",
+    "label": "Aslanapa",
+    "commonsCategory": "Aslanapa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Aslanapa"
+  },
+  "1671338": {
+    "qid": "Q2671001",
+    "label": "Domaniç",
+    "commonsCategory": "Domaniç",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Domaniç"
+  },
+  "1669548": {
+    "qid": "Q2671066",
+    "label": "Pazarlar",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1824832": {
+    "qid": "Q2671123",
+    "label": "Hisarcık",
+    "commonsCategory": "Hisarcık",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Hisarcık"
+  },
+  "1824950": {
+    "qid": "Q3041195",
+    "label": "Dumlupınar",
+    "commonsCategory": "Dumlupınar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Dumlupınar"
+  },
+  "1626475": {
+    "qid": "Q94603",
+    "label": "Çamlıyayla",
+    "commonsCategory": "Çamlıyayla",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çamlıyayla"
+  },
+  "1442351": {
+    "qid": "Q94637",
+    "label": "Mut",
+    "commonsCategory": "Mut, Mersin",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Mut, Mersin"
+  },
+  "1586057": {
+    "qid": "Q134287",
+    "label": "Tarsus",
+    "commonsCategory": "Tarsus (town)",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Tarsus (town)"
+  },
+  "1827891": {
+    "qid": "Q417000",
+    "label": "Akdeniz",
+    "commonsCategory": "Akdeniz, Mersin",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Akdeniz, Mersin"
+  },
+  "1827892": {
+    "qid": "Q485575",
+    "label": "Anamur",
+    "commonsCategory": "Anamur",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Anamur"
+  },
+  "1827893": {
+    "qid": "Q583185",
+    "label": "Aydıncık",
+    "commonsCategory": "Aydıncık, Mersin",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Aydıncık, Mersin"
+  },
+  "1442334": {
+    "qid": "Q650630",
+    "label": "Silifke",
+    "commonsCategory": "Silifke",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Silifke"
+  },
+  "1827894": {
+    "qid": "Q896218",
+    "label": "Bozyazı",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1827895": {
+    "qid": "Q988315",
+    "label": "Erdemli",
+    "commonsCategory": "Erdemli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Erdemli"
+  },
+  "1442756": {
+    "qid": "Q1003894",
+    "label": "Gülnar",
+    "commonsCategory": "Gülnar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gülnar"
+  },
+  "1827896": {
+    "qid": "Q1367930",
+    "label": "Mezitli",
+    "commonsCategory": "Mezitli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Mezitli"
+  },
+  "1827897": {
+    "qid": "Q1652751",
+    "label": "Yenişehir",
+    "commonsCategory": "Yenişehir, Mersin",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yenişehir, Mersin"
+  },
+  "1626398": {
+    "qid": "Q2306513",
+    "label": "Toroslar",
+    "commonsCategory": "Toroslar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Toroslar"
+  },
+  "1211494": {
+    "qid": "Q3130309",
+    "label": "Gölcük (ilçe)",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1211493": {
+    "qid": "Q129649",
+    "label": "İzmit",
+    "commonsCategory": "İzmit",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İzmit"
+  },
+  "1211496": {
+    "qid": "Q206116",
+    "label": "Gebze",
+    "commonsCategory": "Gebze",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gebze"
+  },
+  "1423097": {
+    "qid": "Q211805",
+    "label": "Bartın",
+    "commonsCategory": "Bartın",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bartın"
+  },
+  "1423095": {
+    "qid": "Q455458",
+    "label": "Amasra",
+    "commonsCategory": "Amasra",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Amasra"
+  },
+  "1211490": {
+    "qid": "Q986398",
+    "label": "Darıca",
+    "commonsCategory": "Darıca",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Darıca"
+  },
+  "1211491": {
+    "qid": "Q1022149",
+    "label": "Kandıra",
+    "commonsCategory": "Kandıra",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kandıra"
+  },
+  "1423096": {
+    "qid": "Q1482869",
+    "label": "Kurucaşile",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1423094": {
+    "qid": "Q1529516",
+    "label": "Ulus",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1211495": {
+    "qid": "Q2000455",
+    "label": "Derince",
+    "commonsCategory": "Derince",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Derince"
+  },
+  "1211489": {
+    "qid": "Q2248693",
+    "label": "Karamürsel",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1211488": {
+    "qid": "Q2473716",
+    "label": "Dilovası",
+    "commonsCategory": "Dilovası",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Dilovası"
+  },
+  "1211033": {
+    "qid": "Q2578786",
+    "label": "Kartepe",
+    "commonsCategory": "Kartepe",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kartepe"
+  },
+  "1211497": {
+    "qid": "Q2670796",
+    "label": "Başiskele",
+    "commonsCategory": "Başiskele",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Başiskele"
+  },
+  "1211204": {
+    "qid": "Q2671609",
+    "label": "Çayırova",
+    "commonsCategory": "Çayırova",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çayırova"
+  },
+  "1240868": {
+    "qid": "Q206881",
+    "label": "Kilis",
+    "commonsCategory": "Kilis",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kilis"
+  },
+  "1240867": {
+    "qid": "Q1018509",
+    "label": "Polateli",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1240869": {
+    "qid": "Q1018515",
+    "label": "Elbeyli",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1240870": {
+    "qid": "Q1018542",
+    "label": "Musabeyli",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1381572": {
+    "qid": "Q206895",
+    "label": "Hakkâri",
+    "commonsCategory": "Hakkâri",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Hakkâri"
+  },
+  "1771127": {
+    "qid": "Q214655",
+    "label": "Çorlu",
+    "commonsCategory": "Çorlu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çorlu"
+  },
+  "1776630": {
+    "qid": "Q272939",
+    "label": "Çukurca",
+    "commonsCategory": "Çukurca",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çukurca"
+  },
+  "1381574": {
+    "qid": "Q388797",
+    "label": "Şemdinli",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "9218922": {
+    "qid": "Q1199986",
+    "label": "Derecik",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1381573": {
+    "qid": "Q2176882",
+    "label": "Yüksekova",
+    "commonsCategory": "Yüksekova",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yüksekova"
+  },
+  "1821205": {
+    "qid": "Q64831",
+    "label": "Kula",
+    "commonsCategory": "Kula, Manisa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kula, Manisa"
+  },
+  "1771126": {
+    "qid": "Q272800",
+    "label": "Çerkezköy",
+    "commonsCategory": "Çerkezköy",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çerkezköy"
+  },
+  "1771128": {
+    "qid": "Q388544",
+    "label": "Şarköy",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1771121": {
+    "qid": "Q937499",
+    "label": "Malkara",
+    "commonsCategory": "Malkara, Tekirdağ",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Malkara, Tekirdağ"
+  },
+  "1771122": {
+    "qid": "Q985638",
+    "label": "Marmaraereğlisi",
+    "commonsCategory": "Marmara Ereğlisi",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Marmara Ereğlisi"
+  },
+  "1771124": {
+    "qid": "Q1011256",
+    "label": "Saray",
+    "commonsCategory": "Saray, Tekirdağ",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Saray, Tekirdağ"
+  },
+  "1771120": {
+    "qid": "Q1011282",
+    "label": "Hayrabolu",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1771123": {
+    "qid": "Q2581023",
+    "label": "Muratlı",
+    "commonsCategory": "Muratlı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Muratlı"
+  },
+  "3527588": {
+    "qid": "Q5247279",
+    "label": "Kapaklı",
+    "commonsCategory": "Kapaklı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kapaklı"
+  },
+  "1771125": {
+    "qid": "Q16897309",
+    "label": "Süleymanpaşa",
+    "commonsCategory": "Süleymanpaşa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Süleymanpaşa"
+  },
+  "3525530": {
+    "qid": "Q16957420",
+    "label": "Ergene",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1830538": {
+    "qid": "Q208005",
+    "label": "Kırşehir",
+    "commonsCategory": "Kırşehir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kırşehir"
+  },
+  "1751843": {
+    "qid": "Q131495",
+    "label": "Şırnak",
+    "commonsCategory": "Şırnak",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Şırnak"
+  },
+  "1840251": {
+    "qid": "Q187895",
+    "label": "Zonguldak",
+    "commonsCategory": "Zonguldak",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Zonguldak"
+  },
+  "1830383": {
+    "qid": "Q272709",
+    "label": "Çaycuma",
+    "commonsCategory": "Çaycuma",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çaycuma"
+  },
+  "1808100": {
+    "qid": "Q388703",
+    "label": "Şehitkâmil",
+    "commonsCategory": "Şehitkamil",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Şehitkamil"
+  },
+  "1840250": {
+    "qid": "Q1012887",
+    "label": "Karadeniz Ereğli",
+    "commonsCategory": "Karadeniz Ereğli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karadeniz Ereğli"
+  },
+  "1793737": {
+    "qid": "Q1012945",
+    "label": "Alaplı",
+    "commonsCategory": "Alaplı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Alaplı"
+  },
+  "1840249": {
+    "qid": "Q1014093",
+    "label": "Gökçebey",
+    "commonsCategory": "Gökçebey",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gökçebey"
+  },
+  "3680519": {
+    "qid": "Q1179637",
+    "label": "Kozlu",
+    "commonsCategory": "Kozlu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kozlu"
+  },
+  "1840248": {
+    "qid": "Q1207056",
+    "label": "Devrek",
+    "commonsCategory": "Devrek",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Devrek"
+  },
+  "3680552": {
+    "qid": "Q3233266",
+    "label": "Kilimli",
+    "commonsCategory": "Kilimli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kilimli"
+  },
+  "1826235": {
+    "qid": "Q424674",
+    "label": "Akçadağ",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1826363": {
+    "qid": "Q626165",
+    "label": "Arapgir",
+    "commonsCategory": "Arapgir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Arapgir"
+  },
+  "1826364": {
+    "qid": "Q652393",
+    "label": "Arguvan",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1826542": {
+    "qid": "Q810916",
+    "label": "Battalgazi",
+    "commonsCategory": "Battalgazi",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Battalgazi"
+  },
+  "1826311": {
+    "qid": "Q990206",
+    "label": "Hekimhan",
+    "commonsCategory": "Hekimhan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Hekimhan"
+  },
+  "1826260": {
+    "qid": "Q1003964",
+    "label": "Darende",
+    "commonsCategory": "Darende",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Darende"
+  },
+  "1825945": {
+    "qid": "Q1004642",
+    "label": "Doğanşehir",
+    "commonsCategory": "Doğanşehir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Doğanşehir"
+  },
+  "1246232": {
+    "qid": "Q1019922",
+    "label": "Pütürge",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1826497": {
+    "qid": "Q1027147",
+    "label": "Yazıhan",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1826120": {
+    "qid": "Q1027176",
+    "label": "Kale",
+    "commonsCategory": "Kale, Malatya",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kale, Malatya"
+  },
+  "1246231": {
+    "qid": "Q1027183",
+    "label": "Doğanyol",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1826312": {
+    "qid": "Q1027193",
+    "label": "Kuluncak",
+    "commonsCategory": "Kuluncak",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kuluncak"
+  },
+  "1826216": {
+    "qid": "Q1775778",
+    "label": "Yeşilyurt",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1268454": {
+    "qid": "Q217720",
+    "label": "Çeşme",
+    "commonsCategory": "Çeşme",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çeşme"
+  },
+  "1823318": {
+    "qid": "Q293927",
+    "label": "Ödemiş",
+    "commonsCategory": "Ödemiş",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ödemiş"
+  },
+  "1841226": {
+    "qid": "Q2747929",
+    "label": "Tire (ilçe)",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1269257": {
+    "qid": "Q643505",
+    "label": "Narlıdere",
+    "commonsCategory": "Narlıdere",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Narlıdere"
+  },
+  "1819082": {
+    "qid": "Q737822",
+    "label": "Bergama",
+    "commonsCategory": "Bergama",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bergama"
+  },
+  "1269193": {
+    "qid": "Q743314",
+    "label": "Karaburun",
+    "commonsCategory": "Karaburun",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karaburun"
+  },
+  "1268481": {
+    "qid": "Q812591",
+    "label": "Bayraklı",
+    "commonsCategory": "Bayraklı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bayraklı"
+  },
+  "1841225": {
+    "qid": "Q876176",
+    "label": "Selçuk",
+    "commonsCategory": "Selçuk",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Selçuk"
+  },
+  "1269252": {
+    "qid": "Q894012",
+    "label": "Bornova",
+    "commonsCategory": "Bornova",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bornova"
+  },
+  "1819083": {
+    "qid": "Q992364",
+    "label": "Dikili",
+    "commonsCategory": "Dikili",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Dikili"
+  },
+  "1269192": {
+    "qid": "Q2343342",
+    "label": "Urla (ilçe)",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1268453": {
+    "qid": "Q996748",
+    "label": "Aliağa",
+    "commonsCategory": "Aliağa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Aliağa"
+  },
+  "1269519": {
+    "qid": "Q1011344",
+    "label": "Torbalı",
+    "commonsCategory": "Torbalı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Torbalı"
+  },
+  "1269520": {
+    "qid": "Q1014125",
+    "label": "Kemalpaşa",
+    "commonsCategory": "Kemalpaşa, İzmir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kemalpaşa, İzmir"
+  },
+  "1269251": {
+    "qid": "Q1496685",
+    "label": "Gaziemir",
+    "commonsCategory": "Gaziemir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gaziemir"
+  },
+  "1269194": {
+    "qid": "Q1562333",
+    "label": "Güzelbahçe",
+    "commonsCategory": "Güzelbahçe",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Güzelbahçe"
+  },
+  "1823316": {
+    "qid": "Q1831365",
+    "label": "Beydağ",
+    "commonsCategory": "Beydağ",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Beydağ"
+  },
+  "1268482": {
+    "qid": "Q1908058",
+    "label": "Çiğli",
+    "commonsCategory": "Çiğli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çiğli"
+  },
+  "1268452": {
+    "qid": "Q1921294",
+    "label": "Foça",
+    "commonsCategory": "Foça",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Foça"
+  },
+  "1268484": {
+    "qid": "Q2152404",
+    "label": "Menemen",
+    "commonsCategory": "Menemen",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Menemen"
+  },
+  "1269255": {
+    "qid": "Q2279529",
+    "label": "Konak",
+    "commonsCategory": "Konak, İzmir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Konak, İzmir"
+  },
+  "1830535": {
+    "qid": "Q548125",
+    "label": "Akçakent",
+    "commonsCategory": "Akçakent",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Akçakent"
+  },
+  "1830534": {
+    "qid": "Q556388",
+    "label": "Akpınar",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1428703": {
+    "qid": "Q599416",
+    "label": "Sinop",
+    "commonsCategory": "Sinop, Turkey",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sinop, Turkey"
+  },
+  "1721351": {
+    "qid": "Q1051730",
+    "label": "Mucur",
+    "commonsCategory": "Mucur",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Mucur"
+  },
+  "1830537": {
+    "qid": "Q1074968",
+    "label": "Kaman",
+    "commonsCategory": "Kaman (Kırşehir province)",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kaman (Kırşehir province)"
+  },
+  "1830539": {
+    "qid": "Q1813015",
+    "label": "Çiçekdağı",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1830536": {
+    "qid": "Q2476181",
+    "label": "Boztepe",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1822974": {
+    "qid": "Q138280",
+    "label": "Alaşehir",
+    "commonsCategory": "Alaşehir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Alaşehir"
+  },
+  "1822655": {
+    "qid": "Q209905",
+    "label": "Akhisar",
+    "commonsCategory": "Akhisar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Akhisar"
+  },
+  "1821131": {
+    "qid": "Q1011968",
+    "label": "Demirci",
+    "commonsCategory": "Demirci",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Demirci"
+  },
+  "1821255": {
+    "qid": "Q1012935",
+    "label": "Salihli",
+    "commonsCategory": "Salihli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Salihli"
+  },
+  "1820450": {
+    "qid": "Q1827015",
+    "label": "Gördes",
+    "commonsCategory": "Gördes",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gördes"
+  },
+  "1822975": {
+    "qid": "Q1947487",
+    "label": "Sarıgöl",
+    "commonsCategory": "Sarıgöl",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sarıgöl"
+  },
+  "1758898": {
+    "qid": "Q1948452",
+    "label": "Kırkağaç",
+    "commonsCategory": "Kırkağaç",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kırkağaç"
+  },
+  "1822901": {
+    "qid": "Q2025884",
+    "label": "Saruhanlı",
+    "commonsCategory": "Saruhanlı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Saruhanlı"
+  },
+  "1761487": {
+    "qid": "Q2248722",
+    "label": "Ahmetli",
+    "commonsCategory": "Ahmetli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ahmetli"
+  },
+  "1822723": {
+    "qid": "Q2551174",
+    "label": "Gölmarmara",
+    "commonsCategory": "Gölmarmara",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gölmarmara"
+  },
+  "1821206": {
+    "qid": "Q2674090",
+    "label": "Selendi",
+    "commonsCategory": "Selendi",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Selendi"
+  },
+  "1821042": {
+    "qid": "Q3056055",
+    "label": "Köprübaşı",
+    "commonsCategory": "Köprübaşı, Manisa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Köprübaşı, Manisa"
+  },
+  "1758899": {
+    "qid": "Q13124930",
+    "label": "Soma",
+    "commonsCategory": "Soma, Manisa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Soma, Manisa"
+  },
+  "1822900": {
+    "qid": "Q16961654",
+    "label": "Şehzadeler",
+    "commonsCategory": "Şehzadeler",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Şehzadeler"
+  },
+  "3668268": {
+    "qid": "Q16968958",
+    "label": "Yunusemre",
+    "commonsCategory": "Yunusemre",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yunusemre"
+  },
+  "1822902": {
+    "qid": "Q17396881",
+    "label": "Turgutlu",
+    "commonsCategory": "Turgutlu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Turgutlu"
+  },
+  "1827190": {
+    "qid": "Q171031",
+    "label": "Isparta",
+    "commonsCategory": "Isparta",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Isparta"
+  },
+  "1827196": {
+    "qid": "Q388528",
+    "label": "Şarkikaraağaç",
+    "commonsCategory": "Şarkikaraağaç",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Şarkikaraağaç"
+  },
+  "1601952": {
+    "qid": "Q421624",
+    "label": "Aksu",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1827187": {
+    "qid": "Q586434",
+    "label": "Eğirdir",
+    "commonsCategory": "Eğirdir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Eğirdir"
+  },
+  "1827186": {
+    "qid": "Q6448605",
+    "label": "İslamköy",
+    "commonsCategory": "İslamköy, Atabey",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İslamköy, Atabey"
+  },
+  "1827195": {
+    "qid": "Q991472",
+    "label": "Yalvaç",
+    "commonsCategory": "Yalvaç",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yalvaç"
+  },
+  "1827191": {
+    "qid": "Q1004516",
+    "label": "Keçiborlu",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1827194": {
+    "qid": "Q1012840",
+    "label": "Uluborlu",
+    "commonsCategory": "Uluborlu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Uluborlu"
+  },
+  "1827188": {
+    "qid": "Q1499635",
+    "label": "Gelendost",
+    "commonsCategory": "Gelendost",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gelendost"
+  },
+  "1827189": {
+    "qid": "Q1559368",
+    "label": "Gönen",
+    "commonsCategory": "Gönen, Isparta",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gönen, Isparta"
+  },
+  "10012274": {
+    "qid": "Q1782806",
+    "label": "Yenişarbademli",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1827193": {
+    "qid": "Q1783527",
+    "label": "Sütçüler",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1827192": {
+    "qid": "Q1937212",
+    "label": "Senirkent",
+    "commonsCategory": "Senirkent",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Senirkent"
+  },
+  "1427183": {
+    "qid": "Q606923",
+    "label": "Türkeli",
+    "commonsCategory": "Türkeli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Türkeli"
+  },
+  "1428702": {
+    "qid": "Q792769",
+    "label": "Ayancık",
+    "commonsCategory": "Ayancık",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ayancık"
+  },
+  "1428709": {
+    "qid": "Q895880",
+    "label": "Boyabat",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1428708": {
+    "qid": "Q1834901",
+    "label": "Saraydüzü",
+    "commonsCategory": "Saraydüzü",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Saraydüzü"
+  },
+  "1428707": {
+    "qid": "Q1872912",
+    "label": "Erfelek",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1428705": {
+    "qid": "Q2014028",
+    "label": "Gerze",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1428706": {
+    "qid": "Q2670763",
+    "label": "Durağan",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1428710": {
+    "qid": "Q3027936",
+    "label": "Dikmen",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1269195": {
+    "qid": "Q2523774",
+    "label": "Seferihisar",
+    "commonsCategory": "Seferihisar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Seferihisar"
+  },
+  "1269253": {
+    "qid": "Q2636596",
+    "label": "Balçova",
+    "commonsCategory": "Balçova",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Balçova"
+  },
+  "1268483": {
+    "qid": "Q2670720",
+    "label": "Karşıyaka",
+    "commonsCategory": "Karşıyaka",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karşıyaka"
+  },
+  "1269254": {
+    "qid": "Q2672826",
+    "label": "Buca",
+    "commonsCategory": "Buca",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Buca"
+  },
+  "1823317": {
+    "qid": "Q2709049",
+    "label": "Kiraz",
+    "commonsCategory": "Kiraz",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kiraz"
+  },
+  "1841223": {
+    "qid": "Q2892381",
+    "label": "Bayındır",
+    "commonsCategory": "Bayındır",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bayındır"
+  },
+  "1820958": {
+    "qid": "Q2901034",
+    "label": "Kınık",
+    "commonsCategory": "Kınık",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kınık"
+  },
+  "1269196": {
+    "qid": "Q2996335",
+    "label": "Menderes",
+    "commonsCategory": "Menderes",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Menderes"
+  },
+  "1269256": {
+    "qid": "Q3123584",
+    "label": "Karabağlar",
+    "commonsCategory": "Karabağlar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karabağlar"
+  },
+  "1831013": {
+    "qid": "Q118995",
+    "label": "Muş",
+    "commonsCategory": "Muş",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Muş"
+  },
+  "1831012": {
+    "qid": "Q746811",
+    "label": "Malazgirt",
+    "commonsCategory": "Malazgirt",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Malazgirt"
+  },
+  "1831009": {
+    "qid": "Q988147",
+    "label": "Bulanık",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1831010": {
+    "qid": "Q1011290",
+    "label": "Hasköy",
+    "commonsCategory": "Hasköy",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Hasköy"
+  },
+  "1831011": {
+    "qid": "Q3010236",
+    "label": "Korkut",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1249730": {
+    "qid": "Q194146",
+    "label": "Niğde",
+    "commonsCategory": "Niğde",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Niğde"
+  },
+  "1249727": {
+    "qid": "Q272375",
+    "label": "Çamardı",
+    "commonsCategory": "Çamardı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çamardı"
+  },
+  "1249731": {
+    "qid": "Q272835",
+    "label": "Çiftlik",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1249728": {
+    "qid": "Q289143",
+    "label": "Bor",
+    "commonsCategory": "Bor, Niğde",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bor, Niğde"
+  },
+  "1249729": {
+    "qid": "Q446192",
+    "label": "Altunhisar",
+    "commonsCategory": "Altunhisar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Altunhisar"
+  },
+  "1249726": {
+    "qid": "Q1018537",
+    "label": "Ulukışla",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1647154": {
+    "qid": "Q209925",
+    "label": "Çankırı",
+    "commonsCategory": "Çankırı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çankırı"
+  },
+  "1647158": {
+    "qid": "Q374627",
+    "label": "Şabanözü",
+    "commonsCategory": "Şabanözü",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Şabanözü"
+  },
+  "1245155": {
+    "qid": "Q1367851",
+    "label": "Eskipazar",
+    "commonsCategory": "Eskipazar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Eskipazar"
+  },
+  "1647156": {
+    "qid": "Q1895549",
+    "label": "Kızılırmak",
+    "commonsCategory": "Kızılırmak, Çankırı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kızılırmak, Çankırı"
+  },
+  "1647151": {
+    "qid": "Q1947503",
+    "label": "Ilgaz",
+    "commonsCategory": "Ilgaz",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ilgaz"
+  },
+  "1647152": {
+    "qid": "Q1982306",
+    "label": "Orta",
+    "commonsCategory": "Orta, Çankırı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Orta, Çankırı"
+  },
+  "1647157": {
+    "qid": "Q2248795",
+    "label": "Çerkeş",
+    "commonsCategory": "Çerkeş",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çerkeş"
+  },
+  "1647149": {
+    "qid": "Q49110135",
+    "label": "Yapraklı ilçesi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1647147": {
+    "qid": "Q2424773",
+    "label": "Korgun",
+    "commonsCategory": "Korgun",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Korgun"
+  },
+  "1647148": {
+    "qid": "Q2637524",
+    "label": "Bayramören",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1647155": {
+    "qid": "Q2670983",
+    "label": "Kurşunlu",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1647150": {
+    "qid": "Q2671039",
+    "label": "Atkaracalar",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1647153": {
+    "qid": "Q2672821",
+    "label": "Eldivan",
+    "commonsCategory": "Eldivan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Eldivan"
+  },
+  "281360": {
+    "qid": "Q28076908",
+    "label": "Derinkuyu",
+    "commonsCategory": "Derinkuyu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Derinkuyu"
+  },
+  "1331275": {
+    "qid": "Q166737",
+    "label": "Laçin",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1331279": {
+    "qid": "Q206900",
+    "label": "Çorum",
+    "commonsCategory": "Çorum",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çorum"
+  },
+  "1331274": {
+    "qid": "Q344093",
+    "label": "İskilip",
+    "commonsCategory": "İskilip",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İskilip"
+  },
+  "1331276": {
+    "qid": "Q730663",
+    "label": "Ortaköy",
+    "commonsCategory": "Ortaköy, Çorum",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ortaköy, Çorum"
+  },
+  "1331277": {
+    "qid": "Q812112",
+    "label": "Bayat",
+    "commonsCategory": "Bayat, Çorum",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bayat, Çorum"
+  },
+  "1331282": {
+    "qid": "Q848800",
+    "label": "Boğazkale",
+    "commonsCategory": "Boğazkale",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Boğazkale"
+  },
+  "1331194": {
+    "qid": "Q946342",
+    "label": "Kargı",
+    "commonsCategory": "Kargı, Çorum",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kargı, Çorum"
+  },
+  "1331281": {
+    "qid": "Q1012817",
+    "label": "Alaca",
+    "commonsCategory": "Alaca, Çorum",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Alaca, Çorum"
+  },
+  "1331278": {
+    "qid": "Q1012915",
+    "label": "Sungurlu",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1331195": {
+    "qid": "Q1014135",
+    "label": "Osmancık",
+    "commonsCategory": "Osmancık",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Osmancık"
+  },
+  "1330571": {
+    "qid": "Q1234499",
+    "label": "Dodurga",
+    "commonsCategory": "Dodurga",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Dodurga"
+  },
+  "1331283": {
+    "qid": "Q1440437",
+    "label": "Mecitözü",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1331280": {
+    "qid": "Q2043200",
+    "label": "Oğuzlar",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1331284": {
+    "qid": "Q2305427",
+    "label": "Uğurludağ",
+    "commonsCategory": "Uğurludağ",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Uğurludağ"
+  },
+  "1835986": {
+    "qid": "Q201095",
+    "label": "Giresun",
+    "commonsCategory": "Giresun",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Giresun"
+  },
+  "1393953": {
+    "qid": "Q206885",
+    "label": "Düzce",
+    "commonsCategory": "Düzce",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Düzce"
+  },
+  "1806620": {
+    "qid": "Q388662",
+    "label": "Şebinkarahisar",
+    "commonsCategory": "Şebinkarahisar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Şebinkarahisar"
+  },
+  "1393955": {
+    "qid": "Q610268",
+    "label": "Akçakoca",
+    "commonsCategory": "Akçakoca",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Akçakoca"
+  },
+  "1835989": {
+    "qid": "Q943807",
+    "label": "Keşap",
+    "commonsCategory": "Keşap",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Keşap"
+  },
+  "1835991": {
+    "qid": "Q996077",
+    "label": "Tirebolu",
+    "commonsCategory": "Tirebolu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Tirebolu"
+  },
+  "1835983": {
+    "qid": "Q1253669",
+    "label": "Doğankent",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1835987": {
+    "qid": "Q1921314",
+    "label": "Görele",
+    "commonsCategory": "Görele",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Görele"
+  },
+  "1393949": {
+    "qid": "Q2349440",
+    "label": "Cumayeri",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1393956": {
+    "qid": "Q117421718",
+    "label": "Gümüşova (ilçe)",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1393954": {
+    "qid": "Q2674064",
+    "label": "Yığılca",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1393950": {
+    "qid": "Q2900960",
+    "label": "Çilimli",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1393952": {
+    "qid": "Q2901058",
+    "label": "Kaynaşlı",
+    "commonsCategory": "Kaynaşlı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kaynaşlı"
+  },
+  "1393951": {
+    "qid": "Q2901102",
+    "label": "Gölyaka",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1477818": {
+    "qid": "Q130022",
+    "label": "Ayrancı",
+    "commonsCategory": "Ayrancı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ayrancı"
+  },
+  "1446437": {
+    "qid": "Q130207",
+    "label": "Ermenek",
+    "commonsCategory": "Ermenek",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ermenek"
+  },
+  "1477819": {
+    "qid": "Q262579",
+    "label": "Karaman",
+    "commonsCategory": "Karaman",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karaman"
+  },
+  "1446935": {
+    "qid": "Q327502",
+    "label": "Sarıveliler",
+    "commonsCategory": "Sarıveliler, Karaman",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sarıveliler, Karaman"
+  },
+  "1446934": {
+    "qid": "Q692401",
+    "label": "Başyayla",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1477820": {
+    "qid": "Q1737611",
+    "label": "Kazımkarabekir",
+    "commonsCategory": "Kazımkarabekir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kazımkarabekir"
+  },
+  "1596129": {
+    "qid": "Q216897",
+    "label": "Siverek",
+    "commonsCategory": "Siverek",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Siverek"
+  },
+  "1747580": {
+    "qid": "Q258838",
+    "label": "Halfeti",
+    "commonsCategory": "Halfeti",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Halfeti"
+  },
+  "1747576": {
+    "qid": "Q424700",
+    "label": "Akçakale",
+    "commonsCategory": "Akçakale",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Akçakale"
+  },
+  "1694298": {
+    "qid": "Q497731",
+    "label": "Viranşehir",
+    "commonsCategory": "Viranşehir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Viranşehir"
+  },
+  "1747577": {
+    "qid": "Q849497",
+    "label": "Birecik",
+    "commonsCategory": "Birecik",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Birecik"
+  },
+  "1747578": {
+    "qid": "Q896199",
+    "label": "Bozova",
+    "commonsCategory": "Bozova",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bozova"
+  },
+  "1747583": {
+    "qid": "Q917836",
+    "label": "Suruç",
+    "commonsCategory": "Suruç",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Suruç"
+  },
+  "1747579": {
+    "qid": "Q917838",
+    "label": "Ceylanpınar",
+    "commonsCategory": "Ceylanpınar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ceylanpınar"
+  },
+  "1747582": {
+    "qid": "Q990319",
+    "label": "Hilvan",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "3677455": {
+    "qid": "Q6635526",
+    "label": "Karaköprü",
+    "commonsCategory": "Karaköprü",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karaköprü"
+  },
+  "1835981": {
+    "qid": "Q1947496",
+    "label": "Bulancak",
+    "commonsCategory": "Bulancak",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bulancak"
+  },
+  "1835993": {
+    "qid": "Q2008594",
+    "label": "Çanakçı",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1835992": {
+    "qid": "Q2097511",
+    "label": "Yağlıdere",
+    "commonsCategory": "Yağlıdere",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yağlıdere"
+  },
+  "1835990": {
+    "qid": "Q2248783",
+    "label": "Piraziz",
+    "commonsCategory": "Piraziz",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Piraziz"
+  },
+  "1835980": {
+    "qid": "Q2349330",
+    "label": "Alucra",
+    "commonsCategory": "Alucra",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Alucra"
+  },
+  "1835982": {
+    "qid": "Q2670799",
+    "label": "Dereli",
+    "commonsCategory": "Dereli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Dereli"
+  },
+  "1806690": {
+    "qid": "Q2671156",
+    "label": "Çamoluk",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1835988": {
+    "qid": "Q2671163",
+    "label": "Güce",
+    "commonsCategory": "Güce",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Güce"
+  },
+  "1835985": {
+    "qid": "Q2901008",
+    "label": "Eynesil",
+    "commonsCategory": "Eynesil",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Eynesil"
+  },
+  "1835984": {
+    "qid": "Q2901145",
+    "label": "Espiye",
+    "commonsCategory": "Espiye",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Espiye"
+  },
+  "1747584": {
+    "qid": "Q16841546",
+    "label": "Haliliye",
+    "commonsCategory": "Haliliye",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Haliliye"
+  },
+  "3677452": {
+    "qid": "Q16957471",
+    "label": "Eyyübiye",
+    "commonsCategory": "Eyyübiye",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Eyyübiye"
+  },
+  "1835700": {
+    "qid": "Q214303",
+    "label": "Gümüşhane",
+    "commonsCategory": "Gümüşhane",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gümüşhane"
+  },
+  "1835704": {
+    "qid": "Q390578",
+    "label": "Şiran",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1835701": {
+    "qid": "Q1003919",
+    "label": "Kelkit",
+    "commonsCategory": "Gümüşhane Province",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gümüşhane Province"
+  },
+  "1835702": {
+    "qid": "Q1747359",
+    "label": "Köse",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1835703": {
+    "qid": "Q1797313",
+    "label": "Kürtün",
+    "commonsCategory": "Gümüşhane Province",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gümüşhane Province"
+  },
+  "1835646": {
+    "qid": "Q2006069",
+    "label": "Torul",
+    "commonsCategory": "Torul",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Torul"
+  },
+  "1837374": {
+    "qid": "Q272649",
+    "label": "Çarşamba",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1837369": {
+    "qid": "Q644699",
+    "label": "19 Mayıs",
+    "commonsCategory": "Ondokuzmayıs",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ondokuzmayıs"
+  },
+  "1837364": {
+    "qid": "Q799805",
+    "label": "Bafra",
+    "commonsCategory": "Bafra",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bafra"
+  },
+  "1837367": {
+    "qid": "Q1179834",
+    "label": "Kavak",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1722709": {
+    "qid": "Q2086353",
+    "label": "Vezirköprü",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1837373": {
+    "qid": "Q1858384",
+    "label": "Yakakent",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1837360": {
+    "qid": "Q1947471",
+    "label": "Alaçam",
+    "commonsCategory": "Alaçam",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Alaçam"
+  },
+  "1837363": {
+    "qid": "Q2181540",
+    "label": "Ayvacık",
+    "commonsCategory": "Ayvacık, Samsun",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ayvacık, Samsun"
+  },
+  "1837361": {
+    "qid": "Q2262525",
+    "label": "Asarcık",
+    "commonsCategory": "Asarcık",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Asarcık"
+  },
+  "1837368": {
+    "qid": "Q2279679",
+    "label": "Ladik",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1837371": {
+    "qid": "Q2530261",
+    "label": "Tekkeköy",
+    "commonsCategory": "Tekkeköy",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Tekkeköy"
+  },
+  "1837365": {
+    "qid": "Q2634212",
+    "label": "Canik",
+    "commonsCategory": "Canik",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Canik"
+  },
+  "1837370": {
+    "qid": "Q2671116",
+    "label": "Salıpazarı",
+    "commonsCategory": "Salıpazarı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Salıpazarı"
+  },
+  "1837366": {
+    "qid": "Q2671132",
+    "label": "Havza",
+    "commonsCategory": "Havza",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Havza"
+  },
+  "1837372": {
+    "qid": "Q3055967",
+    "label": "Terme",
+    "commonsCategory": "Terme District",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Terme District"
+  },
+  "1837375": {
+    "qid": "Q3906369",
+    "label": "İlkadım",
+    "commonsCategory": "İlkadım",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İlkadım"
+  },
+  "1837362": {
+    "qid": "Q4812671",
+    "label": "Atakum",
+    "commonsCategory": "Atakum",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Atakum"
+  },
+  "1248433": {
+    "qid": "Q181379",
+    "label": "Osmaniye",
+    "commonsCategory": "Osmaniye",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Osmaniye"
+  },
+  "1248430": {
+    "qid": "Q609713",
+    "label": "Toprakkale",
+    "commonsCategory": "Toprakkale, Osmaniye",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Toprakkale, Osmaniye"
+  },
+  "1248429": {
+    "qid": "Q691646",
+    "label": "Bahçe",
+    "commonsCategory": "Bahçe, Osmaniye",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bahçe, Osmaniye"
+  },
+  "1248435": {
+    "qid": "Q1012824",
+    "label": "Kadirli",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1248436": {
+    "qid": "Q1012858",
+    "label": "Düziçi",
+    "commonsCategory": "Düziçi",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Düziçi"
+  },
+  "1248434": {
+    "qid": "Q1015401",
+    "label": "Sumbas",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1248432": {
+    "qid": "Q1023526",
+    "label": "Hasanbeyli",
+    "commonsCategory": "Hasanbeyli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Hasanbeyli"
+  },
+  "1236156": {
+    "qid": "Q424661",
+    "label": "Akçaabat",
+    "commonsCategory": "Akçaabat",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Akçaabat"
+  },
+  "1832462": {
+    "qid": "Q14640",
+    "label": "Olur",
+    "commonsCategory": "Olur",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Olur"
+  },
+  "1832479": {
+    "qid": "Q272652",
+    "label": "Çat",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1832625": {
+    "qid": "Q344273",
+    "label": "İspir",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1832453": {
+    "qid": "Q374068",
+    "label": "Horasan",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1831341": {
+    "qid": "Q376139",
+    "label": "Hınıs",
+    "commonsCategory": "Hınıs",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Hınıs"
+  },
+  "1832461": {
+    "qid": "Q388842",
+    "label": "Şenkaya",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1832682": {
+    "qid": "Q915429",
+    "label": "Oltu",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1832938": {
+    "qid": "Q1004488",
+    "label": "Palandöken",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1832941": {
+    "qid": "Q1004551",
+    "label": "Tortum",
+    "commonsCategory": "Tortum",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Tortum"
+  },
+  "1832452": {
+    "qid": "Q1004621",
+    "label": "Karaçoban",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1832940": {
+    "qid": "Q1023281",
+    "label": "Tekman",
+    "commonsCategory": "Tekman",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Tekman"
+  },
+  "1832469": {
+    "qid": "Q1023324",
+    "label": "Köprüköy",
+    "commonsCategory": "Köprüköy",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Köprüköy"
+  },
+  "1832451": {
+    "qid": "Q1023333",
+    "label": "Karayazı",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1832937": {
+    "qid": "Q1025415",
+    "label": "Narman",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1832939": {
+    "qid": "Q1027156",
+    "label": "Pasinler",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1832624": {
+    "qid": "Q1027563",
+    "label": "Pazaryolu",
+    "commonsCategory": "Pazaryolu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Pazaryolu"
+  },
+  "1832683": {
+    "qid": "Q1843445",
+    "label": "Uzundere",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1832853": {
+    "qid": "Q2119751",
+    "label": "Aşkale",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1832942": {
+    "qid": "Q2577943",
+    "label": "Yakutiye",
+    "commonsCategory": "Yakutiye",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yakutiye"
+  },
+  "1238924": {
+    "qid": "Q130470",
+    "label": "Odunpazarı",
+    "commonsCategory": "Odunpazarı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Odunpazarı"
+  },
+  "1609669": {
+    "qid": "Q189134",
+    "label": "Uşak",
+    "commonsCategory": "Uşak",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Uşak"
+  },
+  "1840933": {
+    "qid": "Q205942",
+    "label": "Yalova",
+    "commonsCategory": "Yalova",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yalova"
+  },
+  "1609673": {
+    "qid": "Q669172",
+    "label": "Banaz",
+    "commonsCategory": "Banaz",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Banaz"
+  },
+  "1840931": {
+    "qid": "Q689620",
+    "label": "Armutlu",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1609670": {
+    "qid": "Q1004540",
+    "label": "Eşme",
+    "commonsCategory": "Eşme",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Eşme"
+  },
+  "1609671": {
+    "qid": "Q1022144",
+    "label": "Sivaslı",
+    "commonsCategory": "Sivaslı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sivaslı"
+  },
+  "1609674": {
+    "qid": "Q1352472",
+    "label": "Karahallı",
+    "commonsCategory": "Karahallı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karahallı"
+  },
+  "1609672": {
+    "qid": "Q1816898",
+    "label": "Ulubey",
+    "commonsCategory": "Ulubey, Uşak",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ulubey, Uşak"
+  },
+  "1840930": {
+    "qid": "Q1922420",
+    "label": "Altınova",
+    "commonsCategory": "Altınova",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Altınova"
+  },
+  "1840934": {
+    "qid": "Q2248619",
+    "label": "Çiftlikköy",
+    "commonsCategory": "Çiftlikköy",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çiftlikköy"
+  },
+  "1840935": {
+    "qid": "Q2249559",
+    "label": "Çınarcık",
+    "commonsCategory": "Çınarcık",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çınarcık"
+  },
+  "1840932": {
+    "qid": "Q2601948",
+    "label": "Termal",
+    "commonsCategory": "Termal",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Termal"
+  },
+  "1832781": {
+    "qid": "Q15195666",
+    "label": "Aziziye",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1246475": {
+    "qid": "Q132385",
+    "label": "Eruh",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1246472": {
+    "qid": "Q172902",
+    "label": "Şirvan",
+    "commonsCategory": "Şirvan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Şirvan"
+  },
+  "1246473": {
+    "qid": "Q185084",
+    "label": "Siirt",
+    "commonsCategory": "Siirt",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Siirt"
+  },
+  "1246477": {
+    "qid": "Q792913",
+    "label": "Tillo",
+    "commonsCategory": "Tillo",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Tillo"
+  },
+  "1246478": {
+    "qid": "Q812557",
+    "label": "Baykan",
+    "commonsCategory": "Baykan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Baykan"
+  },
+  "1246474": {
+    "qid": "Q921953",
+    "label": "Pervari",
+    "commonsCategory": "Pervari",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Pervari"
+  },
+  "1246476": {
+    "qid": "Q1004659",
+    "label": "Kurtalan",
+    "commonsCategory": "Kurtalan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kurtalan"
+  },
+  "1238933": {
+    "qid": "Q288024",
+    "label": "Beylikova",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1238921": {
+    "qid": "Q377962",
+    "label": "Mihalıççık",
+    "commonsCategory": "Mihalıççık",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Mihalıççık"
+  },
+  "1238931": {
+    "qid": "Q1019915",
+    "label": "Sivrihisar",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1238930": {
+    "qid": "Q1572971",
+    "label": "Seyitgazi",
+    "commonsCategory": "Eskişehir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Eskişehir"
+  },
+  "1238928": {
+    "qid": "Q1919824",
+    "label": "Günyüzü",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1238932": {
+    "qid": "Q2248704",
+    "label": "Çifteler",
+    "commonsCategory": "Çifteler",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çifteler"
+  },
+  "1238929": {
+    "qid": "Q2397202",
+    "label": "Mihalgazi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1238925": {
+    "qid": "Q2417071",
+    "label": "Han",
+    "commonsCategory": "Han, Eskişehir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Han, Eskişehir"
+  },
+  "1238923": {
+    "qid": "Q2615120",
+    "label": "Mahmudiye",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1238927": {
+    "qid": "Q2671060",
+    "label": "Alpu",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1238922": {
+    "qid": "Q2833269",
+    "label": "İnönü",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1238926": {
+    "qid": "Q3056019",
+    "label": "Sarıcakaya",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1687970": {
+    "qid": "Q3906371",
+    "label": "Tepebaşı",
+    "commonsCategory": "Tepebaşı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Tepebaşı"
+  },
+  "282353": {
+    "qid": "Q94683",
+    "label": "Acıgöl",
+    "commonsCategory": "Acıgöl",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Acıgöl"
+  },
+  "1236151": {
+    "qid": "Q764830",
+    "label": "Araklı",
+    "commonsCategory": "Araklı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Araklı"
+  },
+  "1236152": {
+    "qid": "Q938562",
+    "label": "Maçka",
+    "commonsCategory": "Maçka",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Maçka"
+  },
+  "1236154": {
+    "qid": "Q988069",
+    "label": "Of",
+    "commonsCategory": "Of, Trabzon",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Of, Trabzon"
+  },
+  "1236153": {
+    "qid": "Q1011964",
+    "label": "Sürmene",
+    "commonsCategory": "Sürmene",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sürmene"
+  },
+  "1236148": {
+    "qid": "Q1020641",
+    "label": "Tonya",
+    "commonsCategory": "Tonya",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Tonya"
+  },
+  "1236150": {
+    "qid": "Q1947455",
+    "label": "Vakfıkebir",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1236144": {
+    "qid": "Q1948440",
+    "label": "Beşikdüzü",
+    "commonsCategory": "Beşikdüzü",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Beşikdüzü"
+  },
+  "1236147": {
+    "qid": "Q2179932",
+    "label": "Yomra",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1236160": {
+    "qid": "Q2229730",
+    "label": "Şalpazarı",
+    "commonsCategory": "Şalpazarı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Şalpazarı"
+  },
+  "1236155": {
+    "qid": "Q2248665",
+    "label": "Arsin",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1236146": {
+    "qid": "Q2578659",
+    "label": "Dernekpazarı",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1236158": {
+    "qid": "Q2670707",
+    "label": "Çaykara",
+    "commonsCategory": "Çaykara",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çaykara"
+  },
+  "1236145": {
+    "qid": "Q2670825",
+    "label": "Düzköy",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1236143": {
+    "qid": "Q2670987",
+    "label": "Hayrat",
+    "commonsCategory": "Hayrat",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Hayrat"
+  },
+  "1236149": {
+    "qid": "Q2674001",
+    "label": "Köprübaşı",
+    "commonsCategory": "Köprübaşı, Trabzon",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Köprübaşı, Trabzon"
+  },
+  "1236159": {
+    "qid": "Q2901047",
+    "label": "Çarşıbaşı",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1236157": {
+    "qid": "Q16258125",
+    "label": "Ortahisar",
+    "commonsCategory": "Ortahisar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ortahisar"
+  },
+  "281359": {
+    "qid": "Q335010",
+    "label": "Ürgüp",
+    "commonsCategory": "Ürgüp",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ürgüp"
+  },
+  "281228": {
+    "qid": "Q736588",
+    "label": "Hacıbektaş",
+    "commonsCategory": "Hacıbektaş",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Hacıbektaş"
+  },
+  "281083": {
+    "qid": "Q790160",
+    "label": "Avanos",
+    "commonsCategory": "Avanos",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Avanos"
+  },
+  "282354": {
+    "qid": "Q1003182",
+    "label": "Gülşehir",
+    "commonsCategory": "Gülşehir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gülşehir"
+  },
+  "281080": {
+    "qid": "Q1004520",
+    "label": "Kozaklı",
+    "commonsCategory": "Kozaklı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kozaklı"
+  },
+  "1596962": {
+    "qid": "Q211828",
+    "label": "Bayburt",
+    "commonsCategory": "Bayburt",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bayburt"
+  },
+  "1596964": {
+    "qid": "Q792917",
+    "label": "Aydıntepe",
+    "commonsCategory": "Aydıntepe",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Aydıntepe"
+  },
+  "1596963": {
+    "qid": "Q1185714",
+    "label": "Demirözü",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1830507": {
+    "qid": "Q174060",
+    "label": "Elazığ",
+    "commonsCategory": "Elazığ",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Elazığ"
+  },
+  "1829616": {
+    "qid": "Q719227",
+    "label": "Arıcak",
+    "commonsCategory": "Arıcak",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Arıcak"
+  },
+  "1830505": {
+    "qid": "Q794737",
+    "label": "Ağın",
+    "commonsCategory": "Ağın",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ağın"
+  },
+  "1830506": {
+    "qid": "Q810374",
+    "label": "Baskil",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1830510": {
+    "qid": "Q928543",
+    "label": "Sivrice",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1829562": {
+    "qid": "Q990305",
+    "label": "Karakoçan",
+    "commonsCategory": "Karakoçan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karakoçan"
+  },
+  "1829617": {
+    "qid": "Q1003910",
+    "label": "Palu",
+    "commonsCategory": "Palu, Elazığ",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Palu, Elazığ"
+  },
+  "1829599": {
+    "qid": "Q1003954",
+    "label": "Kovancılar",
+    "commonsCategory": "Kovancılar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kovancılar"
+  },
+  "1829615": {
+    "qid": "Q1019868",
+    "label": "Alacakaya",
+    "commonsCategory": "Alacakaya",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Alacakaya"
+  },
+  "1830508": {
+    "qid": "Q1023265",
+    "label": "Keban",
+    "commonsCategory": "Keban",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Keban"
+  },
+  "1830509": {
+    "qid": "Q1023303",
+    "label": "Maden",
+    "commonsCategory": "Maden, Elazığ",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Maden, Elazığ"
+  },
+  "1245153": {
+    "qid": "Q130228",
+    "label": "Yenice",
+    "commonsCategory": "Yenice, Karabük",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yenice, Karabük"
+  },
+  "1245154": {
+    "qid": "Q189697",
+    "label": "Karabük",
+    "commonsCategory": "Karabük",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karabük"
+  },
+  "1245158": {
+    "qid": "Q192501",
+    "label": "Safranbolu",
+    "commonsCategory": "Safranbolu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Safranbolu"
+  },
+  "1245156": {
+    "qid": "Q1296393",
+    "label": "Eflani",
+    "commonsCategory": "Eflani",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Eflani"
+  },
+  "1245157": {
+    "qid": "Q1974304",
+    "label": "Ovacık",
+    "commonsCategory": "Ovacık, Karabük",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ovacık, Karabük"
+  },
+  "1440079": {
+    "qid": "Q107401",
+    "label": "Sivas",
+    "commonsCategory": "Sivas",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sivas"
+  },
+  "1493364": {
+    "qid": "Q147630",
+    "label": "Zara",
+    "commonsCategory": "Zara, Sivas",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Zara, Sivas"
+  },
+  "1503860": {
+    "qid": "Q343911",
+    "label": "İmranlı",
+    "commonsCategory": "İmranlı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İmranlı"
+  },
+  "1335055": {
+    "qid": "Q388598",
+    "label": "Şarkışla",
+    "commonsCategory": "Şarkışla",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Şarkışla"
+  },
+  "1507008": {
+    "qid": "Q424774",
+    "label": "Akıncılar",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1742197": {
+    "qid": "Q447233",
+    "label": "Altınyayla",
+    "commonsCategory": "Altınyayla, Sivas",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Altınyayla, Sivas"
+  },
+  "1482222": {
+    "qid": "Q1003953",
+    "label": "Kangal",
+    "commonsCategory": "Kangal",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kangal"
+  },
+  "1502459": {
+    "qid": "Q1004566",
+    "label": "Suşehri",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1438944": {
+    "qid": "Q1011921",
+    "label": "Yıldızeli",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1731766": {
+    "qid": "Q1011935",
+    "label": "Gürün",
+    "commonsCategory": "Gürün",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gürün"
+  },
+  "1335056": {
+    "qid": "Q1023130",
+    "label": "Gemerek",
+    "commonsCategory": "Gemerek",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gemerek"
+  },
+  "1493876": {
+    "qid": "Q1023145",
+    "label": "Koyulhisar",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1742199": {
+    "qid": "Q1027159",
+    "label": "Ulaş",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1742198": {
+    "qid": "Q1027180",
+    "label": "Hafik",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1843703": {
+    "qid": "Q1253700",
+    "label": "Doğanşar",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1507010": {
+    "qid": "Q1258883",
+    "label": "Gölova",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1797158": {
+    "qid": "Q785077",
+    "label": "Hacılar",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1797260": {
+    "qid": "Q836846",
+    "label": "Talas",
+    "commonsCategory": "Talas, Turkey",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Talas, Turkey"
+  },
+  "1798542": {
+    "qid": "Q1012921",
+    "label": "Develi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1798307": {
+    "qid": "Q1018553",
+    "label": "Tomarza",
+    "commonsCategory": "Tomarza",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Tomarza"
+  },
+  "1798306": {
+    "qid": "Q1179844",
+    "label": "Pınarbaşı",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1798519": {
+    "qid": "Q1921307",
+    "label": "Bünyan",
+    "commonsCategory": "Bünyan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bünyan"
+  },
+  "1798544": {
+    "qid": "Q1947533",
+    "label": "Yeşilhisar",
+    "commonsCategory": "Yeşilhisar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yeşilhisar"
+  },
+  "1798543": {
+    "qid": "Q2205869",
+    "label": "Yahyalı",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1797400": {
+    "qid": "Q2355838",
+    "label": "Kocasinan",
+    "commonsCategory": "Kocasinan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kocasinan"
+  },
+  "1731539": {
+    "qid": "Q2364235",
+    "label": "Sarız",
+    "commonsCategory": "Sarız",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sarız"
+  },
+  "1798518": {
+    "qid": "Q2670788",
+    "label": "Akkışla",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1797146": {
+    "qid": "Q2670975",
+    "label": "Melikgazi",
+    "commonsCategory": "Melikgazi",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Melikgazi"
+  },
+  "1798521": {
+    "qid": "Q2671072",
+    "label": "Özvatan",
+    "commonsCategory": "Özvatan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Özvatan"
+  },
+  "1797157": {
+    "qid": "Q2673990",
+    "label": "İncesu",
+    "commonsCategory": "İncesu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İncesu"
+  },
+  "1798520": {
+    "qid": "Q2674010",
+    "label": "Sarıoğlan",
+    "commonsCategory": "Sarıoğlan, Kayseri",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sarıoğlan, Kayseri"
+  },
+  "1797399": {
+    "qid": "Q2674038",
+    "label": "Felahiye",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1754243": {
+    "qid": "Q136217",
+    "label": "Erzincan",
+    "commonsCategory": "Erzincan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Erzincan"
+  },
+  "1754250": {
+    "qid": "Q272722",
+    "label": "Çayırlı",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1754251": {
+    "qid": "Q335204",
+    "label": "Üzümlü",
+    "commonsCategory": "Üzümlü (Erzincan)",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Üzümlü (Erzincan)"
+  },
+  "1754244": {
+    "qid": "Q343776",
+    "label": "İliç",
+    "commonsCategory": "İliç",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İliç"
+  },
+  "1754246": {
+    "qid": "Q1000823",
+    "label": "Kemaliye",
+    "commonsCategory": "Kemaliye",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kemaliye"
+  },
+  "1754247": {
+    "qid": "Q1023293",
+    "label": "Otlukbeli",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1754248": {
+    "qid": "Q1023298",
+    "label": "Refahiye",
+    "commonsCategory": "Refahiye",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Refahiye"
+  },
+  "1754245": {
+    "qid": "Q1023301",
+    "label": "Kemah",
+    "commonsCategory": "Kemah",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kemah"
+  },
+  "1754249": {
+    "qid": "Q2665536",
+    "label": "Tercan",
+    "commonsCategory": "Tercan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Tercan"
+  },
+  "1838682": {
+    "qid": "Q201101",
+    "label": "Rize",
+    "commonsCategory": "Rize",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Rize"
+  },
+  "1341120": {
+    "qid": "Q117181",
+    "label": "Elbistan",
+    "commonsCategory": "Elbistan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Elbistan"
+  },
+  "1340567": {
+    "qid": "Q272745",
+    "label": "Çağlayancerit",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1341117": {
+    "qid": "Q389650",
+    "label": "Afşin",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1340568": {
+    "qid": "Q509011",
+    "label": "Nurhak",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1336189": {
+    "qid": "Q528602",
+    "label": "Andırın",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1335884": {
+    "qid": "Q939677",
+    "label": "Göksun",
+    "commonsCategory": "Göksun",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Göksun"
+  },
+  "1341115": {
+    "qid": "Q993676",
+    "label": "Türkoğlu",
+    "commonsCategory": "Türkoğlu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Türkoğlu"
+  },
+  "1341119": {
+    "qid": "Q1004653",
+    "label": "Pazarcık",
+    "commonsCategory": "Pazarcık",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Pazarcık"
+  },
+  "1341116": {
+    "qid": "Q1018536",
+    "label": "Ekinözü",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "3671448": {
+    "qid": "Q16836177",
+    "label": "Dulkadiroğlu",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "3671449": {
+    "qid": "Q16960466",
+    "label": "Onikişubat",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1725592": {
+    "qid": "Q588720",
+    "label": "Ardeşen",
+    "commonsCategory": "Rize Province",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Rize Province"
+  },
+  "1725593": {
+    "qid": "Q964710",
+    "label": "Fındıklı",
+    "commonsCategory": "Fındıklı, Rize",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Fındıklı, Rize"
+  },
+  "1806116": {
+    "qid": "Q334985",
+    "label": "Ünye",
+    "commonsCategory": "Ünye",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ünye"
+  },
+  "1251199": {
+    "qid": "Q206891",
+    "label": "Kırıkkale",
+    "commonsCategory": "Kırıkkale",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kırıkkale"
+  },
+  "1251131": {
+    "qid": "Q596731",
+    "label": "Keskin",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1838679": {
+    "qid": "Q1025138",
+    "label": "Hemşin",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1838681": {
+    "qid": "Q1920516",
+    "label": "Pazar",
+    "commonsCategory": "Pazar, Rize",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Pazar, Rize"
+  },
+  "1251196": {
+    "qid": "Q1980493",
+    "label": "Yahşihan",
+    "commonsCategory": "Yahşihan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yahşihan"
+  },
+  "1838684": {
+    "qid": "Q2248873",
+    "label": "Çayeli",
+    "commonsCategory": "Çayeli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çayeli"
+  },
+  "1838677": {
+    "qid": "Q2670684",
+    "label": "Derepazarı",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1838685": {
+    "qid": "Q2670714",
+    "label": "İyidere",
+    "commonsCategory": "İyidere",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İyidere"
+  },
+  "1725548": {
+    "qid": "Q2670748",
+    "label": "İkizdere",
+    "commonsCategory": "İkizdere",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İkizdere"
+  },
+  "1838680": {
+    "qid": "Q2670776",
+    "label": "Kalkandere",
+    "commonsCategory": "Kalkandere",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kalkandere"
+  },
+  "1838683": {
+    "qid": "Q2670821",
+    "label": "Çamlıhemşin",
+    "commonsCategory": "Çamlıhemşin",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çamlıhemşin"
+  },
+  "1838678": {
+    "qid": "Q2671161",
+    "label": "Güneysu",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1801994": {
+    "qid": "Q155915",
+    "label": "Kastamonu",
+    "commonsCategory": "Kastamonu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kastamonu"
+  },
+  "1781114": {
+    "qid": "Q255479",
+    "label": "Tosya",
+    "commonsCategory": "Tosya",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Tosya"
+  },
+  "1802000": {
+    "qid": "Q282654",
+    "label": "İnebolu",
+    "commonsCategory": "İnebolu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İnebolu"
+  },
+  "1839059": {
+    "qid": "Q375020",
+    "label": "Fatsa",
+    "commonsCategory": "Fatsa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Fatsa"
+  },
+  "1802001": {
+    "qid": "Q388894",
+    "label": "Şenpazar",
+    "commonsCategory": "Şenpazar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Şenpazar"
+  },
+  "1839057": {
+    "qid": "Q420148",
+    "label": "Akkuş",
+    "commonsCategory": "Akkuş",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Akkuş"
+  },
+  "1806052": {
+    "qid": "Q1027108",
+    "label": "Çaybaşı",
+    "commonsCategory": "Çaybaşı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çaybaşı"
+  },
+  "1839067": {
+    "qid": "Q1876182",
+    "label": "Perşembe",
+    "commonsCategory": "Perşembe",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Perşembe"
+  },
+  "1839064": {
+    "qid": "Q1921284",
+    "label": "Korgan",
+    "commonsCategory": "Korgan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Korgan"
+  },
+  "1839058": {
+    "qid": "Q1922399",
+    "label": "Aybastı",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1839062": {
+    "qid": "Q1948325",
+    "label": "Gürgentepe",
+    "commonsCategory": "Gürgentepe",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gürgentepe"
+  },
+  "1839060": {
+    "qid": "Q1948371",
+    "label": "Gölköy",
+    "commonsCategory": "Gölköy, Ordu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gölköy, Ordu"
+  },
+  "1839070": {
+    "qid": "Q2158475",
+    "label": "Çatalpınar",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1839065": {
+    "qid": "Q2228273",
+    "label": "Kumru",
+    "commonsCategory": "Kumru, Ordu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kumru, Ordu"
+  },
+  "1839069": {
+    "qid": "Q2248630",
+    "label": "Çamaş",
+    "commonsCategory": "Çamaş",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çamaş"
+  },
+  "1806539": {
+    "qid": "Q2502626",
+    "label": "Kabadüz",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1805920": {
+    "qid": "Q2670781",
+    "label": "İkizce",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1839061": {
+    "qid": "Q2670812",
+    "label": "Gülyalı",
+    "commonsCategory": "Gülyalı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gülyalı"
+  },
+  "1806483": {
+    "qid": "Q2744201",
+    "label": "Mesudiye",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1839063": {
+    "qid": "Q2744219",
+    "label": "Kabataş",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1839066": {
+    "qid": "Q14489529",
+    "label": "Altınordu",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1839068": {
+    "qid": "Q14510650",
+    "label": "Ulubey",
+    "commonsCategory": "Ulubey, Ordu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ulubey, Ordu"
+  },
+  "1251198": {
+    "qid": "Q2300781",
+    "label": "Balışeyh",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1251085": {
+    "qid": "Q2424608",
+    "label": "Çelebi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1251197": {
+    "qid": "Q2499402",
+    "label": "Delice",
+    "commonsCategory": "Delice",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Delice"
+  },
+  "1251201": {
+    "qid": "Q2557043",
+    "label": "Sulakyurt",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1251200": {
+    "qid": "Q2671055",
+    "label": "Bahşılı",
+    "commonsCategory": "Bahşılı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bahşılı"
+  },
+  "1251090": {
+    "qid": "Q2671089",
+    "label": "Karakeçili",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1808098": {
+    "qid": "Q344115",
+    "label": "İslahiye",
+    "commonsCategory": "İslahiye",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İslahiye"
+  },
+  "1808031": {
+    "qid": "Q623678",
+    "label": "Araban",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1808095": {
+    "qid": "Q1004573",
+    "label": "Nurdağı",
+    "commonsCategory": "Nurdağı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Nurdağı"
+  },
+  "1808094": {
+    "qid": "Q1012831",
+    "label": "Nizip",
+    "commonsCategory": "Nizip",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Nizip"
+  },
+  "1808093": {
+    "qid": "Q1018531",
+    "label": "Karkamış",
+    "commonsCategory": "Karkamış",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Karkamış"
+  },
+  "1808096": {
+    "qid": "Q1022230",
+    "label": "Oğuzeli",
+    "commonsCategory": "Oğuzeli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Oğuzeli"
+  },
+  "1808097": {
+    "qid": "Q1027149",
+    "label": "Yavuzeli",
+    "commonsCategory": "Yavuzeli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yavuzeli"
+  },
+  "1808099": {
+    "qid": "Q2195037",
+    "label": "Şahinbey",
+    "commonsCategory": "Şahinbey",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Şahinbey"
+  },
+  "1276034": {
+    "qid": "Q122320",
+    "label": "Çekmeköy",
+    "commonsCategory": "Çekmeköy",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çekmeköy"
+  },
+  "1766109": {
+    "qid": "Q197095",
+    "label": "Zeytinburnu",
+    "commonsCategory": "Zeytinburnu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Zeytinburnu"
+  },
+  "1765892": {
+    "qid": "Q217411",
+    "label": "Beyoğlu",
+    "commonsCategory": "Beyoğlu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Beyoğlu"
+  },
+  "1275310": {
+    "qid": "Q241631",
+    "label": "Şile",
+    "commonsCategory": "Şile",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Şile"
+  },
+  "1276014": {
+    "qid": "Q253182",
+    "label": "Sancaktepe",
+    "commonsCategory": "Sancaktepe",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sancaktepe"
+  },
+  "1766108": {
+    "qid": "Q268747",
+    "label": "Sultangazi",
+    "commonsCategory": "Sultangazi",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sultangazi"
+  },
+  "1766102": {
+    "qid": "Q268983",
+    "label": "Esenyurt",
+    "commonsCategory": "Esenyurt",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Esenyurt"
+  },
+  "1275389": {
+    "qid": "Q272681",
+    "label": "Çatalca",
+    "commonsCategory": "Çatalca",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çatalca"
+  },
+  "1765894": {
+    "qid": "Q284489",
+    "label": "Kağıthane",
+    "commonsCategory": "Kâğıthane",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kâğıthane"
+  },
+  "1276889": {
+    "qid": "Q326339",
+    "label": "Üsküdar",
+    "commonsCategory": "Üsküdar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Üsküdar"
+  },
+  "1276890": {
+    "qid": "Q334924",
+    "label": "Ümraniye",
+    "commonsCategory": "Ümraniye",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ümraniye"
+  },
+  "1766094": {
+    "qid": "Q340148",
+    "label": "Avcılar",
+    "commonsCategory": "Avcılar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Avcılar"
+  },
+  "1766101": {
+    "qid": "Q378714",
+    "label": "Esenler",
+    "commonsCategory": "Esenler",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Esenler"
+  },
+  "1765896": {
+    "qid": "Q390637",
+    "label": "Şişli",
+    "commonsCategory": "Şişli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Şişli"
+  },
+  "1765893": {
+    "qid": "Q459495",
+    "label": "Beşiktaş",
+    "commonsCategory": "Beşiktaş",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Beşiktaş"
+  },
+  "1766105": {
+    "qid": "Q570826",
+    "label": "Gaziosmanpaşa",
+    "commonsCategory": "Gaziosmanpaşa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gaziosmanpaşa"
+  },
+  "1276013": {
+    "qid": "Q639014",
+    "label": "Kartal",
+    "commonsCategory": "Kartal, Istanbul",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kartal, Istanbul"
+  },
+  "7786498": {
+    "qid": "Q639240",
+    "label": "Küçükçekmece",
+    "commonsCategory": "Küçükçekmece",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Küçükçekmece"
+  },
+  "1766103": {
+    "qid": "Q673073",
+    "label": "Eyüpsultan",
+    "commonsCategory": "Eyüpsultan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Eyüpsultan"
+  },
+  "1276012": {
+    "qid": "Q673890",
+    "label": "Sultanbeyli",
+    "commonsCategory": "Sultanbeyli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sultanbeyli"
+  },
+  "1766093": {
+    "qid": "Q691764",
+    "label": "Arnavutköy",
+    "commonsCategory": "Arnavutköy (district)",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Arnavutköy (district)"
+  },
+  "1275379": {
+    "qid": "Q732028",
+    "label": "Silivri",
+    "commonsCategory": "Silivri",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Silivri"
+  },
+  "1766104": {
+    "qid": "Q732923",
+    "label": "Fatih",
+    "commonsCategory": "Fatih",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Fatih"
+  },
+  "1276407": {
+    "qid": "Q739547",
+    "label": "Maltepe",
+    "commonsCategory": "Maltepe",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Maltepe"
+  },
+  "1766098": {
+    "qid": "Q746516",
+    "label": "Bağcılar",
+    "commonsCategory": "Bağcılar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bağcılar"
+  },
+  "1766096": {
+    "qid": "Q752528",
+    "label": "Bakırköy",
+    "commonsCategory": "Bakırköy",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bakırköy"
+  },
+  "1276672": {
+    "qid": "Q753882",
+    "label": "Ataşehir",
+    "commonsCategory": "Ataşehir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ataşehir"
+  },
+  "1766095": {
+    "qid": "Q788634",
+    "label": "Bahçelievler",
+    "commonsCategory": "Bahçelievler",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bahçelievler"
+  },
+  "1766097": {
+    "qid": "Q791567",
+    "label": "Bayrampaşa",
+    "commonsCategory": "Bayrampaşa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bayrampaşa"
+  },
+  "1766099": {
+    "qid": "Q791607",
+    "label": "Başakşehir",
+    "commonsCategory": "Başakşehir",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Başakşehir"
+  },
+  "1276910": {
+    "qid": "Q794351",
+    "label": "Beykoz",
+    "commonsCategory": "Beykoz",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Beykoz"
+  },
+  "1766100": {
+    "qid": "Q794356",
+    "label": "Beylikdüzü",
+    "commonsCategory": "Beylikdüzü",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Beylikdüzü"
+  },
+  "1275387": {
+    "qid": "Q840258",
+    "label": "Büyükçekmece",
+    "commonsCategory": "Büyükçekmece",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Büyükçekmece"
+  },
+  "1276011": {
+    "qid": "Q857056",
+    "label": "Pendik",
+    "commonsCategory": "Pendik",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Pendik"
+  },
+  "1765895": {
+    "qid": "Q857107",
+    "label": "Sarıyer",
+    "commonsCategory": "Sarıyer",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Sarıyer"
+  },
+  "1766106": {
+    "qid": "Q932166",
+    "label": "Güngören",
+    "commonsCategory": "Güngören",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Güngören"
+  },
+  "1276548": {
+    "qid": "Q932886",
+    "label": "Kadıköy",
+    "commonsCategory": "Kadıköy",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kadıköy"
+  },
+  "1276010": {
+    "qid": "Q938548",
+    "label": "Tuzla",
+    "commonsCategory": "Tuzla, Istanbul",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Tuzla, Istanbul"
+  },
+  "963209": {
+    "qid": "Q1020668",
+    "label": "Adalar",
+    "commonsCategory": "Princes' Islands",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Princes' Islands"
+  },
+  "1801992": {
+    "qid": "Q534638",
+    "label": "Devrekani",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1801987": {
+    "qid": "Q1871083",
+    "label": "Azdavay",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1801999": {
+    "qid": "Q1984386",
+    "label": "İhsangazi",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1801985": {
+    "qid": "Q2006400",
+    "label": "Abana",
+    "commonsCategory": "Abana",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Abana"
+  },
+  "1801995": {
+    "qid": "Q2045860",
+    "label": "Küre",
+    "commonsCategory": "Küre",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Küre"
+  },
+  "1801998": {
+    "qid": "Q2252011",
+    "label": "Çatalzeytin",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1801989": {
+    "qid": "Q2355171",
+    "label": "Bozkurt",
+    "commonsCategory": "Bozkurt, Kastamonu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Bozkurt, Kastamonu"
+  },
+  "1801988": {
+    "qid": "Q2491340",
+    "label": "Ağlı",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1801993": {
+    "qid": "Q2670793",
+    "label": "Doğanyurt",
+    "commonsCategory": "Doğanyurt",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Doğanyurt"
+  },
+  "1801990": {
+    "qid": "Q2670870",
+    "label": "Cide",
+    "commonsCategory": "Cide",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Cide"
+  },
+  "1801986": {
+    "qid": "Q2670913",
+    "label": "Araç",
+    "commonsCategory": "Araç",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Araç"
+  },
+  "1426790": {
+    "qid": "Q2671081",
+    "label": "Hanönü",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1801991": {
+    "qid": "Q2674056",
+    "label": "Daday",
+    "commonsCategory": "Daday",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Daday"
+  },
+  "1801997": {
+    "qid": "Q2674078",
+    "label": "Seydiler",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1801996": {
+    "qid": "Q3056024",
+    "label": "Pınarbaşı",
+    "commonsCategory": "Pınarbaşı, Kastamonu",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Pınarbaşı, Kastamonu"
+  },
+  "1426789": {
+    "qid": "Q3906644",
+    "label": "Taşköprü",
+    "commonsCategory": "Taşköprü",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Taşköprü"
+  },
+  "1811108": {
+    "qid": "Q240979",
+    "label": "Çamlıdere",
+    "commonsCategory": "Çamlıdere",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çamlıdere"
+  },
+  "1809594": {
+    "qid": "Q264105",
+    "label": "Balâ",
+    "commonsCategory": "Balâ",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Balâ"
+  },
+  "1713916": {
+    "qid": "Q388999",
+    "label": "Şereflikoçhisar",
+    "commonsCategory": "Şereflikoçhisar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Şereflikoçhisar"
+  },
+  "1667099": {
+    "qid": "Q557607",
+    "label": "Akyurt",
+    "commonsCategory": "Akyurt",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Akyurt"
+  },
+  "1710801": {
+    "qid": "Q631170",
+    "label": "Ayaş",
+    "commonsCategory": "Ayaş",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ayaş"
+  },
+  "1812317": {
+    "qid": "Q682981",
+    "label": "Altındağ",
+    "commonsCategory": "Altındağ",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Altındağ"
+  },
+  "1738278": {
+    "qid": "Q794382",
+    "label": "Beypazarı",
+    "commonsCategory": "Beypazarı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Beypazarı"
+  },
+  "1799855": {
+    "qid": "Q945388",
+    "label": "Polatlı",
+    "commonsCategory": "Polatlı",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Polatlı"
+  },
+  "1811252": {
+    "qid": "Q967071",
+    "label": "Kalecik",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1810229": {
+    "qid": "Q1020642",
+    "label": "Haymana",
+    "commonsCategory": "Haymana",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Haymana"
+  },
+  "1809464": {
+    "qid": "Q1020643",
+    "label": "Gölbaşı",
+    "commonsCategory": "Gölbaşı, Ankara",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Gölbaşı, Ankara"
+  },
+  "1812321": {
+    "qid": "Q1020646",
+    "label": "Çankaya",
+    "commonsCategory": "Çankaya",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çankaya"
+  },
+  "1811046": {
+    "qid": "Q1020659",
+    "label": "Sincan",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1811128": {
+    "qid": "Q1020663",
+    "label": "Kızılcahamam",
+    "commonsCategory": "Kızılcahamam",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kızılcahamam"
+  },
+  "1811393": {
+    "qid": "Q1021220",
+    "label": "Keçiören",
+    "commonsCategory": "Keçiören",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Keçiören"
+  },
+  "1713914": {
+    "qid": "Q1027593",
+    "label": "Evren",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1812354": {
+    "qid": "Q1029159",
+    "label": "Etimesgut",
+    "commonsCategory": "Etimesgut",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Etimesgut"
+  },
+  "1812356": {
+    "qid": "Q1865363",
+    "label": "Yenimahalle",
+    "commonsCategory": "Yenimahalle",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Yenimahalle"
+  },
+  "1738279": {
+    "qid": "Q1947523",
+    "label": "Nallıhan",
+    "commonsCategory": "Nallıhan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Nallıhan"
+  },
+  "1812319": {
+    "qid": "Q2055274",
+    "label": "Mamak",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1812355": {
+    "qid": "Q2318164",
+    "label": "Kahramankazan",
+    "commonsCategory": "Kahramankazan",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Kahramankazan"
+  },
+  "1809674": {
+    "qid": "Q2671994",
+    "label": "Elmadağ",
+    "commonsCategory": "Elmadağ",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Elmadağ"
+  },
+  "1739269": {
+    "qid": "Q2672756",
+    "label": "Güdül",
+    "commonsCategory": "Güdül",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Güdül"
+  },
+  "1667201": {
+    "qid": "Q2868524",
+    "label": "Çubuk",
+    "commonsCategory": "Çubuk",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çubuk"
+  },
+  "1811454": {
+    "qid": "Q3056514",
+    "label": "Pursaklar",
+    "commonsCategory": "Pursaklar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Pursaklar"
+  },
+  "1804178": {
+    "qid": "Q183651",
+    "label": "Tokat",
+    "commonsCategory": "Tokat",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Tokat"
+  },
+  "1804180": {
+    "qid": "Q203018",
+    "label": "Zile",
+    "commonsCategory": "Zile",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Zile"
+  },
+  "1804071": {
+    "qid": "Q513980",
+    "label": "Niksar",
+    "commonsCategory": "Niksar",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Niksar"
+  },
+  "1802575": {
+    "qid": "Q650569",
+    "label": "Erbaa",
+    "commonsCategory": "Erbaa",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Erbaa"
+  },
+  "1804179": {
+    "qid": "Q1012907",
+    "label": "Turhal",
+    "commonsCategory": "Turhal",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Turhal"
+  },
+  "1804160": {
+    "qid": "Q1861963",
+    "label": "Sulusaray",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1802584": {
+    "qid": "Q2248599",
+    "label": "Reşadiye",
+    "commonsCategory": "Reşadiye",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Reşadiye"
+  },
+  "1804073": {
+    "qid": "Q2670757",
+    "label": "Almus",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1804177": {
+    "qid": "Q2670995",
+    "label": "Pazar",
+    "commonsCategory": "Pazar, Tokat",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Pazar, Tokat"
+  },
+  "1802583": {
+    "qid": "Q2671099",
+    "label": "Başçiftlik",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1804176": {
+    "qid": "Q2674070",
+    "label": "Artova",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1804161": {
+    "qid": "Q2674083",
+    "label": "Yeşilyurt",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1829330": {
+    "qid": "Q202195",
+    "label": "Tunceli",
+    "commonsCategory": "Tunceli",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Tunceli"
+  },
+  "1829327": {
+    "qid": "Q963947",
+    "label": "Ovacık",
+    "commonsCategory": "Ovacık",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ovacık"
+  },
+  "1829328": {
+    "qid": "Q990298",
+    "label": "Pertek",
+    "commonsCategory": "Pertek",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Pertek"
+  },
+  "1829324": {
+    "qid": "Q1004584",
+    "label": "Hozat",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1829329": {
+    "qid": "Q1023268",
+    "label": "Pülümür",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1829325": {
+    "qid": "Q1023313",
+    "label": "Mazgirt",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1829326": {
+    "qid": "Q1023317",
+    "label": "Nazımiye",
+    "commonsCategory": "Nazımiye",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Nazımiye"
+  },
+  "1829331": {
+    "qid": "Q2619996",
+    "label": "Çemişgezek",
+    "commonsCategory": "Çemişgezek",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Çemişgezek"
+  },
+  "1751838": {
+    "qid": "Q821363",
+    "label": "Cizre",
+    "commonsCategory": "Cizre",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Cizre"
+  },
+  "1751837": {
+    "qid": "Q853401",
+    "label": "Beytüşşebap",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1751841": {
+    "qid": "Q993707",
+    "label": "Uludere",
+    "commonsCategory": "",
+    "hasBuildings": false,
+    "buildingsCat": ""
+  },
+  "1751840": {
+    "qid": "Q1012881",
+    "label": "Silopi",
+    "commonsCategory": "Silopi",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Silopi"
+  },
+  "1751839": {
+    "qid": "Q1027277",
+    "label": "Güçlükonak",
+    "commonsCategory": "Güçlükonak",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Güçlükonak"
+  },
+  "1751842": {
+    "qid": "Q4595546",
+    "label": "İdil",
+    "commonsCategory": "İdil",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in İdil"
+  },
+  "1483861": {
+    "qid": "Q743587",
+    "label": "Divriği",
+    "commonsCategory": "Divriği",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Divriği"
+  },
+  "1354885": {
+    "qid": "Q945363",
+    "label": "Ergani",
+    "commonsCategory": "Ergani",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Ergani"
+  },
+  "1831014": {
+    "qid": "Q1004578",
+    "label": "Varto",
+    "commonsCategory": "Varto",
+    "hasBuildings": false,
+    "buildingsCat": "Buildings in Varto"
+  }
+}
