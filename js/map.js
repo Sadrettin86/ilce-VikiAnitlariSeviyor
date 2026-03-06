@@ -256,5 +256,7 @@ export function toggleLayer() {
 // ----------------------------------------------------------------
 export function zoomIn()  { map.zoomIn(); }
 export function zoomOut() { map.zoomOut(); }
+
+export function getDistrictCenter(idx) {
   return polyLayers[idx]?.getBounds()?.getCenter();
 }
