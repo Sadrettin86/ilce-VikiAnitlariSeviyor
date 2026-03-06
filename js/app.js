@@ -48,6 +48,9 @@ async function init() {
   buildMatches();
   renderProvinces(state.provFeatures, onProvinceClick);
   hideOverlay();
+
+  // Sayfa açılışında hash varsa oraya git
+  navigateToHash();
 }
 
 function buildMatches() {
@@ -61,6 +64,67 @@ function buildMatches() {
 }
 
 // ----------------------------------------------------------------
+// HASH YÖNETİMİ
+// ----------------------------------------------------------------
+function setHash(type, relationId) {
+  history.replaceState(null, '', `#${type}/${relationId}`);
+}
+
+function clearHash() {
+  history.replaceState(null, '', window.location.pathname);
+}
+
+function navigateToHash() {
+  const hash = window.location.hash; // örn: #province/2167999 veya #district/2167999
+  if (!hash) return;
+
+  const [, type, relId] = hash.match(/^#(province|district)\/(\d+)$/) || [];
+  if (!type || !relId) return;
+
+  if (type === 'province') {
+    const pi = state.provFeatures.findIndex(f =>
+      String(f.properties?.['@id'] || f.properties?.relation_id || '').includes(relId)
+    );
+    if (pi !== -1) onProvinceClick(pi);
+
+  } else if (type === 'district') {
+    // Önce ilçeyi bul
+    const idx = state.features.findIndex(f =>
+      String(f.properties?.relation_id || '') === relId
+    );
+    if (idx === -1) return;
+
+    // O ilçenin iline git
+    const provBounds  = state.provFeatures.findIndex(pf => {
+      // İlçenin bulunduğu ili bul: bounding box içinde hangi il var?
+      try {
+        const distFeat = state.features[idx];
+        const coords   = distFeat.geometry?.coordinates?.[0]?.[0] || distFeat.geometry?.coordinates?.[0];
+        const pt       = Array.isArray(coords?.[0]) ? coords[0] : coords;
+        if (!pt) return false;
+        // İlin geometrisinin bbox'ını kontrol et
+        const pBounds  = L.geoJSON(pf).getBounds();
+        return pBounds.contains([pt[1], pt[0]]);
+      } catch(e) { return false; }
+    });
+
+    const pi = provBounds !== -1 ? provBounds : null;
+    if (pi !== null) {
+      state.activeProvIdx = pi;
+      highlightProvLayer(pi);
+      const pb        = getProvBounds(pi);
+      const pf        = state.provFeatures[pi];
+      const idxList   = renderDistricts(state.features, state.matches, pb, onDistrictClick, pf);
+      state.currentIdxList = idxList;
+    }
+    onDistrictClick(idx);
+  }
+}
+
+// Browser geri/ileri tuşlarını dinle
+window.addEventListener('hashchange', navigateToHash);
+
+// ----------------------------------------------------------------
 // İL TIKLAMA
 // ----------------------------------------------------------------
 function onProvinceClick(pi) {
@@ -70,9 +134,13 @@ function onProvinceClick(pi) {
   closeSidebar();
   removeAdminMarkers();
 
-  const provBounds  = getProvBounds(pi);
   const provFeature = state.provFeatures[pi];
-  const idxList     = renderDistricts(state.features, state.matches, provBounds, onDistrictClick, provFeature);
+  const relId       = String(provFeature?.properties?.['@id'] || '').replace('relation/', '')
+                   || String(provFeature?.properties?.relation_id || '');
+  if (relId) setHash('province', relId); else clearHash();
+
+  const provBounds     = getProvBounds(pi);
+  const idxList        = renderDistricts(state.features, state.matches, provBounds, onDistrictClick, provFeature);
   state.currentIdxList = idxList;
 }
 
@@ -85,17 +153,19 @@ async function onDistrictClick(idx) {
   highlightDistrict(prev, idx, state.matches);
   removeAdminMarkers();
 
+  // Hash güncelle
+  const relId = String(state.features[idx]?.properties?.relation_id || '');
+  if (relId) setHash('district', relId); else clearHash();
+
   const m = state.matches[String(idx)];
   if (!m?.qid) {
     closeSidebar();
     return;
   }
 
-  // Sidebar'ı hemen aç, yükleniyor göster
   openSidebar(m.label || `İlçe #${idx+1}`, []);
   setOverlay('Öğeler yükleniyor...');
 
-  // Paralel: harita noktaları + sidebar item listesi
   const [items, points] = await Promise.all([
     fetchDistrictItems(m.qid),
     fetchAdminPoints(m.qid)
@@ -110,7 +180,15 @@ async function onDistrictClick(idx) {
 // GLOBAL HANDLERS
 // ----------------------------------------------------------------
 window._sel         = (idx) => onDistrictClick(idx);
-window._qSel        = (qid) => toggleAccordion(qid);
+window._qSel        = (qid) => {
+  toggleAccordion(qid);
+  const relId    = String(state.features[state.activeIdx]?.properties?.relation_id || '');
+  const isNowOpen = document.querySelector(`.qitem.open`); // render sonrası kontrol
+  if (relId) {
+    const hash = isNowOpen ? `#district/${relId}/qid/${qid}` : `#district/${relId}`;
+    history.replaceState(null, '', hash);
+  }
+};
 window.setItemFilter= (f, btn) => setItemFilter(f);
 window.toggleLocate = () => toggleLocate();
 window.toggleLayer  = () => toggleLayer();
