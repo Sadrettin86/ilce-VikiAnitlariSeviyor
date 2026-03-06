@@ -23,6 +23,7 @@ export async function fetchDistrictItems(qid) {
       qid:      b.item.value.replace('http://www.wikidata.org/entity/', ''),
       label:    b.itemLabel?.value || '',
       hasImage: !!b.p18,
+      p18file:  b.p18?.value || null,
       p373:     b.p373?.value || null,
     }));
   } catch(e) { return []; }
