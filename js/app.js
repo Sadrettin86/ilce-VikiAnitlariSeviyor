@@ -54,6 +54,9 @@ async function init() {
   renderProvinces(state.provFeatures, onProvinceClick);
   hideOverlay();
 
+  // Varsayılan olarak nokta modu açık
+  togglePointsMode();
+
   // Sayfa açılışında hash varsa oraya git
   navigateToHash();
 }
