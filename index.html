@@ -14,18 +14,37 @@
 
 <div id="header">
   <h1><span class="logo-green">🏛️</span> Viki Anıtları Seviyor – İlçe Eşleştirici</h1>
-  <input id="search-box" type="text" placeholder="İlçe ara (eşleştirilen)..." oninput="onSearch(this.value)">
-  <div id="stats">Eşleşti: <b id="s-matched">0</b> / <b id="s-total">0</b> &nbsp;|&nbsp; 🟢 Binalar: <b id="s-bldg">0</b></div>
 </div>
 
+<div id="main">
+
+  <!-- SIDEBAR — sol, sadece ilçe seçilince görünür -->
+  <div id="sidebar">
+    <div id="sidebar-top">
+      <div id="sidebar-title">–</div>
+      <div id="filter-btns">
+        <button class="fbtn on" data-f="all"      onclick="window.setItemFilter('all',this)">Tümü</button>
+        <button class="fbtn"    data-f="image"    onclick="window.setItemFilter('image',this)">📷 Var</button>
+        <button class="fbtn"    data-f="noimage"  onclick="window.setItemFilter('noimage',this)">📷 Yok</button>
+        <button class="fbtn"    data-f="category" onclick="window.setItemFilter('category',this)">📁 Var</button>
+        <button class="fbtn"    data-f="nocat"    onclick="window.setItemFilter('nocat',this)">📁 Yok</button>
+      </div>
+      <div id="item-count"></div>
+    </div>
+    <div id="item-list"></div>
+  </div>
+
+  <div id="map"></div>
+
+</div>
+
+<!-- Harita kontrolleri -->
 <div id="map-controls">
-  <!-- Zoom grubu -->
-  <div class="ctrl-group">
+  <div class="map-btn-group">
     <button id="btn-zoom-in"  class="map-btn" onclick="window.zoomIn()"  title="Yakınlaş">+</button>
     <button id="btn-zoom-out" class="map-btn" onclick="window.zoomOut()" title="Uzaklaş">−</button>
   </div>
-  <!-- Araçlar grubu -->
-  <div class="ctrl-group">
+  <div class="map-btn-group">
     <button id="btn-locate" class="map-btn" onclick="window.toggleLocate()" title="Konumumu göster">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
@@ -36,28 +55,6 @@
         <polygon points="12 2 22 8.5 12 15 2 8.5"/><polyline points="2 15.5 12 22 22 15.5"/>
       </svg>
     </button>
-  </div>
-</div>
-
-<div id="main">
-  <div id="map"></div>
-  <div id="sidebar">
-    <div id="sidebar-top">
-      <span id="list-label">–</span>
-      <div id="filter-btns">
-        <button class="fbtn on" onclick="setFilter('all',this)">Tümü</button>
-        <button class="fbtn" onclick="setFilter('matched',this)">Eşleşti</button>
-        <button class="fbtn" onclick="setFilter('buildings',this)">🟢 Binalar</button>
-        <button class="fbtn" onclick="setFilter('unmatched',this)">Bekliyor</button>
-      </div>
-    </div>
-    <div id="district-list"></div>
-    <div id="detail">
-      <div id="detail-title"></div>
-      <div class="mlabel">Wikidata Eşleştirmesi</div>
-      <div id="match-area"></div>
-      <div id="commons-box" style="display:none"></div>
-    </div>
   </div>
 </div>
 
