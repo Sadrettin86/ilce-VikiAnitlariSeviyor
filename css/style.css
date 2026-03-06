@@ -357,3 +357,19 @@ path.leaflet-interactive:focus { outline: none; }
 .acc-link:hover { text-decoration: underline; }
 
 .acc-empty { color: #999; font-style: italic; }
+
+/* ── YÜKLE BUTONU ─────────────────────────────────────────────── */
+.upload-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 12px;
+  background: #7ebc6f;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 3px;
+  text-decoration: none;
+  font-family: inherit;
+  transition: background .15s;
+}
+.upload-btn:hover { background: #6aaa5a; text-decoration: none; color: #fff; }
