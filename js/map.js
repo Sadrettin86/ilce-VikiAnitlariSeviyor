@@ -165,23 +165,50 @@ export function showAllLayers() {
   polyLayers.forEach(l => { if (l) l.addTo(map); });
 }
 
-// Nokta modu marker'ları (adminMarkers'dan ayrı)
-let pointMarkers = [];
+// Nokta modu marker'ları — Map<qid, marker> ile diff güncelleme
+let pointMarkerMap = new Map(); // qid → leaflet marker
+let _pointClickCb = null;
 
 export function clearPointMarkers() {
-  pointMarkers.forEach(m => map.removeLayer(m));
-  pointMarkers = [];
+  pointMarkerMap.forEach(m => map.removeLayer(m));
+  pointMarkerMap.clear();
 }
 
+// Diff tabanlı güncelleme: sadece eklenecek/kaldırılacak marker'ları işle
 export function showPointMarkers(items, onMarkerClick) {
-  clearPointMarkers();
+  _pointClickCb = onMarkerClick;
+  const newQids = new Set(items.map(i => i.qid));
+
+  // Görüş alanından çıkan marker'ları yumuşakça kaldır
+  pointMarkerMap.forEach((marker, qid) => {
+    if (!newQids.has(qid)) {
+      const el = marker.getElement();
+      if (el) {
+        el.style.transition = 'opacity 0.3s';
+        el.style.opacity = '0';
+        setTimeout(() => {
+          if (pointMarkerMap.get(qid) === marker) {
+            map.removeLayer(marker);
+            pointMarkerMap.delete(qid);
+          }
+        }, 300);
+      } else {
+        map.removeLayer(marker);
+        pointMarkerMap.delete(qid);
+      }
+    }
+  });
+
+  // Yeni gelen marker'ları fade-in ile ekle
   items.forEach(item => {
+    if (pointMarkerMap.has(item.qid)) return; // zaten var, dokundurma
+
     const iconUrl = item.hasImage ? 'css/marker-green.png' : 'css/marker-red.png';
     const icon = L.icon({
       iconUrl,
-      shadowUrl:    'css/marker-shadow.png',
-      iconSize:     [25, 41], iconAnchor:   [12, 41],
-      popupAnchor:  [1, -34], shadowSize:   [41, 41], shadowAnchor: [12, 41],
+      shadowUrl:   'css/marker-shadow.png',
+      iconSize:    [25, 41], iconAnchor:   [12, 41],
+      popupAnchor: [1, -34], shadowSize:   [41, 41], shadowAnchor: [12, 41],
     });
 
     const p18thumb = makeThumbUrl(item.p18file, 120);
@@ -202,8 +229,18 @@ export function showPointMarkers(items, onMarkerClick) {
       .bindPopup(popupHtml, { maxWidth: 280, className: 'monument-popup' })
       .addTo(map);
 
-    marker.on('click', () => { if (onMarkerClick) onMarkerClick(item.qid); });
-    pointMarkers.push(marker);
+    // Fade-in
+    requestAnimationFrame(() => {
+      const el = marker.getElement();
+      if (el) {
+        el.style.opacity = '0';
+        el.style.transition = 'opacity 0.35s';
+        requestAnimationFrame(() => { el.style.opacity = '1'; });
+      }
+    });
+
+    marker.on('click', () => { if (_pointClickCb) _pointClickCb(item.qid); });
+    pointMarkerMap.set(item.qid, marker);
   });
 }
 
