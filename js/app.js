@@ -9,7 +9,7 @@ import { renderProvinces, renderDistricts, refreshDistrictLayer,
          highlightProvLayer, showAdminMarker, removeAdminMarkers,
          toggleLocate, toggleLayer, zoomIn, zoomOut }              from "./map.js";
 import { initSidebar, openSidebar, closeSidebar, renderItems,
-         setItemFilter, toggleAccordion,
+         setItemFilter, toggleAccordion, openQidFromMap,
          setOverlay, hideOverlay }                                  from "./sidebar.js";
 
 // ----------------------------------------------------------------
@@ -172,14 +172,22 @@ async function onDistrictClick(idx) {
   ]);
 
   hideOverlay();
-  points.forEach(p => showAdminMarker(p.lat, p.lng, p.label));
+  points.forEach(p => {
+    // fetchDistrictItems'dan gelen item'ı bul (p18 bilgisi için)
+    const item = items.find(i => i.qid === p.qid);
+    const p18thumb = item?.hasImage
+      ? `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(item.p18file || '')}`
+      : null;
+    showAdminMarker(p.lat, p.lng, p.label, p.qid, item?.hasImage || false, p18thumb);
+  });
   openSidebar(m.label || `İlçe #${idx+1}`, items);
 }
 
 // ----------------------------------------------------------------
 // GLOBAL HANDLERS
 // ----------------------------------------------------------------
-window._sel         = (idx) => onDistrictClick(idx);
+window._sel             = (idx) => onDistrictClick(idx);
+window._sidebarOpenQid  = (qid) => openQidFromMap(qid);
 window._qSel        = (qid) => {
   toggleAccordion(qid);
   const relId    = String(state.features[state.activeIdx]?.properties?.relation_id || '');
