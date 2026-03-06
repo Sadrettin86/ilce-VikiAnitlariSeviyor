@@ -152,30 +152,91 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
   attribution: '© OpenStreetMap © CARTO', maxZoom: 19
 }).addTo(map);
 
+let provLayers    = [];   // il layer referansları
+let activeProvIdx = null; // seçili il index'i
+
 // ================================================================
 // INIT
 // ================================================================
 async function init() {
-  setOverlay('İlçe sınırları yükleniyor...');
+  setOverlay('Harita yükleniyor...');
   const [distResp, provResp] = await Promise.all([fetch(GEOJSON_URL), fetch(PROV_URL)]);
   if (!distResp.ok) throw new Error('İlçe GeoJSON yüklenemedi');
   if (!provResp.ok)  throw new Error('İl GeoJSON yüklenemedi');
   features     = (await distResp.json()).features;
   provFeatures = (await provResp.json()).features;
 
-  // İl katmanını arkaya çiz (tıklanamaz)
-  L.geoJSON({type:'FeatureCollection', features: provFeatures}, {
-    style: { color: '#475569', weight: 2, fill: false, opacity: 0.5 },
-    interactive: false
-  }).addTo(map);
-
   setOverlay('Eşleştirmeler yükleniyor...');
   await loadMatches();
 
-  renderMap();
-  renderList();
+  // Sadece il katmanını göster
+  renderProvinces();
+  renderList([]);  // boş başla
   updateStats();
   hideOverlay();
+}
+
+// ================================================================
+// İL KATMANI
+// ================================================================
+function renderProvinces() {
+  provLayers.forEach(l => { if (l) map.removeLayer(l); });
+  provLayers = [];
+
+  provFeatures.forEach((feat, pi) => {
+    const layer = L.geoJSON(feat, {
+      style: { color: '#475569', weight: 2, fillColor: '#64748b', fillOpacity: 0.06, opacity: 0.7 }
+    });
+    layer.on('click',     () => selectProvince(pi));
+    layer.on('mouseover', () => { if (activeProvIdx !== pi) layer.setStyle({ fillOpacity: 0.15, weight: 2.5, color: '#7c3aed' }); });
+    layer.on('mouseout',  () => { if (activeProvIdx !== pi) layer.setStyle({ color: '#475569', weight: 2, fillOpacity: 0.06 }); });
+    layer.addTo(map);
+    provLayers[pi] = layer;
+  });
+}
+
+function selectProvince(pi) {
+  // Önceki ili sıfırla
+  if (activeProvIdx !== null && provLayers[activeProvIdx]) {
+    provLayers[activeProvIdx].setStyle({ color: '#475569', weight: 2, fillColor: '#64748b', fillOpacity: 0.06 });
+  }
+  // Önceki ilçeleri kaldır
+  polyLayers.forEach(l => { if (l) map.removeLayer(l); });
+  polyLayers = [];
+  if (activeProvLayer) { map.removeLayer(activeProvLayer); activeProvLayer = null; }
+
+  activeProvIdx = pi;
+  activeIdx = null;
+
+  // İli vurgula
+  provLayers[pi].setStyle({ color: '#7c3aed', weight: 3, fillColor: '#7c3aed', fillOpacity: 0.08 });
+
+  // İl sınırları içindeki ilçeleri bul ve çiz
+  const provBounds = provLayers[pi].getBounds();
+  const districtIdxs = [];
+  features.forEach((feat, idx) => {
+    try {
+      const layer = L.geoJSON(feat, { style: getStyle(idx) });
+      // İlçe merkezi ilin bounds'u içinde mi?
+      const b = layer.getBounds();
+      if (provBounds.contains(b.getCenter())) {
+        layer.on('click', () => selectDistrict(idx));
+        layer.on('mouseover', () => { if (activeIdx !== idx) layer.setStyle({ fillOpacity: getStyle(idx).fillOpacity + 0.12, weight: 2 }); });
+        layer.on('mouseout',  () => { if (activeIdx !== idx) layer.setStyle(getStyle(idx)); });
+        const m = matches[String(idx)];
+        if (m?.label) layer.bindTooltip(m.label, { sticky: true });
+        layer.addTo(map);
+        polyLayers[idx] = layer;
+        districtIdxs.push(idx);
+      }
+    } catch(e) {}
+  });
+
+  map.fitBounds(provBounds, { padding: [30, 30] });
+
+  // Listeyi o ilin ilçeleriyle güncelle
+  renderList(districtIdxs);
+  document.getElementById('detail').style.display = 'none';
 }
 
 // ================================================================
@@ -233,8 +294,8 @@ function refreshLayer(idx) {
 // ================================================================
 // LİSTE
 // ================================================================
-function getFiltered() {
-  let list = features.map((f, i) => ({ idx: i, match: matches[String(i)] }));
+function getFiltered(idxList) {
+  let list = (idxList || features.map((_,i) => i)).map(i => ({ idx: i, match: matches[String(i)] }));
   if (searchQ) {
     const q = searchQ.toLowerCase();
     list = list.filter(d => (d.match?.label || '').toLowerCase().includes(q));
@@ -251,9 +312,16 @@ function getFiltered() {
   return list;
 }
 
-function renderList() {
-  const filtered = getFiltered();
+let currentIdxList = null;
+
+function renderList(idxList) {
+  if (idxList !== undefined) currentIdxList = idxList;
+  const filtered = getFiltered(currentIdxList);
   document.getElementById('list-label').textContent = `${filtered.length} ilçe`;
+  if (!filtered.length) {
+    document.getElementById('district-list').innerHTML = `<div class="info-txt" style="padding:20px">Bir ile tıklayarak ilçeleri göster</div>`;
+    return;
+  }
   document.getElementById('district-list').innerHTML = filtered.map(({ idx, match }) => {
     const name   = match?.label || `İlçe #${idx + 1}`;
     const dotCls = match?.hasBuildings ? 'dot-g' : match?.qid ? 'dot-y' : 'dot-x';
@@ -367,12 +435,14 @@ window._wdSearch = async function(idx) {
     const data = await (await fetch(url)).json();
     const res  = data.search || [];
     if (!res.length) { document.getElementById('sugs').innerHTML = `<div class="info-txt">Sonuç bulunamadı.</div>`; return; }
-    document.getElementById('sugs').innerHTML = res.map(r => `
-      <div class="sug" onclick="window._apply(${idx},'${r.id}',${JSON.stringify(r.label || r.id)})">
+    // Önerileri data attribute ile sakla, onclick'te index kullan
+    window._sugData = res;
+    document.getElementById('sugs').innerHTML = res.map((r, si) => `
+      <div class="sug" onclick="window._applySug(${idx},${si})">
         <div class="sug-qid">${r.id}</div>
         <div>
           <div class="sug-name">${r.label || r.id}</div>
-          <div class="sug-desc">${r.description || ''}</div>
+          <div class="sug-desc">${(r.description||'').replace(/</g,'&lt;')}</div>
         </div>
       </div>`).join('');
   } catch(e) {
@@ -380,8 +450,10 @@ window._wdSearch = async function(idx) {
   }
 };
 
-// ================================================================
-// EŞLEŞTİRME UYGULA
+window._applySug = function(idx, si) {
+  const r = window._sugData[si];
+  if (r) window._apply(idx, r.id, r.label || r.id);
+};
 // ================================================================
 window._apply = async function(idx, qid, label) {
   document.getElementById('match-area').innerHTML = `<div class="info-txt">⏳ Commons kontrol ediliyor...</div>`;
