@@ -18,13 +18,16 @@ export function openSidebar(districtLabel, items) {
     b.classList.toggle('on', b.dataset.f === 'all');
   });
 
-  document.getElementById('sidebar-title').textContent = districtLabel;
-  document.getElementById('sidebar').style.display     = 'flex';
+  const titleEl   = document.getElementById('sidebar-title');
+  const sidebarEl = document.getElementById('sidebar');
+  if (titleEl)   titleEl.textContent    = districtLabel;
+  if (sidebarEl) sidebarEl.style.display = 'flex';
   renderItems(items);
 }
 
 export function closeSidebar() {
-  document.getElementById('sidebar').style.display = 'none';
+  const el = document.getElementById('sidebar');
+  if (el) el.style.display = 'none';
 }
 
 // ----------------------------------------------------------------
@@ -38,7 +41,7 @@ export function renderItems(items) {
   const list     = document.getElementById('item-list');
   const count    = document.getElementById('item-count');
 
-  count.textContent = `${filtered.length} öğe`;
+  if (count) count.textContent = `${filtered.length} öğe`;
 
   if (!filtered.length) {
     list.innerHTML = `<div class="info-txt">Bu filtrede öğe yok</div>`;
@@ -71,7 +74,10 @@ function renderAccordion(item) {
     ? `<a href="https://commons.wikimedia.org/wiki/Category:${encodeURIComponent(item.p373)}"
           target="_blank" class="acc-link">📁 ${item.p373}</a>`
     : `<span class="acc-empty">P373 değeri yok</span>`;
-  return `<div class="qitem-body">${catLine}</div>`;
+  return `<div class="qitem-body">
+    ${catLine}
+    <a class="upload-btn" href="upload.html?qid=${item.qid}" target="_blank">📤 Yükle</a>
+  </div>`;
 }
 
 function applyFilter(items) {
@@ -105,7 +111,12 @@ export function toggleAccordion(qid) {
 // OVERLAY
 // ----------------------------------------------------------------
 export function setOverlay(txt) {
-  document.getElementById('overlay').classList.remove('hidden');
-  document.getElementById('overlay-lbl').textContent = txt;
+  const o = document.getElementById('overlay');
+  const l = document.getElementById('overlay-lbl');
+  if (o) o.classList.remove('hidden');
+  if (l) l.textContent = txt;
 }
-export function hideOverlay() { document.getElementById('overlay').classList.add('hidden'); }
+export function hideOverlay() {
+  const o = document.getElementById('overlay');
+  if (o) o.classList.add('hidden');
+}
