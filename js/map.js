@@ -93,7 +93,23 @@ export function showProvHighlight(feat) {
     interactive: false
   }).addTo(map);
 }
+let adminMarker = null;
 
+export function showAdminMarker(lat, lng, label) {
+  if (adminMarker) { map.removeLayer(adminMarker); adminMarker = null; }
+  const icon = L.divIcon({
+    className: '',
+    html: `<div style="width:12px;height:12px;border-radius:50%;background:#7c3aed;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.4)"></div>`,
+    iconSize: [12, 12], iconAnchor: [6, 6]
+  });
+  adminMarker = L.marker([lat, lng], { icon, interactive: false })
+    .bindTooltip(label || 'İdari merkez', { permanent: false, direction: 'top', offset: [0, -8] })
+    .addTo(map);
+}
+
+export function removeAdminMarker() {
+  if (adminMarker) { map.removeLayer(adminMarker); adminMarker = null; }
+}
 export function getDistrictCenter(idx) {
   return polyLayers[idx]?.getBounds()?.getCenter();
 }
