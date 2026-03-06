@@ -1,11 +1,14 @@
 /* ================================================================
-   mobile.css — Sadece mobil stilleri (max-width: 768px)
+   mobile.css — Mobil stilleri (max-width: 768px)
    ================================================================ */
 
 @media (max-width: 768px) {
-  #sidebar { display: none; }
-  #stats { display: none; }
-  #search-box { max-width: 100%; flex: 1; }
-  #header { padding: 8px 12px; gap: 8px; }
-  #header h1 { font-size: 13px; }
+  #sidebar    { display: none; }
+  #stats      { display: none; }
+  #search-box { max-width: 140px; font-size: 12px; }
+  #header h1  { font-size: 12px; }
+  #header     { padding: 0 8px; gap: 8px; }
+
+  /* Kontrol paneli ekranın sağında */
+  #map-controls { right: 10px; top: 54px; }
 }
