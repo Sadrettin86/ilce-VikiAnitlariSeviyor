@@ -124,10 +124,6 @@ export function highlightDistrict(prevIdx, idx, matches) {
       l.setStyle({ ...base, fillOpacity: 0, fillColor: 'transparent' });
     }
   });
-  // Seçili ilçeye zoom
-  if (polyLayers[idx]) {
-    try { map.fitBounds(polyLayers[idx].getBounds(), { padding: [20, 20] }); } catch(e) {}
-  }
 }
 
 export function showProvHighlight() {
