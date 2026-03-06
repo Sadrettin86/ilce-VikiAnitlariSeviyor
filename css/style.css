@@ -47,7 +47,9 @@ body {
   gap: 10px;
   flex-shrink: 0;
   box-shadow: 0 2px 4px rgba(0,0,0,.4);
-  z-index: 100;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 #header h1 {
