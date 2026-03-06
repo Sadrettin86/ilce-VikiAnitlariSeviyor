@@ -77,7 +77,8 @@ function onProvinceClick(pi) {
   closeDetail();
   removeAdminMarkers();
   const provBounds   = getProvBounds(pi);
-  const districtIdxs = renderDistricts(state.features, state.matches, provBounds, onDistrictClick);
+  const provFeature  = state.provFeatures[pi];
+  const districtIdxs = renderDistricts(state.features, state.matches, provBounds, onDistrictClick, provFeature);
   state.currentIdxList = districtIdxs;
   renderList(districtIdxs);
   updateStats(state.features, state.matches);
