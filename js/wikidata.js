@@ -8,26 +8,28 @@ export async function searchWikidata(q) {
   return data.search || [];
 }
 
-// İlçe QID'sine P131 ile bağlı ve P11729 değeri olan tüm öğeleri getir
+// P131=ilçe QID'si, P11729 (Kültür Envanteri ID) var, P625 koordinatını çek
 export async function fetchAdminPoints(qid) {
   try {
     const sparql = `
-      SELECT ?item ?itemLabel ?lat ?lng WHERE {
+      SELECT ?item ?itemLabel ?coord WHERE {
         ?item wdt:P131 wd:${qid} .
-        ?item wdt:P11729 ?coord .
-        BIND(geof:latitude(?coord) AS ?lat)
-        BIND(geof:longitude(?coord) AS ?lng)
+        ?item wdt:P11729 [] .
+        ?item wdt:P625 ?coord .
         SERVICE wikibase:label { bd:serviceParam wikibase:language "tr,en". }
       }
     `;
     const url = 'https://query.wikidata.org/sparql?query=' + encodeURIComponent(sparql) + '&format=json';
     const data = await (await fetch(url, { headers: { 'Accept': 'application/sparql-results+json' } })).json();
-    return (data.results?.bindings || []).map(b => ({
-      qid:   b.item.value.replace('http://www.wikidata.org/entity/', ''),
-      label: b.itemLabel?.value || '',
-      lat:   parseFloat(b.lat.value),
-      lng:   parseFloat(b.lng.value),
-    }));
+    return (data.results?.bindings || []).map(b => {
+      const m = b.coord.value.match(/Point\(([^ ]+) ([^)]+)\)/);
+      return {
+        qid:   b.item.value.replace('http://www.wikidata.org/entity/', ''),
+        label: b.itemLabel?.value || '',
+        lat:   parseFloat(m?.[2]),
+        lng:   parseFloat(m?.[1]),
+      };
+    }).filter(p => !isNaN(p.lat) && !isNaN(p.lng));
   } catch(e) { return []; }
 }
 
