@@ -21,3 +21,12 @@ export async function checkCommons(qid) {
     return { commonsCategory: p373, hasBuildings: exists, buildingsCat: exists ? buildingsCat : null };
   } catch(e) { return {}; }
 }
+export async function fetchP11729(qid) {
+  try {
+    const data = await (await fetch(`https://www.wikidata.org/wiki/Special:EntityData/${qid}.json`)).json();
+    const entity = data.entities[qid];
+    const p11729 = entity?.claims?.P11729?.[0]?.mainsnak?.datavalue?.value;
+    if (!p11729) return null;
+    return { lat: p11729.latitude, lng: p11729.longitude };
+  } catch(e) { return null; }
+}
