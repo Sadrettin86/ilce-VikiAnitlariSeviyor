@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viki Anıtları Seviyor – İlçe Eşleştirici</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<div id="header">
+  <h1>🏛️ Viki Anıtları Seviyor – İlçe Eşleştirici</h1>
+  <input id="search-box" type="text" placeholder="İlçe ara (eşleştirilen)..." oninput="onSearch(this.value)">
+  <div id="stats">Eşleşti: <b id="s-matched">0</b> / <b id="s-total">0</b> &nbsp;|&nbsp; 🟢 Binalar: <b id="s-bldg">0</b></div>
+</div>
+
+<div id="main">
+  <div id="map"></div>
+  <div id="sidebar">
+    <div id="sidebar-top">
+      <span id="list-label">–</span>
+      <div id="filter-btns">
+        <button class="fbtn on" onclick="setFilter('all',this)">Tümü</button>
+        <button class="fbtn" onclick="setFilter('matched',this)">Eşleşti</button>
+        <button class="fbtn" onclick="setFilter('buildings',this)">🟢 Binalar</button>
+        <button class="fbtn" onclick="setFilter('unmatched',this)">Bekliyor</button>
+      </div>
+    </div>
+    <div id="district-list"></div>
+    <div id="detail">
+      <div id="detail-title"></div>
+      <div class="mlabel">Wikidata Eşleştirmesi</div>
+      <div id="match-area"></div>
+      <div id="commons-box" style="display:none"></div>
+    </div>
+  </div>
+</div>
+
+<div id="overlay">
+  <div style="text-align:center">
+    <div class="spin"></div>
+    <div class="spin-lbl" id="overlay-lbl">Yükleniyor...</div>
+  </div>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
