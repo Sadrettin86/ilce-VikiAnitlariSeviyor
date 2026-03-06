@@ -15,6 +15,28 @@ const cartoTile = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{
 osmTile.addTo(map);
 let currentTile = 'osm';
 
+// ----------------------------------------------------------------
+// YARDIMCI: Commons dosya adından thumb URL üret (senkron)
+// p18file SPARQL'dan "http://commons.wikimedia.org/wiki/Special:FilePath/Dosya.jpg" şeklinde gelir
+// md5() fonksiyonu index.html'deki blueimp-md5 CDN'inden geliyor
+// ----------------------------------------------------------------
+export function makeThumbUrl(p18file, width = 120) {
+  if (!p18file) return null;
+  let filename = decodeURIComponent(
+    p18file.replace(/.*Special:FilePath\//, '').replace(/.*\/File:/, '')
+  ).replace(/ /g, '_');
+  if (typeof md5 !== 'function') {
+    // md5 yüklenmemişse fallback
+    return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}?width=${width}`;
+  }
+  const hex  = md5(filename);
+  const a    = hex[0];
+  const ab   = hex[0] + hex[1];
+  const ext  = filename.split('.').pop().toLowerCase();
+  const thumb = ext === 'svg' ? `${width}px-${filename}.png` : `${width}px-${filename}`;
+  return `https://upload.wikimedia.org/wikipedia/commons/thumb/${a}/${ab}/${encodeURIComponent(filename)}/${thumb}`;
+}
+
 let provLayers  = [];
 let polyLayers  = [];
 let activeProvIdx = null;
@@ -162,11 +184,9 @@ export function showPointMarkers(items, onMarkerClick) {
       popupAnchor:  [1, -34], shadowSize:   [41, 41], shadowAnchor: [12, 41],
     });
 
-    const p18thumb = item.p18file
-      ? `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(item.p18file)}?width=100`
-      : null;
+    const p18thumb = makeThumbUrl(item.p18file, 120);
     const imgHtml = p18thumb
-      ? `<img src="${p18thumb}" style="width:72px;height:54px;object-fit:cover;border-radius:3px;flex-shrink:0">`
+      ? `<img src="${p18thumb}" style="width:72px;height:54px;object-fit:cover;border-radius:3px;flex-shrink:0" loading="lazy">`
       : `<div style="width:72px;height:54px;background:#e8e8e8;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">📷</div>`;
 
     const popupHtml = `
@@ -174,8 +194,7 @@ export function showPointMarkers(items, onMarkerClick) {
         ${imgHtml}
         <div style="flex:1;min-width:0">
           <div style="font-weight:700;font-size:13px;color:#333;margin-bottom:3px;line-height:1.3">${item.label || item.qid}</div>
-          <div style="font-size:11px;color:#888">${item.hasImage ? '📷 Fotoğraf var' : '📷 Fotoğraf yok'}</div>
-          <div style="font-size:10px;color:#7ebc6f;margin-top:4px;font-weight:600">Yükle →</div>
+          ${!item.hasImage ? `<div style="font-size:11px;color:#888">📷 Fotoğraf yok</div>` : ''}
         </div>
       </div>`;
 
@@ -214,7 +233,7 @@ export function showAdminMarker(lat, lng, label, qid, hasImage, p18thumb) {
   });
 
   const imgHtml = p18thumb
-    ? `<img src="${p18thumb}" style="width:72px;height:54px;object-fit:cover;border-radius:3px;flex-shrink:0">`
+    ? `<img src="${p18thumb}" style="width:72px;height:54px;object-fit:cover;border-radius:3px;flex-shrink:0" loading="lazy">`
     : `<div style="width:72px;height:54px;background:#e8e8e8;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">📷</div>`;
 
   const popupHtml = `
@@ -224,8 +243,7 @@ export function showAdminMarker(lat, lng, label, qid, hasImage, p18thumb) {
       ${imgHtml}
       <div style="flex:1;min-width:0">
         <div style="font-weight:700;font-size:13px;color:#333;margin-bottom:3px;line-height:1.3">${label || qid}</div>
-        <div style="font-size:11px;color:#888">${hasImage ? '📷 Fotoğraf var' : '📷 Fotoğraf yok'}</div>
-        <div style="font-size:10px;color:#7ebc6f;margin-top:4px;font-weight:600">Yükle →</div>
+        ${!hasImage ? `<div style="font-size:11px;color:#888">📷 Fotoğraf yok</div>` : ''}
       </div>
     </div>`;
 
