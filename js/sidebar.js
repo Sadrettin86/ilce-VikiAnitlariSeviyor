@@ -131,9 +131,18 @@ export function showFilterBtns() {
   if (filterEl) filterEl.style.display = 'flex';
 }
 export function openQidFromMap(qid) {
+  // Nokta modunda: DOM'da elemanı bul, sadece scroll et
+  const existing = document.querySelector(`.qitem[onclick*="'${qid}'"]`);
+  if (existing && (!_state.currentItems || !_state.currentItems.length)) {
+    document.querySelectorAll('.qitem').forEach(el => el.classList.remove('open'));
+    existing.classList.add('open');
+    existing.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    return;
+  }
+
+  // Normal district modu
   _openQid = qid;
   renderItems();
-  // O QID'nin elemanına scroll et
   setTimeout(() => {
     const el = document.querySelector(`.qitem.open`);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
