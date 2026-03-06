@@ -1,4 +1,6 @@
+// ================================================================
 // map.js — Leaflet harita, il ve ilçe katmanları
+// ================================================================
 
 export const map = L.map('map').setView([39, 35], 6);
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -9,9 +11,13 @@ let provLayers    = [];
 let polyLayers    = [];
 let activeProvLayer = null;
 
+// ----------------------------------------------------------------
+// İL KATMANI
+// ----------------------------------------------------------------
 export function renderProvinces(provFeatures, onProvinceClick) {
   provLayers.forEach(l => { if (l) map.removeLayer(l); });
   provLayers = [];
+
   provFeatures.forEach((feat, pi) => {
     const layer = L.geoJSON(feat, {
       style: { color: '#475569', weight: 2, fillColor: '#64748b', fillOpacity: 0.06, opacity: 0.7 }
@@ -36,6 +42,9 @@ export function getProvBounds(pi) {
   return provLayers[pi]?.getBounds();
 }
 
+// ----------------------------------------------------------------
+// İLÇE KATMANI
+// ----------------------------------------------------------------
 export function getDistrictStyle(matches, idx) {
   const m = matches[String(idx)];
   if (!m)             return { color: '#94a3b8', weight: 1.2, fillColor: '#94a3b8', fillOpacity: 0.08, opacity: 0.6 };
@@ -44,17 +53,24 @@ export function getDistrictStyle(matches, idx) {
 }
 
 export function renderDistricts(features, matches, provBounds, onDistrictClick) {
+  // Mevcut ilçe layerlarını kaldır
   polyLayers.forEach(l => { if (l) map.removeLayer(l); });
   polyLayers = [];
+
   const districtIdxs = [];
+
   features.forEach((feat, idx) => {
     try {
       const style = getDistrictStyle(matches, idx);
       const layer = L.geoJSON(feat, { style });
+
+      // İl sınırları içinde mi?
       if (!provBounds.contains(layer.getBounds().getCenter())) return;
+
       layer.on('click',     () => onDistrictClick(idx));
-      layer.on('mouseover', () => layer.setStyle({ fillOpacity: style.fillOpacity + 0.12, weight: 2 }));
+      layer.on('mouseover', () => { if (polyLayers[idx]?._active) return; layer.setStyle({ fillOpacity: style.fillOpacity + 0.12, weight: 2 }); });
       layer.on('mouseout',  () => layer.setStyle(getDistrictStyle(matches, idx)));
+
       const m = matches[String(idx)];
       if (m?.label) layer.bindTooltip(m.label, { sticky: true });
       layer.addTo(map);
@@ -62,26 +78,37 @@ export function renderDistricts(features, matches, provBounds, onDistrictClick) 
       districtIdxs.push(idx);
     } catch(e) {}
   });
+
   return districtIdxs;
 }
 
 export function refreshDistrictLayer(matches, idx) {
   const layer = polyLayers[idx];
   if (!layer) return;
-  layer.setStyle(getDistrictStyle(matches, idx));
+  const style = getDistrictStyle(matches, idx);
+  layer.setStyle(style);
   layer.unbindTooltip();
   const m = matches[String(idx)];
   if (m?.label) layer.bindTooltip(m.label, { sticky: true });
 }
 
 export function highlightDistrict(prevIdx, idx, matches) {
+  // Öncekini sıfırla
   if (prevIdx !== null && polyLayers[prevIdx]) {
     polyLayers[prevIdx].setStyle(getDistrictStyle(matches, prevIdx));
   }
+  // Yenisini vurgula
   if (polyLayers[idx]) {
     const s = getDistrictStyle(matches, idx);
     polyLayers[idx].setStyle({ ...s, weight: 2.5, fillOpacity: s.fillOpacity + 0.15 });
     try { map.fitBounds(polyLayers[idx].getBounds(), { maxZoom: 12, padding: [40, 40] }); } catch(e) {}
+  }
+
+  // İl sınırını mor göster
+  if (activeProvLayer) { map.removeLayer(activeProvLayer); activeProvLayer = null; }
+  if (polyLayers[idx]) {
+    const center = polyLayers[idx].getBounds().getCenter();
+    // Hâlâ seçili provLayer üzerinden gidiyoruz, bunu app.js'de halledelim
   }
 }
 
@@ -93,23 +120,26 @@ export function showProvHighlight(feat) {
     interactive: false
   }).addTo(map);
 }
-let adminMarker = null;
+
+let adminMarkers = [];
 
 export function showAdminMarker(lat, lng, label) {
-  if (adminMarker) { map.removeLayer(adminMarker); adminMarker = null; }
   const icon = L.divIcon({
     className: '',
-    html: `<div style="width:12px;height:12px;border-radius:50%;background:#7c3aed;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.4)"></div>`,
-    iconSize: [12, 12], iconAnchor: [6, 6]
+    html: `<div style="width:10px;height:10px;border-radius:50%;background:#7c3aed;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.4)"></div>`,
+    iconSize: [10, 10], iconAnchor: [5, 5]
   });
-  adminMarker = L.marker([lat, lng], { icon, interactive: false })
-    .bindTooltip(label || 'İdari merkez', { permanent: false, direction: 'top', offset: [0, -8] })
+  const marker = L.marker([lat, lng], { icon, interactive: true })
+    .bindTooltip(label || 'İdari merkez', { permanent: false, direction: 'top', offset: [0, -6] })
     .addTo(map);
+  adminMarkers.push(marker);
 }
 
-export function removeAdminMarker() {
-  if (adminMarker) { map.removeLayer(adminMarker); adminMarker = null; }
+export function removeAdminMarkers() {
+  adminMarkers.forEach(m => map.removeLayer(m));
+  adminMarkers = [];
 }
+
 export function getDistrictCenter(idx) {
   return polyLayers[idx]?.getBounds()?.getCenter();
 }
