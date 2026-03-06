@@ -7,9 +7,7 @@ import { fetchDistrictItems, fetchAdminPoints }                    from "./wikid
 import { renderProvinces, renderDistricts, refreshDistrictLayer,
          highlightDistrict, getProvBounds,
          highlightProvLayer, showAdminMarker, removeAdminMarkers,
-         toggleLocate, toggleLayer, zoomIn, zoomOut,
-         disableDistrictClick, enableDistrictClick,
-         setLocationDistrictCallback }                              from "./map.js";
+         toggleLocate, toggleLayer, zoomIn, zoomOut }              from "./map.js";
 import { initSidebar, openSidebar, closeSidebar, renderItems,
          setItemFilter, toggleAccordion, openQidFromMap,
          setOverlay, hideOverlay }                                  from "./sidebar.js";
@@ -51,32 +49,6 @@ async function init() {
   renderProvinces(state.provFeatures, onProvinceClick);
   hideOverlay();
 
-  // Konum bulununca ilçeyi otomatik aç
-  setLocationDistrictCallback((lat, lng) => {
-    // Hangi il içinde?
-    const pi = state.provFeatures.findIndex(pf => {
-      try { return L.geoJSON(pf).getBounds().contains([lat, lng]); } catch(e) { return false; }
-    });
-    if (pi === -1) return;
-
-    // İli aç
-    state.activeProvIdx = pi;
-    highlightProvLayer(pi);
-    const pb      = getProvBounds(pi);
-    const pf      = state.provFeatures[pi];
-    const idxList = renderDistricts(state.features, state.matches, pb, onDistrictClick, pf);
-    state.currentIdxList = idxList;
-
-    // Hangi ilçe içinde?
-    const idx = idxList.find(i => {
-      try {
-        const feat = state.features[i];
-        return pointInFeature([lng, lat], feat);
-      } catch(e) { return false; }
-    });
-    if (idx !== undefined) onDistrictClick(idx);
-  });
-
   // Sayfa açılışında hash varsa oraya git
   navigateToHash();
 }
@@ -88,25 +60,6 @@ function buildMatches() {
     if (relId && state.relations[relId]) {
       state.matches[String(idx)] = state.relations[relId];
     }
-  });
-}
-
-// Nokta ilçe geometrisi içinde mi? (konum tespiti için)
-function pointInFeature(pt, feat) {
-  const geom  = feat.geometry;
-  const polys = geom.type === 'Polygon' ? [geom.coordinates] : geom.coordinates;
-  return polys.some(poly => {
-    const ring = poly[0];
-    let inside = false;
-    for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-      const xi = ring[i][0], yi = ring[i][1];
-      const xj = ring[j][0], yj = ring[j][1];
-      if (((yi > pt[1]) !== (yj > pt[1])) &&
-          (pt[0] < (xj - xi) * (pt[1] - yi) / (yj - yi) + xi)) {
-        inside = !inside;
-      }
-    }
-    return inside;
   });
 }
 
@@ -179,7 +132,6 @@ function onProvinceClick(pi) {
   state.activeIdx     = null;
   highlightProvLayer(pi);
   closeSidebar();
-  enableDistrictClick();
   removeAdminMarkers();
 
   const provFeature = state.provFeatures[pi];
@@ -212,7 +164,6 @@ async function onDistrictClick(idx) {
   }
 
   openSidebar(m.label || `İlçe #${idx+1}`, []);
-  disableDistrictClick();
   setOverlay('Öğeler yükleniyor...');
 
   const [items, points] = await Promise.all([
