@@ -22,8 +22,14 @@ export function renderProvinces(provFeatures, onProvinceClick) {
       style: { color: '#94a3b8', weight: 1, fillColor: '#64748b', fillOpacity: 0.04, opacity: 0.6 }
     });
     layer.on('click',     () => onProvinceClick(pi));
-    layer.on('mouseover', () => layer.setStyle({ fillOpacity: 0.10, weight: 1.5, color: '#7c3aed' }));
-    layer.on('mouseout',  () => layer.setStyle({ color: '#94a3b8', weight: 1, fillOpacity: 0.04 }));
+    layer.on('mouseover', () => {
+      if (activeProvIdx !== null) return; // il seçiliyken hover efekti yok
+      layer.setStyle({ fillOpacity: 0.10, weight: 1.5, color: '#7c3aed' });
+    });
+    layer.on('mouseout',  () => {
+      if (activeProvIdx !== null) return;
+      layer.setStyle({ color: '#94a3b8', weight: 1, fillOpacity: 0.04 });
+    });
     layer.addTo(map);
     provLayers[pi] = layer;
   });
@@ -31,16 +37,21 @@ export function renderProvinces(provFeatures, onProvinceClick) {
 
 export function highlightProvLayer(pi) {
   activeProvIdx = pi;
-  // Tüm il sınırlarını gizle, sadece zoom yap
-  provLayers.forEach(l => { if (l) map.removeLayer(l); });
+  // İl layerlarını haritada bırak ama görünmez yap (tıklanabilir kalsın)
+  provLayers.forEach((l, i) => {
+    if (!l) return;
+    l.setStyle({ color: 'transparent', weight: 0, fillColor: 'transparent', fillOpacity: 0, opacity: 0 });
+  });
   if (provLayers[pi]) {
     try { map.fitBounds(provLayers[pi].getBounds(), { padding: [30, 30] }); } catch(e) {}
   }
 }
 
 export function restoreProvLayers() {
-  // İl seçimi iptal edilince il sınırlarını geri göster
-  provLayers.forEach(l => { if (l) l.addTo(map); });
+  provLayers.forEach(l => {
+    if (!l) return;
+    l.setStyle({ color: '#94a3b8', weight: 1, fillColor: '#64748b', fillOpacity: 0.04, opacity: 0.6 });
+  });
   activeProvIdx = null;
 }
 
